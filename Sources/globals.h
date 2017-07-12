@@ -455,6 +455,7 @@ extern NSString *reverseSyncGreenKey;
 extern NSString *reverseSyncBlueKey;
 extern NSString *AutomaticSpellingCorrectionEnabledKey;
 extern NSString *FixSplitBlankPagesKey;
+extern NSString *IndexColorStartKey;
 
 
 
@@ -534,6 +535,7 @@ extern BOOL             doAutoSave;
 extern BOOL             activateBauerPatch; // this is set in TSAppDelegate and turns on or off Bauer's patch to watch servers and catch file changes
 extern BOOL             atLeastMavericks;
 extern BOOL             atLeastElCapitan;
+extern BOOL             atLeastSierra;
 
 // Command completion
 extern NSString *g_commandCompletionChar;	/*" The key triggering completion. Always set to ESC in finishCommandCompletionConfigure "*/

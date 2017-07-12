@@ -50,6 +50,8 @@
 #define NSAppKitVersionNumber10_8 1187
 #define NSAppKitVersionNumber10_9 1265
 #define NSAppKitVersionNumber10_10 1343
+#define NSAppKitVersionNumber10_12 1405
+
 
 @class TSTextEditorWindow;
 
@@ -211,6 +213,11 @@
         atLeastElCapitan = YES;
     else
         atLeastElCapitan = NO;
+    
+    if (floor(NSAppKitVersionNumber) > NSAppKitVersionNumber10_12)
+        atLeastSierra = YES;
+    else
+        atLeastSierra = NO;
     
 	NSString *fileName, *currentVersion, *versionString, *myVersion;
 	NSDictionary *factoryDefaults;
@@ -397,17 +404,17 @@
         
 		g_taggedTagSections = [[NSArray alloc] initWithObjects:@"chapter: ",
                                @"section: ",
-                               @"subsection: ",
-                               @"subsubsection: ",
-                               @"subsubsubsection: ",
-                               @"subsubsubsubsection: ",
+                               @"    subsection: ",
+                               @"        subsubsection: ",
+                               @"            subsubsubsection: ",
+                               @"            subsubsubsubsection: ",
                                @"part: ",
-                               @"title: ",
-                               @"subject: ",
-                               @"subsubject: ",
-                               @"subsubsubject: ",
-                               @"subsubsubsubject: ",
-                               @"subsubsubsubsubject: ",
+                               @"    title: ",
+                               @"        subject: ",
+                               @"            subsubject: ",
+                               @"            subsubsubject: ",
+                               @"            subsubsubsubject: ",
+                               @"            subsubsubsubsubject: ",
                                nil];
         
         
@@ -444,19 +451,19 @@
                                nil];
         
 		g_taggedTagSections = [[NSArray alloc] initWithObjects:@"chapter: ",
-                               @"section: ",
-                               @"subsection: ",
-                               @"subsubsection: ",
-                               @"paragraph: ",
-                               @"subparagraph: ",
+                               @"    section: ",
+                               @"        subsection: ",
+                               @"            subsubsection: ",
+                               @"            paragraph: ",
+                               @"            subparagraph: ",
                                @"chapter: ",
-                               @"section: ",
-                               @"subsection: ",
-                               @"subsubsection: ",
-                               @"paragraph: ",
-                               @"subparagraph: ",
-                               @"macro: ",
-                               @"environment: ",
+                               @"    section: ",
+                               @"        subsection: ",
+                               @"            subsubsection: ",
+                               @"            paragraph: ",
+                               @"            subparagraph: ",
+                               @"                macro: ",
+                               @"                environment: ",
                                nil];
 	}
 
@@ -788,7 +795,7 @@
     //  [myController openDocumentWithContentsOfURL: [NSURL fileURLWithPath:myName] display: YES error:NULL];
             
             myURL = [fileArray objectAtIndex:i];
-    		[myController openDocumentWithContentsOfURL: myURL display: YES error:NULL];
+    		[myController openDocumentWithContentsOfURL: myURL display: YES completionHandler:NULL];
 		}
 	}
 	
@@ -827,8 +834,16 @@
 
 - (IBAction)doMovie:(id)sender
 {
-	NSString *title = [[sender title] stringByAppendingString:@".mov"];
-	[self.myMovie doMovie:title];
+	if (atLeastMavericks)
+        {
+            NSString *title = [[sender title] stringByAppendingString:@".mp4"];
+            [self.myMovie doMovie:title];
+        }
+    else
+        {
+            NSAlert *alert = [NSAlert alertWithMessageText:@"Alert" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:NSLocalizedString(@"Demo Movies require Mac OS 10.9, Mavericks, or higher.", @"Demo Movies require Mac OS 10.9, Mavericks, or higher.")];
+            [alert runModal];
+        }
 }
 
 - (void)configureMovieMenu
@@ -872,7 +887,7 @@
 				//					 action: @selector(doTemplate:) level: lv];
 				// [newItem setSubmenu: submenu];
 				} 
-			else if ([[[title pathExtension] lowercaseString] isEqualToString: @"mov"]) {
+			else if ([[[title pathExtension] lowercaseString] isEqualToString: @"mp4"]) {
 				title = [title stringByDeletingPathExtension];
                 if (( ! [title isEqualToString:@"Getting Started"]) && ( ! [title isEqualToString:@"Initial Preferences"]))
                     [texshopDemosMenu addItemWithTitle:title action: @selector(doMovie:) keyEquivalent:@"" ];
@@ -1078,6 +1093,25 @@
 	}
 
 }
+
+
+
+- (void)makeDefaultEditor:(id)sender;
+{
+    
+    /*
+     CFStringRef myStringRef = LSCopyDefaultRoleHandlerForContentType (CFSTR("edu.uo.texshop.tex"), kLSRolesAll) ;
+     NSString *aString = (__bridge NSString *)myStringRef;
+     NSLog(aString);
+     */
+    
+    OSStatus myStatus = LSSetDefaultRoleHandlerForContentType ( CFSTR("edu.uo.texshop.tex"), kLSRolesAll, CFSTR("TeXShop") );
+    
+    
+}
+
+
+
 
 
 @end

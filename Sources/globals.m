@@ -242,6 +242,7 @@ NSString *reverseSyncGreenKey = @"ReverseSyncGreen";
 NSString *reverseSyncBlueKey = @"ReverseSyncBlue";
 NSString *AutomaticSpellingCorrectionEnabledKey = @"AutomaticSpellingCorrectionEnabled";
 NSString *FixSplitBlankPagesKey = @"FixSplitBlankPages";
+NSString *IndexColorStartKey = @"IndexColorStart";
 
 
 // Paths
@@ -308,6 +309,7 @@ BOOL                doAutoSave; // this is present so changes in AutoSave only t
 BOOL                activateBauerPatch; // this is set in
 BOOL                atLeastMavericks;
 BOOL                atLeastElCapitan;
+BOOL                atLeastSierra;
 
 // Encodings
 NSStringEncoding    NSISOLatin9StringEncoding;
