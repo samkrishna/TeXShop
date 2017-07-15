@@ -80,7 +80,7 @@ static BOOL isValidTeXCommandChar(NSInteger c)
 	NSUInteger		length;
 	NSRange			colorRange;
 	NSUInteger		location;
-	NSInteger				theChar;
+	NSInteger		theChar;
 	NSUInteger		aLineStart;
 	NSUInteger		aLineEnd;
 	NSUInteger		end;
