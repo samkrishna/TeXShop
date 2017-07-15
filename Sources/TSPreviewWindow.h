@@ -53,40 +53,40 @@
 
 - (NSRect)windowWillUseStandardFrame:(NSWindow *)window defaultFrame:(NSRect)defaultFrame;
 
-- (void) close;
-- (void) doTextMagnify: sender;   // for toolbar in text mode
-- (void) doTextPage: sender;      // for toolbar in text mode
-- (void) magnificationDidEnd:(NSWindow *)sheet returnCode: (NSInteger)returnCode contextInfo: (void *)contextInfo;
-- (void) pagenumberDidEnd:(NSWindow *)sheet returnCode: (NSInteger)returnCode contextInfo: (void *)contextInfo;
-- (void) previousPage: sender;
-- (void) nextPage: sender;
-- (void) zoomIn: sender;
-- (void) zoomOut: sender;
+- (void)close;
+- (void)doTextMagnify: sender;   // for toolbar in text mode
+- (void)doTextPage: sender;      // for toolbar in text mode
+- (void)magnificationDidEnd:(NSWindow *)sheet returnCode: (NSInteger)returnCode contextInfo: (void *)contextInfo;
+- (void)pagenumberDidEnd:(NSWindow *)sheet returnCode: (NSInteger)returnCode contextInfo: (void *)contextInfo;
+- (void)previousPage: sender;
+- (void)nextPage: sender;
+- (void)zoomIn: sender;
+- (void)zoomOut: sender;
 
-- (void) displayLog: sender;
-- (void) displayConsole: sender;
-- (void) trashAUXFiles: sender;
-- (void) abort: sender;
+- (void)displayLog: sender;
+- (void)displayConsole: sender;
+- (void)trashAUXFiles: sender;
+- (void)abort: sender;
 
-- (void) firstPage: sender;
-- (void) lastPage: sender;
-- (void) up: sender;
-- (void) down: sender;
-- (void) top: sender;
-- (void) bottom: sender;
-- (void) left: sender; // mitsu 1.29 (O)
-- (void) right: sender; // mitsu 1.29 (O)
+- (void)firstPage: sender;
+- (void)lastPage: sender;
+- (void)up: sender;
+- (void)down: sender;
+- (void)top: sender;
+- (void)bottom: sender;
+- (void)left: sender; // mitsu 1.29 (O)
+- (void)right: sender; // mitsu 1.29 (O)
 
 
-- (void) doError: sender;
-- (void) doChooseMethod: sender;
-- (void) rotateClockwise: sender;
-- (void) rotateCounterclockwise: sender;
-- (void) savePreviewPosition: sender;
-- (void) savePortablePreviewPosition: sender;
-- (void) orderOut: sender;
-- (void) sendEvent:(NSEvent *)theEvent;
-- (void) associatedWindow: sender;
+- (void)doError: sender;
+- (void)doChooseMethod: sender;
+- (void)rotateClockwise: sender;
+- (void)rotateCounterclockwise: sender;
+- (void)savePreviewPosition: sender;
+- (void)savePortablePreviewPosition: sender;
+- (void)orderOut: sender;
+- (void)sendEvent:(NSEvent *)theEvent;
+- (void)associatedWindow: sender;
 - (BOOL)validateMenuItem:(NSMenuItem *)anItem;
 - (void)doMove: (id)sender;
 - (void)resignMainWindow;
@@ -101,17 +101,17 @@
 // - (void)pagenumberDidEnd:(NSWindow *)sheet returnCode: (NSInteger)returnCode contextInfo: (void *)contextInfo;
 // - (void)magnificationDidEnd:(NSWindow *)sheet returnCode: (NSInteger)returnCode contextInfo: (void *)contextInfo;
 //- (void)configurePaperSize: sender;
-- (void) splitPdfKitWindow: (id)sender; 
-- (void) splitWindow: (id)sender; // so menu item can split both source and preview window
-- (void)fixAfterRotation: (BOOL) clockwise;
-// - (BOOL) validateMenuItem:(NSMenuItem *)anItem;
-- (void) changeMouseMode: sender;
-- (void) doStepper: sender;
-- (void) changeScale: sender;
-- (IBAction) goToKitPage: sender;
-// - (void) doFind: sender;
-- (IBAction) takeDestinationFromOutline: (id) sender;
-- (IBAction) convertTiff:(id)sender;
+- (void)splitPdfKitWindow: (id)sender; 
+- (void)splitWindow: (id)sender; // so menu item can split both source and preview window
+- (void)fixAfterRotation: (BOOL)clockwise;
+// - (BOOL)validateMenuItem:(NSMenuItem *)anItem;
+- (void)changeMouseMode: sender;
+- (void)doStepper: sender;
+- (void)changeScale: sender;
+- (IBAction)goToKitPage: sender;
+// - (void)doFind: sender;
+- (IBAction)takeDestinationFromOutline: (id)sender;
+- (IBAction)convertTiff:(id)sender;
 
 - (BOOL)windowIsSplit;
 

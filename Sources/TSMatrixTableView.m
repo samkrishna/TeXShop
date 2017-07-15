@@ -39,12 +39,12 @@ static NSColor *sStripeColor = nil;
 }
 */
 
--(BOOL)ignoreModifierKeysWhileDragging
+- (BOOL)ignoreModifierKeysWhileDragging
 {
 	return YES;
 }
 
-- (void) highlightSelectionInClipRect:(NSRect)rect
+- (void)highlightSelectionInClipRect:(NSRect)rect
 {
 	[self drawStripesInRect:rect];
 	[super highlightSelectionInClipRect:rect];
@@ -72,7 +72,7 @@ static NSColor *sStripeColor = nil;
 
 // draw background of area of tableview, which will be inserted
 
-- (void) drawStripesInRect:(NSRect)clipRect
+- (void)drawStripesInRect:(NSRect)clipRect
 {
 	NSRect stripeRect;
 	NSInteger actCols = [[(TSMatrixPanelController *)[self dataSource] theMatrix] actCols];

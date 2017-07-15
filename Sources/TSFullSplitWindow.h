@@ -72,8 +72,8 @@
 - (void)printSource: (id)sender;
 - (void)convertTiff: (id)sender;
 - (void)splitWindow: (id)sender;
-- (void) becomeMainWindow;
-- (void) resignMainWindow;
+- (void)becomeMainWindow;
+- (void)resignMainWindow;
 - (BOOL)makeFirstResponder:(NSResponder *)aResponder;
 - (void)associatedWindow:(id)sender;
 

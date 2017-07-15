@@ -30,17 +30,17 @@
 
 @implementation TSLogWindow : NSWindow
 
-- (void) doTypeset: sender
+- (void)doTypeset: sender
 {
 	[self.myDocument doTypeset: sender];
 }
 
-- (void) displayLog: sender
+- (void)displayLog: sender
 {
 	[self.myDocument displayLog: sender];
 }
 
-- (void) displayConsole: sender
+- (void)displayConsole: sender
 {
 	[self.myDocument displayConsole: sender];
 }

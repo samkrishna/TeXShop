@@ -141,7 +141,7 @@ else
 //
 // -----------------------------------------------------------------------------
 
-- (NSToolbarItem*) makeToolbarItemWithItemIdentifier:(NSString*)itemIdent key:(NSString*)itemKey
+- (NSToolbarItem*)makeToolbarItemWithItemIdentifier:(NSString*)itemIdent key:(NSString*)itemKey
 {
 	NSToolbarItem*	toolbarItem = [[NSToolbarItem alloc] initWithItemIdentifier: itemIdent] ;
 	NSString*	labelKey = [NSString stringWithFormat:@"tiLabel%@", itemKey];
@@ -159,7 +159,7 @@ else
 //
 // -----------------------------------------------------------------------------
 
-- (NSToolbarItem*) makeToolbarItemWithItemIdentifier:(NSString*)itemIdent key:(NSString*)itemKey imageName:(NSString*)imageName target:(id)target action:(SEL)action
+- (NSToolbarItem*)makeToolbarItemWithItemIdentifier:(NSString*)itemIdent key:(NSString*)itemKey imageName:(NSString*)imageName target:(id)target action:(SEL)action
 {
 	NSToolbarItem*	toolbarItem = [self makeToolbarItemWithItemIdentifier:itemIdent key:itemKey];
 	[toolbarItem setImage: [NSImage imageNamed:imageName]];
@@ -174,7 +174,7 @@ else
 //
 // -----------------------------------------------------------------------------
 
-- (NSToolbarItem*) makeToolbarItemWithItemIdentifier:(NSString*)itemIdent key:(NSString*)itemKey customView:(id)customView
+- (NSToolbarItem*)makeToolbarItemWithItemIdentifier:(NSString*)itemIdent key:(NSString*)itemKey customView:(id)customView
 {
 	NSToolbarItem*	toolbarItem = [self makeToolbarItemWithItemIdentifier:itemIdent key:itemKey];
 	[toolbarItem setView: customView];
@@ -189,7 +189,7 @@ else
 //
 // -----------------------------------------------------------------------------
 
-- (void) setupToolbar
+- (void)setupToolbar
 {
 /*
 	[typesetButton retain];
@@ -313,7 +313,7 @@ else
 //
 // -----------------------------------------------------------------------------
 
-- (NSToolbarItem *) toolbar: (NSToolbar *)toolbar itemForItemIdentifier: (NSString *) itemIdent willBeInsertedIntoToolbar:(BOOL) willBeInserted {
+- (NSToolbarItem *)toolbar: (NSToolbar *)toolbar itemForItemIdentifier: (NSString *)itemIdent willBeInsertedIntoToolbar:(BOOL)willBeInserted {
 	// Required delegate method   Given an item identifier, self method returns an item
 	// The toolbar will use self method to obtain toolbar items that can be displayed in the customization sheet, or in the toolbar itself
 
@@ -1089,7 +1089,7 @@ else
 //
 // -----------------------------------------------------------------------------
 
-- (NSArray *) toolbarDefaultItemIdentifiers: (NSToolbar *) toolbar {
+- (NSArray *)toolbarDefaultItemIdentifiers: (NSToolbar *)toolbar {
 	// Required delegate method   Returns the ordered list of items to be shown in the toolbar by default
 	// If during the toolbar's initialization, no overriding values are found in the user defaults, or if the
 	// user chooses to revert to the default items self set will be used
@@ -1268,7 +1268,7 @@ else
 //
 // -----------------------------------------------------------------------------
 
-- (NSArray *) toolbarAllowedItemIdentifiers: (NSToolbar *) toolbar {
+- (NSArray *)toolbarAllowedItemIdentifiers: (NSToolbar *)toolbar {
 	// Required delegate method   Returns the list of all allowed items by identifier   By default, the toolbar
 	// does not assume any items are allowed, even the separator   So, every allowed item must be explicitly listed
 	// The set of allowed items is used to construct the customization palette
@@ -1521,7 +1521,7 @@ else
 //
 // -----------------------------------------------------------------------------
 
-- (void) toolbarWillAddItem: (NSNotification *) notif {
+- (void)toolbarWillAddItem: (NSNotification *)notif {
 	// Optional delegate method   Before an new item is added to the toolbar, self notification is posted
 	// self is the best place to notice a new item is going into the toolbar   For instance, if you need to
 	// cache a reference to the toolbar item or need to set up some initial state, self is the best place
@@ -1572,7 +1572,7 @@ else
 //
 // -----------------------------------------------------------------------------
 
-- (void) toolbarDidRemoveItem: (NSNotification *) notif {
+- (void)toolbarDidRemoveItem: (NSNotification *)notif {
 	// Optional delegate method   After an item is removed from a toolbar the notification is sent   self allows
 	// the chance to tear down information related to the item that may have been cached   The notification object
 	// is the toolbar to which the item is being added   The item being added is found by referencing the @"item"
@@ -1589,7 +1589,7 @@ else
 // -----------------------------------------------------------------------------
 // this is based on validateMenuItem
 
-- (BOOL) validateToolbarItem: (NSToolbarItem *) toolbarItem {
+- (BOOL)validateToolbarItem: (NSToolbarItem *)toolbarItem {
 	// Optional method   self message is sent to us since we are the target of some toolbar item actions
 	// (for example:  of the save items action)
     

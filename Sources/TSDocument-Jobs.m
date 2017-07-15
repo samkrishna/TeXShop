@@ -129,7 +129,7 @@
 
 
 
-- (void) doJobForScript:(NSInteger)type withError:(BOOL)error runContinuously:(BOOL)continuous
+- (void)doJobForScript:(NSInteger)type withError:(BOOL)error runContinuously:(BOOL)continuous
 {
 	
     SEL saveFinished;
@@ -195,7 +195,7 @@
 }
 
 
-- (void) doJob:(NSInteger)type withError:(BOOL)error runContinuously:(BOOL)continuous
+- (void)doJob:(NSInteger)type withError:(BOOL)error runContinuously:(BOOL)continuous
 {
 	SEL		saveFinished;
 
@@ -281,7 +281,7 @@
 }
 
     
-- (void) autosaveFinished: (NSDocument *)doc didSave:(BOOL)didSave contextInfo:(void *)contextInfo
+- (void)autosaveFinished: (NSDocument *)doc didSave:(BOOL)didSave contextInfo:(void *)contextInfo
 {
     if(showFullPath) [textWindow performSelector:@selector(refreshTitle) withObject:nil afterDelay:0.2]; // added by Terada
 }
@@ -289,7 +289,7 @@
     
 
 
-- (NSString *) separate: (NSString *)myEngine into:(NSMutableArray *)args
+- (NSString *)separate: (NSString *)myEngine into:(NSMutableArray *)args
 {
 	NSArray		*myList;
 	NSString		*myString, *middleString = 0;
@@ -348,7 +348,7 @@
 	return (theEngine);
 }
 
-- (void) testGSCommandKey;
+- (void)testGSCommandKey;
 {
     NSString	    *gsTeXCommand, *path;
     NSRange			theRange;
@@ -396,7 +396,7 @@
     
 }
 
-- (void) convertDocument
+- (void)convertDocument
 {
 	NSFileManager	*fileManager;
 	NSString		*myFileName;
@@ -548,7 +548,7 @@
 // The only reason for its current name seems to be that before we typeset a document,
 // we always first save it. And at the end of that save process, we perform the
 // typesetting.
-- (void) saveFinished: (NSDocument *)doc didSave:(BOOL)didSave contextInfo:(void *)contextInfo
+- (void)saveFinished: (NSDocument *)doc didSave:(BOOL)didSave contextInfo:(void *)contextInfo
 {
 	NSArray			*myList;
 	NSString		*theSource, *theKey, *myEngine, *testString, *programString;
@@ -894,7 +894,7 @@ if ((whichEngineLocal != 3) && (whichEngineLocal != 4) && (! fromMenu)) { //don'
 }
 
 
-- (BOOL) startTask: (NSTask*) task running: (NSString*) leafname withArgs: (NSMutableArray*) args inDirectoryContaining: (NSString*) sourcePath withEngine: (NSInteger)theEngine
+- (BOOL)startTask: (NSTask*) task running: (NSString*) leafname withArgs: (NSMutableArray*)args inDirectoryContaining: (NSString*)sourcePath withEngine: (NSInteger)theEngine
 {
 	BOOL            isFile;
 	BOOL            isExecutable;
@@ -980,7 +980,7 @@ if ((whichEngineLocal != 3) && (whichEngineLocal != 4) && (! fromMenu)) { //don'
 }
 
 
-- (void) completeSaveFinished
+- (void)completeSaveFinished
 {
 	NSString		*myFileName;
 	NSMutableArray	*args;
@@ -1407,13 +1407,13 @@ if ((whichEngineLocal != 3) && (whichEngineLocal != 4) && (! fromMenu)) { //don'
 	}
 }
 
-- (void) doTex: sender
+- (void)doTex: sender
 {
 	fromMenu = YES;
 	[self doTex1: sender];
 }
 
-- (void) doTex1: sender
+- (void)doTex1: sender
 {
 // added by mitsu --(J++) Program popup button indicating Program name
 	[programButton selectItemWithTitle: @"Plain TeX"];
@@ -1424,13 +1424,13 @@ if ((whichEngineLocal != 3) && (whichEngineLocal != 4) && (! fromMenu)) { //don'
 	[self doJob:TexEngine withError:YES runContinuously:NO];
 }
 
-- (void) doLatex: sender
+- (void)doLatex: sender
 {
 	fromMenu = YES;
 	[self doLatex1: sender];
 }
 
-- (void) doLatex1: sender
+- (void)doLatex1: sender
 {
 // added by mitsu --(J++) Program popup button indicating Program name
 	[programButton selectItemWithTitle: @"LaTeX"];
@@ -1440,7 +1440,7 @@ if ((whichEngineLocal != 3) && (whichEngineLocal != 4) && (! fromMenu)) { //don'
 	[self doJob:LatexEngine withError:YES runContinuously:NO];
 }
 
-- (void) doUser: (NSInteger)theEngine
+- (void)doUser: (NSInteger)theEngine
 {
 	fromMenu = NO;
 	[programButton selectItemAtIndex:(theEngine - 1)];
@@ -1451,13 +1451,13 @@ if ((whichEngineLocal != 3) && (whichEngineLocal != 4) && (! fromMenu)) { //don'
 	[self doJob:whichEngine withError:YES runContinuously:NO];
 }
 
-- (void) doContext: sender
+- (void)doContext: sender
 {
 	fromMenu = YES;
 	[self doContext1: sender];
 }
 
-- (void) doContext1: sender
+- (void)doContext1: sender
 {
 // added by mitsu --(J++) Program popup button indicating Program name
 	[programButton selectItemWithTitle: @"ConTeXt"];
@@ -1467,13 +1467,13 @@ if ((whichEngineLocal != 3) && (whichEngineLocal != 4) && (! fromMenu)) { //don'
 	[self doJob:ContextEngine withError:YES runContinuously:NO];
 }
 
-- (void) doMetapost: sender
+- (void)doMetapost: sender
 {
 	fromMenu = YES;
 	[self doMetapost1: sender];
 }
 
-- (void) doMetapost1: sender
+- (void)doMetapost1: sender
 {
 // added by mitsu --(J++) Program popup button indicating Program name
 	[programButton selectItemWithTitle: @"MetaPost"];
@@ -1484,7 +1484,7 @@ if ((whichEngineLocal != 3) && (whichEngineLocal != 4) && (! fromMenu)) { //don'
 	[self doJob:MetapostEngine withError:YES runContinuously:NO];
 }
 
-- (void) doBibtex: sender
+- (void)doBibtex: sender
 {
 // added by mitsu --(J++) Program popup button indicating Program name
 	// [programButton selectItemWithTitle: @"BibTeX"];
@@ -1495,7 +1495,7 @@ if ((whichEngineLocal != 3) && (whichEngineLocal != 4) && (! fromMenu)) { //don'
 	[self doJob:BibtexEngine withError:NO runContinuously:NO];
 }
 
-- (void) doIndex: sender
+- (void)doIndex: sender
 {
 // added by mitsu --(J++) Program popup button indicating Program name
 	// [programButton selectItemWithTitle: @"MakeIndex"];
@@ -1506,13 +1506,13 @@ if ((whichEngineLocal != 3) && (whichEngineLocal != 4) && (! fromMenu)) { //don'
 	[self doJob:IndexEngine withError:NO runContinuously:NO];
 }
 
-- (void) doMetaFont: sender
+- (void)doMetaFont: sender
 {
 	// fromMenu = YES;
 	// [self doMetaFont1: sender];
 }
 
-- (void) doMetaFont1: sender
+- (void)doMetaFont1: sender
 {
 // added by mitsu --(J++) Program popup button indicating Program name
 	// [programButton selectItemWithTitle: @"MetaFont"];
@@ -1523,46 +1523,46 @@ if ((whichEngineLocal != 3) && (whichEngineLocal != 4) && (! fromMenu)) { //don'
 }
 
 // The temp forms which follow do not reset the default typeset buttons
-- (void) doTexTemp: sender
+- (void)doTexTemp: sender
 {
 	[self doJob:TexEngine withError:YES runContinuously:NO];
 }
 
-- (void) doLatexTemp: sender
+- (void)doLatexTemp: sender
 {
 	[self doJobForScript:LatexEngine withError:YES runContinuously:NO];
 }
 
-- (void) doBibtexTemp: sender
+- (void)doBibtexTemp: sender
 {
 	[self doJobForScript:BibtexEngine withError:YES runContinuously:NO];
 }
 
-- (void) doMetapostTemp: sender
+- (void)doMetapostTemp: sender
 {
 	[self doJobForScript:MetapostEngine withError:YES runContinuously:NO];
 }
-- (void) doContextTemp: sender
+- (void)doContextTemp: sender
 {
 	[self doJobForScript:ContextEngine withError:YES runContinuously:NO];
 }
 
-- (void) doIndexTemp: sender
+- (void)doIndexTemp: sender
 {
 	[self doJobForScript:IndexEngine withError:YES runContinuously:NO];
 }
 
-- (void) doMetaFontTemp: sender
+- (void)doMetaFontTemp: sender
 {
 	// [self doJobForScript:MetafontEngine withError:YES runContinuously:NO];
 }
 
-- (void) doTypesetEE: sender
+- (void)doTypesetEE: sender
 {
 	[self doTypeset: sender];
 }
 
-- (void) doTypesetForScriptContinuously:(BOOL)method
+- (void)doTypesetForScriptContinuously:(BOOL)method
 {
 	BOOL	useError;
 
@@ -1577,7 +1577,7 @@ if ((whichEngineLocal != 3) && (whichEngineLocal != 4) && (! fromMenu)) { //don'
 // end change
 }
 
-- (void) doTypeset: sender
+- (void)doTypeset: sender
 {
 //    NSString	*titleString;
 	BOOL	useError;
@@ -1618,7 +1618,7 @@ if ((whichEngineLocal != 3) && (whichEngineLocal != 4) && (! fromMenu)) { //don'
 */
 }
 
-- (void) doTexCommand: sender
+- (void)doTexCommand: sender
 {
 	NSData *myData;
 	NSString *command;
@@ -1792,12 +1792,12 @@ if ((whichEngineLocal != 3) && (whichEngineLocal != 4) && (! fromMenu)) { //don'
 	}
 }
 
-- (BOOL) getWillClose
+- (BOOL)getWillClose
 {
 	return willClose;
 }
 
-- (void) setWillClose: (BOOL)value
+- (void)setWillClose: (BOOL)value
 {
 	willClose = value;
 }

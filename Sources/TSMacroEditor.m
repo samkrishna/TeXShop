@@ -377,7 +377,7 @@ static TSFilterMode savedFilter = kNoFilterMode;
 }
 
 // delegate method for window
-- (BOOL) windowShouldClose: (id)sender
+- (BOOL)windowShouldClose: (id)sender
 {
 	if (sender == self)		// called via saveButtonPressed or cancelButtonPressed
 		return YES;
@@ -402,7 +402,7 @@ static TSFilterMode savedFilter = kNoFilterMode;
 }
 
 // handler for "Save Macros?" sheet
-- (void) saveMacrosSheetDidEnd:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo
+- (void)saveMacrosSheetDidEnd:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo
 {
 	switch (returnCode) {
 		case NSAlertDefaultReturn:
@@ -417,7 +417,7 @@ static TSFilterMode savedFilter = kNoFilterMode;
 }
 
 // delegate method for window
-- (void) windowWillClose: (NSNotification *)aNotification
+- (void)windowWillClose: (NSNotification *)aNotification
 {
 	// clean up
 	if (self.previousItem)

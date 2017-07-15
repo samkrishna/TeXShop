@@ -405,7 +405,7 @@ static BOOL isValidTeXCommandChar(NSInteger c)
 	[self colorizeVisibleAreaInTextView:textView2];
 }
 
-- (void) colorizeVisibleAreaInTextView:(NSTextView *)aTextView
+- (void)colorizeVisibleAreaInTextView:(NSTextView *)aTextView
 {
 	// No syntax coloring if the file is not TeX, or if it is disabled
 	if (!fileIsTex || ![SUD boolForKey:SyntaxColoringEnabledKey])

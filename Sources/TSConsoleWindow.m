@@ -41,27 +41,27 @@
 	return result;
 }
 
-- (void) doChooseMethod: sender
+- (void)doChooseMethod: sender
 {
 	[self.myDocument doChooseMethod: sender];
 }
 
-- (void) doError: sender
+- (void)doError: sender
 {
 	[self.myDocument doError: sender];
 }
 
-- (void) doTypeset: sender
+- (void)doTypeset: sender
 {
 	[self.myDocument doTypeset: sender];
 }
 
-- (void) displayLog: sender
+- (void)displayLog: sender
 {
 	[self.myDocument displayLog: sender];
 }
 
-- (void) displayConsole: sender
+- (void)displayConsole: sender
 {
 	[self.myDocument displayConsole: sender];
 }
@@ -86,12 +86,12 @@
     }
 }
 
-- (void) abort: sender
+- (void)abort: sender
 {
 	[self.myDocument abort: sender];
 }
 
-- (void) trashAUXFiles: sender
+- (void)trashAUXFiles: sender
 {
 	[self.myDocument trashAUXFiles: sender];
 }
@@ -136,7 +136,7 @@
 		}
 }
 
-- (IBAction) convertTiff:(id)sender
+- (IBAction)convertTiff:(id)sender
 {
     [(TSDocument *)self.myDocument convertTiff:sender];
 }

@@ -118,7 +118,7 @@ extern NSPanel *pageNumberWindow;
 }
 */
 
-- (void) becomeMainWindow
+- (void)becomeMainWindow
 {
    self.willClose = NO;
 	if([self.myDocument fileURL] != nil ) [self setTitle:[[[self.myDocument fileTitleName] stringByDeletingPathExtension] stringByAppendingString: @".pdf"]]; // added by Terada
@@ -128,7 +128,7 @@ extern NSPanel *pageNumberWindow;
 }
 
 
-- (void) doTextMagnify: sender
+- (void)doTextMagnify: sender
 {
 	id	thePanel;
 
@@ -147,7 +147,7 @@ extern NSPanel *pageNumberWindow;
 	[sheet orderOut: self];
 }
 
-- (void) doTextPage: sender      // for toolbar in text mode
+- (void)doTextPage: sender      // for toolbar in text mode
 {
 	id	thePanel;
 
@@ -166,87 +166,87 @@ extern NSPanel *pageNumberWindow;
 	[sheet orderOut: self];
 }
 
-- (void) displayLog: sender
+- (void)displayLog: sender
 {
 	[self.myDocument displayLog: sender];
 }
 
-- (void) displayConsole: sender
+- (void)displayConsole: sender
 {
 	[self.myDocument displayConsole: sender];
 }
 
-- (void) abort: sender
+- (void)abort: sender
 {
 	[self.myDocument abort: sender];
 }
 
-- (void) trashAUXFiles: sender
+- (void)trashAUXFiles: sender
 {
 	[self.myDocument trashAUXFiles: sender];
 }
 
-- (void) runPageLayout: sender
+- (void)runPageLayout: sender
 {
 	[self.myDocument runPageLayout: sender];
 }
 
-- (void) printDocument: sender
+- (void)printDocument: sender
 {
 	[self.myDocument printDocument: sender];
 }
 
-- (void) printSource: sender
+- (void)printSource: sender
 {
 	[self.myDocument printSource: sender];
 }
 
-- (void) doTypeset: sender
+- (void)doTypeset: sender
 {
 	[self.myDocument doTypeset: sender];
 }
 
-- (void) flipShowSync: sender
+- (void)flipShowSync: sender
 {
 	[self.myDocument flipShowSync: sender];
 }
 
-- (void) doTex: sender
+- (void)doTex: sender
 {
 	[self.myDocument doTex: sender];
 }
 
-- (void) doLatex: sender
+- (void)doLatex: sender
 {
 	[self.myDocument doLatex: sender];
 }
 
-- (void) doBibtex: sender
+- (void)doBibtex: sender
 {
 	[self.myDocument doBibtex: sender];
 }
 
-- (void) doIndex: sender
+- (void)doIndex: sender
 {
 	[self.myDocument doIndex: sender];
 }
 
-- (void) doMetapost: sender
+- (void)doMetapost: sender
 {
 	[self.myDocument doMetapost: sender];
 }
 
-- (void) doContext: sender
+- (void)doContext: sender
 {
 	[self.myDocument doContext: sender];
 }
 
-- (void) doMetaFont: sender
+- (void)doMetaFont: sender
 {
 	[self.myDocument doMetaFont: sender];
 }
 
-- (void) previousPage: sender
+- (void)previousPage: sender
 {
 	if ([self.myDocument fromKit])
 		[[self.myDocument pdfKitView] previousPage: sender];
@@ -254,7 +254,7 @@ extern NSPanel *pageNumberWindow;
 		[[self.myDocument pdfView] previousPage: sender];
 }
 
-- (void) nextPage: sender;
+- (void)nextPage: sender;
 {	
 	
 	if ([self.myDocument fromKit])
@@ -264,22 +264,22 @@ extern NSPanel *pageNumberWindow;
 }
 
 
-- (void) doChooseMethod: sender
+- (void)doChooseMethod: sender
 {
 	[self.myDocument doChooseMethod: sender];
 }
 
-- (void) doError: sender
+- (void)doError: sender
 {
 	[self.myDocument doError: sender];
 }
 
-- (void) setProjectFile: sender
+- (void)setProjectFile: sender
 {
 	[self.myDocument setProjectFile: sender];
 }
 
-- (void) rotateClockwise: sender
+- (void)rotateClockwise: sender
 {
 	if ([self.myDocument fromKit])
 		[[self.myDocument pdfKitView] rotateClockwise: sender];
@@ -288,7 +288,7 @@ extern NSPanel *pageNumberWindow;
 	}
 }
 
-- (void) rotateCounterclockwise: sender
+- (void)rotateCounterclockwise: sender
 {
 	if ([self.myDocument fromKit])
 		[[self.myDocument pdfKitView] rotateCounterclockwise: sender];
@@ -299,14 +299,14 @@ extern NSPanel *pageNumberWindow;
 
 ////////////////////// key movement ///////////////////////////////////
 
-- (void) firstPage: sender;
+- (void)firstPage: sender;
 {	if ([self.myDocument fromKit])
 		[[self.myDocument pdfKitView] firstPage: sender];
 	else
 		[[self.myDocument pdfView] firstPage: sender];
 }
 
-- (void) lastPage: sender
+- (void)lastPage: sender
 {
 	if ([self.myDocument fromKit])
 		[[self.myDocument pdfKitView] lastPage: sender];
@@ -314,28 +314,28 @@ extern NSPanel *pageNumberWindow;
 		[[self.myDocument pdfView] lastPage: sender];
 }
 
-- (void) up: sender
+- (void)up: sender
 {
 	if (![self.myDocument fromKit]) {
 		[[self.myDocument pdfView] up: sender];
 	}
 }
 
-- (void) down: sender
+- (void)down: sender
 {
 	if (![self.myDocument fromKit]) {
 		[[self.myDocument pdfView] down: sender];
 	}
 }
 
-- (void) top: sender
+- (void)top: sender
 {
 	if (![self.myDocument fromKit]) {
 		[[self.myDocument pdfView] top: sender];
 	}
 }
 
-- (void) bottom: sender
+- (void)bottom: sender
 {
 	if (![self.myDocument fromKit]) {
 		[[self.myDocument pdfView] bottom: sender];
@@ -343,14 +343,14 @@ extern NSPanel *pageNumberWindow;
 }
 
 // mitsu 1.29 (O)
-- (void) left: sender
+- (void)left: sender
 {
 	if (![self.myDocument fromKit]) {
 		[[self.myDocument pdfView] left: sender];
 	}
 }
 
-- (void) right: sender
+- (void)right: sender
 {
 	if (![self.myDocument fromKit]) {
 		[[self.myDocument pdfView] right: sender];
@@ -365,7 +365,7 @@ extern NSPanel *pageNumberWindow;
 
 ////////// end key movement /////////////////////////
 
-- (void) orderOut:sender
+- (void)orderOut:sender
 {
 	self.willClose = YES;
 	if ([self.myDocument externalEditor]) {
@@ -633,12 +633,12 @@ extern NSPanel *pageNumberWindow;
 		[self.myDocument fullscreen: sender];
 }
 
-- (void) savePreviewPosition: sender
+- (void)savePreviewPosition: sender
 {
 	[self.myDocument savePreviewPosition];
 }
 
-- (void) savePortablePreviewPosition: sender
+- (void)savePortablePreviewPosition: sender
 {
 	[self.myDocument savePortablePreviewPosition];
 }
@@ -670,7 +670,7 @@ extern NSPanel *pageNumberWindow;
 
 #endif
 
-- (void) splitPdfKitWindow: (id)sender
+- (void)splitPdfKitWindow: (id)sender
 {
 	NSSize		newSize;
 	NSRect		theFrame;
@@ -728,12 +728,12 @@ extern NSPanel *pageNumberWindow;
 }
 
 // Procedure called by menu item which splits both source and preview windows
-- (void) splitWindow: (id)sender
+- (void)splitWindow: (id)sender
 {
 	[self splitPdfKitWindow: sender];
 }
 
-- (void) fixAfterRotation: (BOOL) clockwise
+- (void)fixAfterRotation: (BOOL)clockwise
 {
 	if (clockwise)
 		[(MyPDFKitView *)self.myPDFKitView rotateClockwisePrimary];
@@ -763,35 +763,35 @@ extern NSPanel *pageNumberWindow;
 }
 */
 
-- (void) changeMouseMode: sender
+- (void)changeMouseMode: sender
 {
 	[(MyPDFKitView *)self.myPDFKitView changeMouseMode: sender];
 	[(MyPDFKitView *)self.myPDFKitView2 changeMouseMode: sender];
 }
 
-- (void) doStepper: sender;
+- (void)doStepper: sender;
 {
 		[(MyPDFKitView *)self.activeView doStepper: sender];
 }
 
-- (void) changeScale: sender;
+- (void)changeScale: sender;
 {
 	[(MyPDFKitView *)self.activeView changeScale: sender];
 }
 
-- (void) goToKitPage: sender
+- (void)goToKitPage: sender
 {
 	[(MyPDFKitView *)self.activeView goToKitPage: sender];
 }
 
 /*
-- (void) doFind: sender
+- (void)doFind: sender
 {
 	[(MyPDFKitView *)self.activeView doFind: sender];
 }
 */
 
-- (IBAction) takeDestinationFromOutline: (id) sender
+- (IBAction)takeDestinationFromOutline: (id)sender
 {
 	[(MyPDFKitView *)self.activeView takeDestinationFromOutline: sender];
 }

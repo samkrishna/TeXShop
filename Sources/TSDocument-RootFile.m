@@ -38,7 +38,7 @@
 }
 */
 
-- (BOOL) checkRootFile: (NSString *)nameString forTask:(NSInteger)task
+- (BOOL)checkRootFile: (NSString *)nameString forTask:(NSInteger)task
 {
 	NSArray 			*wlist;
 	NSEnumerator 		*en;
@@ -324,7 +324,7 @@
 }
 
 
-- (BOOL) checkRootFile_forTask:(NSInteger)task
+- (BOOL)checkRootFile_forTask:(NSInteger)task
 {
 	NSString			*projectPath, *nameString;
     NSStringEncoding    theEncoding;
@@ -352,7 +352,7 @@
 
 /* Removed by Ulrich Bauer patch */
 
-- (void) checkFileLinksA
+- (void)checkFileLinksA
 {
 	NSArray *wlist;
 	NSEnumerator *en;
@@ -375,7 +375,7 @@
 	}
 }
 
-- (void) checkFileLinks:(NSString *)theSource
+- (void)checkFileLinks:(NSString *)theSource
 {
 	NSString *home,*jobname=[[[self fileURL]path] stringByDeletingLastPathComponent];
 	NSRange aRange,bRange;
@@ -447,7 +447,7 @@
 // added by John A. Nairn
 // read argument to \input command and resolve to full path name
 // ignore \input commands that have been commented out
-- (NSString *) readInputArg:(NSString *)fileLine atIndex:(NSUInteger)i
+- (NSString *)readInputArg:(NSString *)fileLine atIndex:(NSUInteger)i
 		homePath:(NSString *)home job:(NSString *)jobname
 {
 	unichar firstChar;
@@ -509,7 +509,7 @@
 // added by John A. Nairn
 // get full path name for possible relative file name in relFile
 // relative is from home
-- (NSString *) decodeFile:(NSString *)relFile homePath:(NSString *)home job:(NSString *)jobname
+- (NSString *)decodeFile:(NSString *)relFile homePath:(NSString *)home job:(NSString *)jobname
 {
 	NSString *saveName, *searchString;
 	NSMutableString *saveTemp;

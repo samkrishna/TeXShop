@@ -391,7 +391,7 @@
 
 
 // for debug
-- (void) examine
+- (void)examine
 {
 	// NODE_INFO(@"examine", self); warning says "always evaluates to true"
 
@@ -625,7 +625,7 @@
 
 @implementation NSArray (MyExtensions)
 
-- (BOOL) containsObjectIdenticalTo: (id)obj {
+- (BOOL)containsObjectIdenticalTo: (id)obj {
 	return [self indexOfObjectIdenticalTo: obj] != NSNotFound;
 }
 
@@ -633,7 +633,7 @@
 
 @implementation NSMutableArray (MyExtensions)
 
-- (void) insertObjectsFromArray:(NSArray *)array atIndex:(NSInteger)idx {
+- (void)insertObjectsFromArray:(NSArray *)array atIndex:(NSInteger)idx {
 	NSObject *entry = nil;
 	NSEnumerator *enumerator = [array objectEnumerator];
 	while ((entry = [enumerator nextObject])) {

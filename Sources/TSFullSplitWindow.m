@@ -67,83 +67,83 @@
     [self.myDocument newTag: sender];
 }
 
-- (void) doChooseMethod: sender
+- (void)doChooseMethod: sender
 {
 	[self.myDocument doChooseMethod: sender];
 }
 
-- (void) abort: sender
+- (void)abort: sender
 {
 	[self.myDocument abort: sender];
 }
 
-- (void) trashAUXFiles: sender
+- (void)trashAUXFiles: sender
 {
 	[self.myDocument trashAUXFiles: sender];
 }
 
 
-- (void) doTypeset: sender
+- (void)doTypeset: sender
 {
 	[self.myDocument doTypeset: sender];
 }
 
-- (void) doTex: sender
+- (void)doTex: sender
 {
 	[self.myDocument doTex: sender];
 }
 
-- (void) doLatex: sender
+- (void)doLatex: sender
 {
 	[self.myDocument doLatex: sender];
 }
 
-- (void) doBibtex: sender
+- (void)doBibtex: sender
 {
 	[self.myDocument doBibtex: sender];
 }
 
-- (void) doIndex: sender
+- (void)doIndex: sender
 {
 	[self.myDocument doIndex: sender];
 }
 
-- (void) doMetapost: sender
+- (void)doMetapost: sender
 {
 	[self.myDocument doMetapost: sender];
 }
 
-- (void) doContext: sender
+- (void)doContext: sender
 {
 	[self.myDocument doContext: sender];
 }
 
-- (void) closeCurrentEnvironment: sender
+- (void)closeCurrentEnvironment: sender
 {
 	[self.myDocument closeCurrentEnvironment: sender];
 }
 
-- (void) changeAutoComplete: sender
+- (void)changeAutoComplete: sender
 {
 	[self.myDocument changeAutoComplete: sender];
 }
 
-- (void) showHideLineNumbers: sender
+- (void)showHideLineNumbers: sender
 {
 	[self.myDocument showHideLineNumbers: sender];
 }
 
-- (void) showHideInvisibleCharacters:(id)sender
+- (void)showHideInvisibleCharacters:(id)sender
 {
 	[self.myDocument showHideInvisibleCharacters: sender];
 }
 
-- (void) saveSourcePosition: sender
+- (void)saveSourcePosition: sender
 {
 	[self.myDocument saveSourcePosition];
 }
 
-- (void) savePortableSourcePosition:(id)sender
+- (void)savePortableSourcePosition:(id)sender
 {
 	[self.myDocument savePortableSourcePosition];
 }
@@ -378,7 +378,7 @@
 
 
 
-- (void) becomeMainWindow
+- (void)becomeMainWindow
 {
     NSMenu      *menuBar;
     NSMenu      *fileMenu;
@@ -401,7 +401,7 @@
 
 }
 
-- (void) resignMainWindow
+- (void)resignMainWindow
 {
     NSMenu  *menuBar;
     NSMenu  *fileMenu;

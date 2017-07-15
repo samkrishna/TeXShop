@@ -117,7 +117,7 @@
 - (BOOL)isStandardItem; // not Group, not Separator
 - (BOOL)isSeparator;
 
-- (void) examine;
+- (void)examine;
 
 - (TSMacroTreeNode *)duplicateNode;
 + (NSArray *)duplicateNodeArray: (NSArray *)srcNodeArray;
@@ -141,7 +141,7 @@
 @end
 
 @interface NSMutableArray (MyExtensions)
-- (void) insertObjectsFromArray:(NSArray *)array atIndex:(NSInteger)idx;
+- (void)insertObjectsFromArray:(NSArray *)array atIndex:(NSInteger)idx;
 @end
 
 

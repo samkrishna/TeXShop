@@ -99,7 +99,7 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 
 
 
-- (void) okForStationeryPanel: sender
+- (void)okForStationeryPanel: sender
 {
 	NSDocumentController	*myController;
 	NSURL					*myURL;
@@ -122,7 +122,7 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 	
 }
 
-- (void) cancelForStationeryPanel: sender
+- (void)cancelForStationeryPanel: sender
 {
 	[stationeryWindow close];
 }

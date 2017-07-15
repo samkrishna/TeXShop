@@ -55,7 +55,7 @@
         return [sourceURL path];
 }
 
-- (void) tryScrap:(id)sender
+- (void)tryScrap:(id)sender
 {
     BOOL        spellExists;
     NSString    *newTitle;
@@ -116,7 +116,7 @@
 }
 
 
-- (IBAction) typesetScrap:(id)sender
+- (IBAction)typesetScrap:(id)sender
 {
     NSString            *theSource, *theHeader, *newSource;
     NSRange             beginDoc, header, lineheader;

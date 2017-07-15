@@ -28,11 +28,11 @@
 
 @interface TSDocument (ToolbarSupport)
 
-- (void) setupToolbar;
-- (NSToolbarItem *) toolbar: (NSToolbar *)toolbar itemForItemIdentifier: (NSString *) itemIdent willBeInsertedIntoToolbar:(BOOL) willBeInserted;
-- (NSArray *) toolbarDefaultItemIdentifiers: (NSToolbar *) toolbar;
-- (NSArray *) toolbarAllowedItemIdentifiers: (NSToolbar *) toolbar;
-- (void) toolbarWillAddItem: (NSNotification *) notif;
-- (void) toolbarDidRemoveItem: (NSNotification *) notif;
-- (BOOL) validateToolbarItem: (NSToolbarItem *) toolbarItem;
+- (void)setupToolbar;
+- (NSToolbarItem *)toolbar:(NSToolbar *)toolbar itemForItemIdentifier:(NSString *)itemIdent willBeInsertedIntoToolbar:(BOOL)willBeInserted;
+- (NSArray *)toolbarDefaultItemIdentifiers: (NSToolbar *)toolbar;
+- (NSArray *)toolbarAllowedItemIdentifiers: (NSToolbar *)toolbar;
+- (void)toolbarWillAddItem: (NSNotification *)notif;
+- (void)toolbarDidRemoveItem: (NSNotification *)notif;
+- (BOOL)validateToolbarItem: (NSToolbarItem *)toolbarItem;
 @end
