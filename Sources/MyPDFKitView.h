@@ -125,18 +125,18 @@
 @property           NSInteger                       timerNumber; // 0 <= timerNumber <= 100
 
 
-// - (void) scheduleAddintToolips;
-- (id) init;
-- (void) setup;
-- (void) initializeDisplay;
-- (void) showWithPath: (NSString *)imagePath;
-- (void) reShowWithPath: (NSString *)imagePath;
-- (void) showForSecond;
-- (void) prepareSecond;
-- (void) reShowForSecond;
-- (void) setupPageStyle;
-- (void) setupMagnificationStyle;
-- (BOOL) doReleaseDocument;
+// - (void)scheduleAddintToolips;
+- (id)init;
+- (void)setup;
+- (void)initializeDisplay;
+- (void)showWithPath: (NSString *)imagePath;
+- (void)reShowWithPath: (NSString *)imagePath;
+- (void)showForSecond;
+- (void)prepareSecond;
+- (void)reShowForSecond;
+- (void)setupPageStyle;
+- (void)setupMagnificationStyle;
+- (BOOL)doReleaseDocument;
 
 - (NSInteger)pageStyle;
 - (NSInteger)firstPageStyle;
@@ -145,46 +145,46 @@
 - (void)setFirstPageStyle: (NSInteger)theFirstPageStyle;
 - (void)setResizeOption: (NSInteger)theResizeOption;
 
-- (void) rotateClockwise:sender;
-- (void) rotateCounterclockwise:sender;
-- (void) rotateClockwisePrimary;
-- (void) rotateCounterclockwisePrimary;
+- (void)rotateClockwise:sender;
+- (void)rotateCounterclockwise:sender;
+- (void)rotateClockwisePrimary;
+- (void)rotateCounterclockwisePrimary;
 
-- (void) goBack:sender;
-- (void) goForward: sender;
+- (void)goBack:sender;
+- (void)goForward: sender;
 
-- (void) goToKitPageNumber: (NSInteger)thePage;
-- (void) goToKitPage: (id)sender;
-- (void) previousPage: (id)sender;
-- (void) nextPage: (id)sender;
-- (void) firstPage: (id)sender;
-- (void) lastPage: (id)sender;
-- (IBAction) changeScale: sender;
-- (IBAction) doStepper: sender;
-- (IBAction) doFind: sender;
-- (IBAction) doFindOne: sender;
-- (void) doFindAgain;
+- (void)goToKitPageNumber: (NSInteger)thePage;
+- (void)goToKitPage: (id)sender;
+- (void)previousPage: (id)sender;
+- (void)nextPage: (id)sender;
+- (void)firstPage: (id)sender;
+- (void)lastPage: (id)sender;
+- (IBAction)changeScale: sender;
+- (IBAction)doStepper: sender;
+- (IBAction)doFind: sender;
+- (IBAction)doFindOne: sender;
+- (void)doFindAgain;
 - (double)magnification;
-- (void) setMagnification: (double)magnification;
-- (void) changePageStyle: (id)sender;
-- (void) changePDFViewSize: (id)sender;
-- (void) copy: (id)sender;
-- (void) saveSelectionToFile: (id)sender;
-- (IBAction) toggleDrawer: (id) sender;
-- (void) takeDestinationFromOutline: (id) sender;
-- (void) changeMouseMode: (id)sender;
-- (void) mouseDown: (NSEvent *) theEvent;
-- (void) mouseUp: (NSEvent *) theEvent;
-- (void) mouseDragged: (NSEvent *) theEvent;
-- (void) mouseMoved: (NSEvent *) theEvent;
-- (void) scrollByDragging: (NSEvent *)theEvent;
-- (void) zoomIn: (id)sender;
-- (void) zoomOut: (id)sender;
+- (void)setMagnification: (double)magnification;
+- (void)changePageStyle: (id)sender;
+- (void)changePDFViewSize: (id)sender;
+- (void)copy: (id)sender;
+- (void)saveSelectionToFile: (id)sender;
+- (IBAction)toggleDrawer: (id)sender;
+- (void)takeDestinationFromOutline: (id)sender;
+- (void)changeMouseMode: (id)sender;
+- (void)mouseDown: (NSEvent *)theEvent;
+- (void)mouseUp: (NSEvent *)theEvent;
+- (void)mouseDragged: (NSEvent *)theEvent;
+- (void)mouseMoved: (NSEvent *)theEvent;
+- (void)scrollByDragging: (NSEvent *)theEvent;
+- (void)zoomIn: (id)sender;
+- (void)zoomOut: (id)sender;
 
-- (BOOL) validateMenuItem:(NSMenuItem *)anItem;
+- (BOOL)validateMenuItem:(NSMenuItem *)anItem;
 
 // printing
-- (void) printDocument: sender;
+- (void)printDocument: sender;
 
 - (void)selectARect: (NSEvent *)theEvent;
 - (void)selectAll: (id)sender;
@@ -195,7 +195,7 @@
 - (NSData *)imageDataFromSelectionType: (NSInteger)type;
 - (NSData *)PDFImageDataFromSelection;
 // - (void)saveSelectionToFile: (id)sender;
-- (void) chooseExportImageType: sender;
+- (void)chooseExportImageType: sender;
 // drag & drop
 - (void)startDragging: (NSEvent *)theEvent; // mitsu 1.29 drag & drop
 - (void)flagsChanged:(NSEvent *)theEvent;
@@ -211,14 +211,14 @@
 - (void)setupSourceFiles;
 - (void)keyDown:(NSEvent *)theEvent;
 - (void)updateBackground: (NSRect)aRect;
-// - (void)goToKitPageNumber: (NSInteger) thePage;
+// - (void)goToKitPageNumber: (NSInteger)thePage;
 - (NSMenu *)menuForEvent:(NSEvent *)theEvent;
 - (void)fixMagnificationControls;
 - (NSMutableArray *)getSearchResults;
 - (void)resetSearchDelegate;
 - (void)cancelSearch;
 - (void)setProtectFind: (BOOL)value;
-- (void) setShowSync: (BOOL)value;
+- (void)setShowSync: (BOOL)value;
 - (void)setNumberSyncRect: (int)value;
 - (void)setSyncRect: (int)which originX: (float)x originY: (float)y width: (float)width height: (float)height;
 - (void)setOldSync: (BOOL)value;
@@ -228,18 +228,18 @@
 - (NSInteger)index;
 - (NSImage *)imageFromSelection;
 - (NSDrawer *)drawer;
-- (void) breakConnections;
-// - (void) setOverView:(OverView *)theOveView;
+- (void)breakConnections;
+// - (void)setOverView:(OverView *)theOveView;
 // - (OverView *)overView;
 // - (BOOL)resignFirstResponder;
 - (void)fixWhiteDisplay;
 @end
 
 @interface MyPDFKitView (PDFDocumentDelegate)
-- (void) documentDidBeginDocumentFind: (NSNotification *) notification;
-- (void) documentDidEndDocumentFind: (NSNotification *) notification;
-- (void) documentDidEndPageFind: (NSNotification *)notification;
-- (void) documentDidFindMatch: (NSNotification *)notification;
+- (void)documentDidBeginDocumentFind: (NSNotification *)notification;
+- (void)documentDidEndDocumentFind: (NSNotification *)notification;
+- (void)documentDidEndPageFind: (NSNotification *)notification;
+- (void)documentDidFindMatch: (NSNotification *)notification;
 
 @end
 

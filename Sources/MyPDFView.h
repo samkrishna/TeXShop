@@ -76,45 +76,45 @@ IBOutlet		id                  myStepper1;
 @property (retain) OverView                        *overView;
 
 // set up the view
-- (void) setImageType: (NSInteger)theType;
-- (void) setDocument: (id) theDocument;
-- (void) setImageRep: (NSPDFImageRep *)theRep;
+- (void)setImageType: (NSInteger)theType;
+- (void)setDocument: (id)theDocument;
+- (void)setImageRep: (NSPDFImageRep *)theRep;
 - (void)setupForPDFRep: (NSPDFImageRep *)newRep style: (NSInteger)newPageStyle;
 - (void)setFrameAndBounds; // mitsu 1.29 (O)
 - (void)fitToSize;
 - (BOOL)acceptsFirstResponder;
 // magnification
-- (double) magnification;
-- (void) setMagnification: (double) magSize;
-- (void) changeScale: sender;
-- (void) doStepper: sender;
-- (void) resetMagnification;
+- (double)magnification;
+- (void)setMagnification: (double)magSize;
+- (void)changeScale: sender;
+- (void)doStepper: sender;
+- (void)resetMagnification;
 // drawRect
 - (NSInteger)pageNumberForPoint: (NSPoint)aPoint;
 - (NSPoint)pointForPage: (NSInteger)aPage;
 - (NSImage *)imageFromRect: (NSRect)aRect;
 // moving
-- (void) previousPage: sender;
-- (void) firstPage: sender;
-- (void) up: sender;
-- (void) top: sender;
-- (void) nextPage: sender;
-- (void) lastPage: sender;
-- (void) down: sender;
-- (void) bottom: sender;
-- (void) left: sender;
-- (void) right: sender;
-- (void) goToPage: sender;
+- (void)previousPage: sender;
+- (void)firstPage: sender;
+- (void)up: sender;
+- (void)top: sender;
+- (void)nextPage: sender;
+- (void)lastPage: sender;
+- (void)down: sender;
+- (void)bottom: sender;
+- (void)left: sender;
+- (void)right: sender;
+- (void)goToPage: sender;
 - (void)displayPage: (NSInteger)pagenumber;
 - (void)updateCurrentPage;
 - (void)wasScrolled: (NSNotification *)aNotification;
 // rotation
-- (void) rotateClockwise:sender;
-- (void) rotateCounterclockwise:sender;
-- (void) fixRotation;
+- (void)rotateClockwise:sender;
+- (void)rotateCounterclockwise:sender;
+- (void)fixRotation;
 - (CGFloat)rotationAmount;
 // printing
-- (void) printDocument: sender;
+- (void)printDocument: sender;
 // mouseDown
 - (void)changeMouseMode: (id)sender;
 - (void)flagsChanged:(NSEvent *)theEvent;
@@ -130,7 +130,7 @@ IBOutlet		id                  myStepper1;
 - (BOOL)hasSelection;
 - (NSData *)imageDataFromSelectionType: (NSInteger)type;
 - (void)saveSelectionToFile: (id)sender;
-- (void) chooseExportImageType: sender;
+- (void)chooseExportImageType: sender;
 // drag & drop
 - (void)startDragging: (NSEvent *)theEvent; // mitsu 1.29 drag & drop
 // others

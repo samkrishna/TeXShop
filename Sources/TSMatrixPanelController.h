@@ -67,7 +67,7 @@
 + (id)sharedInstance;
 
 - (void)hideWindow:(id)sender;
-- (MatrixData *) theMatrix;
+- (MatrixData *)theMatrix;
 - (IBAction)envselChange:(id)sender;
 - (IBAction)brselChange:(id)sender;
 - (IBAction)insertMatrix:(id)sender;

@@ -300,12 +300,12 @@ NSData *draggedData;
 
 }
 
-- (void) setImageType: (NSInteger)theType
+- (void)setImageType: (NSInteger)theType
 {
 	documentType = theType;
 }
 
-- (void) setDocument: (id) theDocument
+- (void)setDocument: (id)theDocument
 {
 	self.myDocument = theDocument;
 }
@@ -325,7 +325,7 @@ is the most common case and does not require resetting any bounds,
 it is separated out for special minimal treatment to preserve
 scroller position.
 */
-- (void) setImageRep: (NSPDFImageRep *)theRep
+- (void)setImageRep: (NSPDFImageRep *)theRep
 {
 // mitsu 1.29 (O) completely changed
 	[self renewGState];
@@ -671,7 +671,7 @@ possible to fix those sizes inside setMagnification.
 The commands below work, and were found after various unpleasant experiments
 failed. If you change the code below, be sure to test carefully!
 */
-- (void) setMagnification: (double)magSize
+- (void)setMagnification: (double)magSize
 {
 	NSRect	myBounds, visRect;
 	NSPoint topLeft, theOrigin;
@@ -722,7 +722,7 @@ failed. If you change the code below, be sure to test carefully!
 	[(NSClipView *)[self superview] setCopiesOnScroll: copiesOnScroll];
 }
 
-- (void) changeScale: sender
+- (void)changeScale: sender
 {
 	NSInteger		scale;
 	double	magSize;
@@ -765,7 +765,7 @@ failed. If you change the code below, be sure to test carefully!
 	// end mitsu 1.29
 }
 
-- (void) doStepper: sender
+- (void)doStepper: sender
 {
 	if (sender == myStepper)
 		[myScale setIntegerValue:[myStepper integerValue]];
@@ -850,7 +850,7 @@ failed. If you change the code below, be sure to test carefully!
 	oldMagnification = [self magnification];
 }
 
-- (void) revertMagnification:(NSNotification *)aNotification
+- (void)revertMagnification:(NSNotification *)aNotification
 {
 	if (oldMagnification != [self magnification])
 		[self setMagnification: oldMagnification];
@@ -1073,7 +1073,7 @@ failed. If you change the code below, be sure to test carefully!
 
 #pragma mark =====moving=====
 
-- (void) previousPage: sender
+- (void)previousPage: sender
 {
 	NSInteger		pagenumber;
 	NSRect	myBounds, myVisible, newVisible;
@@ -1159,7 +1159,7 @@ failed. If you change the code below, be sure to test carefully!
 	}
 }
 
-- (void) firstPage: sender
+- (void)firstPage: sender
 {
 	NSInteger		pagenumber;
 
@@ -1183,7 +1183,7 @@ failed. If you change the code below, be sure to test carefully!
 }
 
 
-- (void) up: sender
+- (void)up: sender
 {
 	NSRect	myBounds, myVisible, newVisible;
 	// mitsu 1.29 (O)  commented out--this should work with TIFF etc.
@@ -1201,7 +1201,7 @@ failed. If you change the code below, be sure to test carefully!
 	[self display];
 }
 
-- (void) top: sender
+- (void)top: sender
 {
 	NSRect	myBounds, myVisible, newVisible;
 
@@ -1219,7 +1219,7 @@ failed. If you change the code below, be sure to test carefully!
 
 
 
-- (void) nextPage: sender
+- (void)nextPage: sender
 {
 	NSInteger		pagenumber;
 	NSRect	myBounds, myVisible, newVisible;
@@ -1291,7 +1291,7 @@ failed. If you change the code below, be sure to test carefully!
 	}
 }
 
-- (void) lastPage: sender
+- (void)lastPage: sender
 {
 	NSInteger		pagenumber;
 
@@ -1315,7 +1315,7 @@ failed. If you change the code below, be sure to test carefully!
 }
 
 
-- (void) down: sender
+- (void)down: sender
 {
 	NSRect	myBounds, myVisible, newVisible;
 	// mitsu 1.29 (O)  commented out--this should work with TIFF etc.
@@ -1332,7 +1332,7 @@ failed. If you change the code below, be sure to test carefully!
 	[self display];
 }
 
-- (void) bottom: sender
+- (void)bottom: sender
 {
 	NSRect	myBounds, myVisible, newVisible;
 	// mitsu 1.29 (O)  commented out--this should work with TIFF etc.
@@ -1470,7 +1470,7 @@ failed. If you change the code below, be sure to test carefully!
 }
 
 
-- (void) goToPage: sender
+- (void)goToPage: sender
 {
 		NSInteger		pagenumber;
 	NSRect		myBounds, myVisible, newVisible;
@@ -1604,7 +1604,7 @@ failed. If you change the code below, be sure to test carefully!
 
 #pragma mark =====rotation=====
 
-- (void) rotateClockwise:sender
+- (void)rotateClockwise:sender
 {
 	rotationAmount = rotationAmount - 90;
 	if (rotationAmount < -90)
@@ -1614,7 +1614,7 @@ failed. If you change the code below, be sure to test carefully!
 }
 
 
-- (void) rotateCounterclockwise:sender
+- (void)rotateCounterclockwise:sender
 {
 	rotationAmount = rotationAmount + 90;
 	if (rotationAmount > 180)
@@ -1624,7 +1624,7 @@ failed. If you change the code below, be sure to test carefully!
 }
 
 
-- (void) fixRotation
+- (void)fixRotation
 {
 	NSPoint	theCenter, theOrigin;
 	NSRect	myBounds, visRect;
@@ -1668,12 +1668,12 @@ failed. If you change the code below, be sure to test carefully!
 
 #pragma mark =====printing=====
 
-- (void) printDocument: sender
+- (void)printDocument: sender
 {
 	[self.myDocument printDocument: sender];
 }
 
-- (void) printSource: sender
+- (void)printSource: sender
 {
 	[self.myDocument printSource: sender];
 }
@@ -3377,7 +3377,7 @@ failed. If you change the code below, be sure to test carefully!
 
 
 // control image type popup
-- (void) chooseExportImageType: sender
+- (void)chooseExportImageType: sender
 {
 	NSInteger imageExportType;
 	NSSavePanel *savePanel;
@@ -3600,7 +3600,7 @@ failed. If you change the code below, be sure to test carefully!
 	// end mitsu 1.29b
 }
 
-- (void) setShowSync: (BOOL)value
+- (void)setShowSync: (BOOL)value
 {	
 	showSync = value;
 }

@@ -50,7 +50,7 @@
 
 
 
-- (void) showWithPath: (NSString *)imagePath
+- (void)showWithPath: (NSString *)imagePath
 {
 	PDFDocument	*pdfDoc;
     
@@ -77,7 +77,7 @@
 }
 
 
-- (void) reShowWithPath: (NSString *)imagePath
+- (void)reShowWithPath: (NSString *)imagePath
 {
 	PDFDocument     *pdfDoc;
 	BOOL            needsInitialization;

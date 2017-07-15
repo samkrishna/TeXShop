@@ -23,12 +23,12 @@
 
 @property (retain) NSImage *magnifiedImage;
 
-// - (void) dealloc;
-- (void) setDrawRubberBand: (BOOL)value;
-- (void) setDrawMagnifiedRect: (BOOL)value;
-- (void) setSelectionRect: (NSRect) theRect;
-- (void) setMagnifiedRect: (NSRect) theRect;
-- (void) setDrawMagnifiedImage: (BOOL)value;
+// - (void)dealloc;
+- (void)setDrawRubberBand: (BOOL)value;
+- (void)setDrawMagnifiedRect: (BOOL)value;
+- (void)setSelectionRect: (NSRect)theRect;
+- (void)setMagnifiedRect: (NSRect)theRect;
+- (void)setDrawMagnifiedImage: (BOOL)value;
 
 
 @end

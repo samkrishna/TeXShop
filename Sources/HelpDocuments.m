@@ -474,12 +474,12 @@
 
 }
 
-- (void) okForPanel: sender
+- (void)okForPanel: sender
 {
 	[NSApp stopModalWithCode: 0];
 }
 
-- (void) cancelForPanel: sender
+- (void)cancelForPanel: sender
 {
 	[NSApp stopModalWithCode:1];
 }

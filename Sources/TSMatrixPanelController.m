@@ -203,7 +203,7 @@ static id _sharedInstance = nil;
 	return [info draggingSourceOperationMask];
 }
 
-- (BOOL) tableView:(NSTableView*)tv writeRows:(NSArray*)rows toPasteboard:(NSPasteboard *)pboard
+- (BOOL)tableView:(NSTableView*)tv writeRows:(NSArray*)rows toPasteboard:(NSPasteboard *)pboard
 {
 	NSInteger i;
 	NSMutableArray *j = [NSMutableArray array];

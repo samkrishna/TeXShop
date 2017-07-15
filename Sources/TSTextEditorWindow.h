@@ -37,16 +37,16 @@
 // following is OK; it returns myDocument
  - (TSDocument *)document;
 // end addition
-- (void) doChooseMethod: sender;
-- (void) saveSourcePosition: sender;
-- (void) savePortableSourcePosition: sender;
-- (void) makeKeyAndOrderFront:(id)sender;
-- (void) trashAUXFiles: sender;
-- (void) abort: sender;
-- (void) becomeMainWindow;
-- (void) resignMainWindow;
-- (void) sendEvent:(NSEvent *)theEvent;
-- (void) associatedWindow:(id)sender;
+- (void)doChooseMethod: sender;
+- (void)saveSourcePosition: sender;
+- (void)savePortableSourcePosition: sender;
+- (void)makeKeyAndOrderFront:(id)sender;
+- (void)trashAUXFiles: sender;
+- (void)abort: sender;
+- (void)becomeMainWindow;
+- (void)resignMainWindow;
+- (void)sendEvent:(NSEvent *)theEvent;
+- (void)associatedWindow:(id)sender;
 - (NSRect)windowWillUseStandardFrame:(NSWindow *)window defaultFrame:(NSRect)defaultFrame;
 // forsplit
 - (BOOL)makeFirstResponder:(NSResponder *)aResponder;

@@ -303,7 +303,7 @@ Turns out this approach of building the new string and inserting it at the appro
 	}
 }
 
-- (void) jumpToSelection:sender {
+- (void)jumpToSelection:sender {
 	NSTextView *textView = [self textObjectToSearchIn];
 	if (textView) {
 		[textView scrollRangeToVisible:[textView selectedRange]];

@@ -4826,8 +4826,7 @@ if (! useFullSplitWindow) {
 }
 
 // Code by Nicolas Ojeda Bar, slightly modified by Martin Heusse
-- (BOOL)textView:(NSTextView *)aTextView doCommandBySelector:(SEL)
-	aSelector
+- (BOOL)textView:(NSTextView *)aTextView doCommandBySelector:(SEL)aSelector
 {
 
 	if (aSelector == @selector (insertNewline:)) {

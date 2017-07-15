@@ -572,7 +572,7 @@
 
 // Added by Greg Landweber to load the autocompletion dictionary
 // This code is modified from the code to load the LaTeX panel
-- (void) finishAutoCompletionConfigure
+- (void)finishAutoCompletionConfigure
 {
 	NSString	*autocompletionPath;
 	
@@ -681,7 +681,7 @@
 }
 
 // mitsu 1.29 (P)
-- (void) finishCommandCompletionConfigure
+- (void)finishCommandCompletionConfigure
 {
 	NSString            *completionPath, *small;
 	NSData              *myData;

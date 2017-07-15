@@ -96,7 +96,7 @@ Change History (most recent first):
 
 // Custom windows that use the NSBorderlessWindowMask can't become key by default.  Therefore, controls in such windows
 // won't ever be enabled by default.  Thus, we override this method to change that.
-- (BOOL) canBecomeKeyWindow
+- (BOOL)canBecomeKeyWindow
 {
     return YES;
 }

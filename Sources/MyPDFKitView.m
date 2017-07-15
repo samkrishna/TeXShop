@@ -57,7 +57,7 @@
 
 @implementation MyPDFKitView : PDFView
 
-- (void) breakConnections
+- (void)breakConnections
 {
     // Breaks retain cycles to prevent memory leaks.
     [self cleanupMarquee: YES];
@@ -151,7 +151,7 @@
 
 
 
-- (void) initializeDisplay
+- (void)initializeDisplay
 {
     
     protectFind = NO;
@@ -198,7 +198,7 @@
 
 }
 
-- (void) setupPageStyle
+- (void)setupPageStyle
 {
     
 	switch (pageStyle) {
@@ -235,7 +235,7 @@
 		}
 }
 
-- (void) setupMagnificationStyle
+- (void)setupMagnificationStyle
 {
 	double	theMagnification;
 	NSInteger		mag;
@@ -267,7 +267,7 @@
     [myStepper1 setMaxValue:PDF_MAX_SCALE];
 }
 
-- (void) setupOutline
+- (void)setupOutline
 {
 //     NSLog(@"setup outline");
     
@@ -301,7 +301,7 @@
 	}
 }
 
-- (void) notificationSetup;
+- (void)notificationSetup;
 {
 	[[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(pageChanged:)
 												 name: PDFViewPageChangedNotification object: self];
@@ -332,7 +332,7 @@
 	
 }
 
-- (void) setup
+- (void)setup
 {
 	[self notificationSetup];
 	
@@ -349,7 +349,7 @@
 	[self initializeDisplay];
 }
 
-- (BOOL) doReleaseDocument
+- (BOOL)doReleaseDocument
 {
 // This entire routine was protection for a bug in Tiger. So we can
 //     bypass it
@@ -384,7 +384,7 @@
 }
 
 // added by Terada for the blurring bug of Yosemite and El Capitan
-- (void) changeScaleFactorForRemovingBlurringWithParameters:(NSArray*)parameters
+- (void)changeScaleFactorForRemovingBlurringWithParameters:(NSArray*)parameters
 {
     float originalScale = [(NSNumber*)(parameters[0]) floatValue];
     BOOL autoScales = [(NSNumber*)(parameters[1]) boolValue];
@@ -404,7 +404,7 @@
 }
 
 // added by Terada for the blurring bug of Yosemite and El Capitan
-- (void) removeBlurringByResettingMagnification
+- (void)removeBlurringByResettingMagnification
 {
     
     
@@ -417,7 +417,7 @@
 }
 
 
-- (void) showWithPath: (NSString *)imagePath
+- (void)showWithPath: (NSString *)imagePath
 {
 
     
@@ -489,7 +489,7 @@
 
 }
 
-- (void) showForSecond;
+- (void)showForSecond;
 {
     
     
@@ -505,7 +505,7 @@
 }
 
 
-- (void) reShowWithPath: (NSString *)imagePath
+- (void)reShowWithPath: (NSString *)imagePath
 {
 	
 	PDFDocument	*pdfDoc, *oldDoc;
@@ -709,7 +709,7 @@
 	*/ 
 }	 
 
-- (void) reShowForSecond
+- (void)reShowForSecond
 {
 	PDFPage		*aPage;
     if (floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_10_Max)
@@ -831,7 +831,7 @@
  
 }
 
-- (void) rotateClockwisePrimary
+- (void)rotateClockwisePrimary
 {	
 	NSInteger			i, amount, newAmount;
 	PDFPage		*myPage;
@@ -848,7 +848,7 @@
 }
 
 
-- (void) rotateClockwise:sender
+- (void)rotateClockwise:sender
 {
 	
 	
@@ -859,7 +859,7 @@
 	// [self layoutDocumentView];
 }
 
-- (void) rotateCounterclockwisePrimary
+- (void)rotateCounterclockwisePrimary
 {
 	NSInteger			i, amount, newAmount;
 	PDFPage		*myPage;
@@ -876,7 +876,7 @@
 	}
 }
 
-- (void) rotateCounterclockwise:sender
+- (void)rotateCounterclockwise:sender
 {
 	
 	
@@ -889,21 +889,21 @@
 	// [self layoutDocumentView];
 }
 
-- (void) goBack:sender
+- (void)goBack:sender
 {
 	if  ((pageStyle == PDF_SINGLE_PAGE_STYLE) || (pageStyle == PDF_TWO_PAGE_STYLE))
 		[self cleanupMarquee: YES];
 	[super goBack:sender];
 }
 
-- (void) goForward: sender
+- (void)goForward: sender
 {
 	if  ((pageStyle == PDF_SINGLE_PAGE_STYLE) || (pageStyle == PDF_TWO_PAGE_STYLE))
 		[self cleanupMarquee: YES];
 	[super goForward:sender];
 }
 
-- (void) scaleChanged: (NSNotification *) notification
+- (void)scaleChanged: (NSNotification *)notification
 {
 	CGFloat	theScale;
 	NSInteger		magsize;
@@ -922,7 +922,7 @@
 		}
 }
 
-- (void) pageChanged: (NSNotification *) notification
+- (void)pageChanged: (NSNotification *)notification
 {
 	PDFPage			*aPage;
 	NSInteger				pageNumber;
@@ -1040,7 +1040,7 @@
 }
 
 
-- (void) changeScale: sender
+- (void)changeScale: sender
 {
 	NSInteger		scale;
 	double	magSize;
@@ -1101,7 +1101,7 @@
 */
 }
 
-- (void) doStepper: sender
+- (void)doStepper: sender
 {
     if (sender == myStepper)
         [myScale setStringValue:[myStepper stringValue]]; // Strangely, setIntegerValue doesn't work correctly
@@ -1124,14 +1124,14 @@
 */
 
 
-- (void) previousPage: (id)sender
+- (void)previousPage: (id)sender
 {
 	if  ((pageStyle == PDF_SINGLE_PAGE_STYLE) || (pageStyle == PDF_TWO_PAGE_STYLE))
 		[self cleanupMarquee: YES];
 	[self goToPreviousPage:self];
 }
 
-- (void) nextPage: (id)sender
+- (void)nextPage: (id)sender
 {
 	
 	if  ((pageStyle == PDF_SINGLE_PAGE_STYLE) || (pageStyle == PDF_TWO_PAGE_STYLE))
@@ -1139,21 +1139,21 @@
 	[self goToNextPage:sender];
 }
 
-- (void) firstPage: (id)sender
+- (void)firstPage: (id)sender
 {
 	if  ((pageStyle == PDF_SINGLE_PAGE_STYLE) || (pageStyle == PDF_TWO_PAGE_STYLE))
 		[self cleanupMarquee: YES];
 	[self goToFirstPage:self];
 }
 
-- (void) lastPage: (id)sender
+- (void)lastPage: (id)sender
 {
 	if  ((pageStyle == PDF_SINGLE_PAGE_STYLE) || (pageStyle == PDF_TWO_PAGE_STYLE))
 		[self cleanupMarquee: YES];
 	[self goToLastPage:sender];
 }
 
-- (void) goToKitPageNumber: (NSInteger) thePage
+- (void)goToKitPageNumber: (NSInteger)thePage
 {
 	NSInteger			myPage;
 	PDFPage		*aPage;
@@ -1185,7 +1185,7 @@
 }
 
 
-- (void) goToKitPage: (id)sender
+- (void)goToKitPage: (id)sender
 {
 	NSInteger		thePage;
 
@@ -1387,7 +1387,7 @@
 }
 
 
-- (void) copy: (id)sender
+- (void)copy: (id)sender
 {
 	
 	if (mouseMode != NEW_MOUSE_MODE_SELECT_PDF)
@@ -1420,14 +1420,14 @@
 
 // --------------------------------------------------------------------------------------------------------- toggleDrawer
 
-- (IBAction) toggleDrawer: (id) sender
+- (IBAction)toggleDrawer: (id)sender
 {
 	[_drawer toggle: self];
 }
 
 // ------------------------------------------------------------------------------------------- takeDestinationFromOutline
 
-- (IBAction) takeDestinationFromOutline: (id) sender
+- (IBAction)takeDestinationFromOutline: (id)sender
 {
 	// Get the destination associated with the search result list.  Tell the PDFView to go there.
 	[self goToDestination: [[sender itemAtRow: [sender selectedRow]] destination]];
@@ -1439,7 +1439,7 @@
 
 // The outline view is for the PDF outline.  Not all PDF's have an outline.
 
-- (NSInteger) outlineView: (NSOutlineView *) outlineView numberOfChildrenOfItem: (id) item
+- (NSInteger)outlineView: (NSOutlineView *)outlineView numberOfChildrenOfItem: (id)item
 {
 	if (item == NULL)
 	{
@@ -1454,7 +1454,7 @@
 
 // --------------------------------------------------------------------------------------------- outlineView:child:ofItem
 
-- (id) outlineView: (NSOutlineView *) outlineView child: (NSInteger) idx ofItem: (id) item
+- (id)outlineView: (NSOutlineView *)outlineView child: (NSInteger)idx ofItem: (id)item
 {
 	if (item == NULL)
 	{
@@ -1469,7 +1469,7 @@
 
 // ----------------------------------------------------------------------------------------- outlineView:isItemExpandable
 
-- (BOOL) outlineView: (NSOutlineView *) outlineView isItemExpandable: (id) item
+- (BOOL)outlineView: (NSOutlineView *)outlineView isItemExpandable: (id)item
 {
 	if (item == NULL)
 	{
@@ -1484,13 +1484,13 @@
 
 // ------------------------------------------------------------------------- outlineView:objectValueForTableColumn:byItem
 
-- (id) outlineView: (NSOutlineView *) outlineView objectValueForTableColumn: (NSTableColumn *) tableColumn
+- (id)outlineView: (NSOutlineView *)outlineView objectValueForTableColumn: (NSTableColumn *)tableColumn
 		byItem: (id) item
 {
 	return [(PDFOutline *)item label];
 }
 
-- (void) doFindOne: (id) sender
+- (void)doFindOne: (id)sender
 {
    
     PDFSelection                    *searchSelection;
@@ -1534,7 +1534,7 @@
 
 }
 
-- (void) doFindAgain
+- (void)doFindAgain
 {
     PDFSelection                    *searchSelection;
     
@@ -1572,7 +1572,7 @@
 }
 
 
-- (void) doFind: (id) sender
+- (void)doFind: (id)sender
 {
     
     self.toolbarFind = NO;
@@ -1596,7 +1596,7 @@
 
 // ------------------------------------------------------------------------------------------------------------ startFind
 
-- (void) documentDidBeginDocumentFind: (NSNotification *) notification
+- (void)documentDidBeginDocumentFind: (NSNotification *)notification
 {
     
     if (self.toolbarFind)
@@ -1622,7 +1622,7 @@
 
 // --------------------------------------------------------------------------------------------------------- findProgress
 
-- (void) documentDidEndPageFind: (NSNotification *) notification
+- (void)documentDidEndPageFind: (NSNotification *)notification
 {
 	double		pageIndex;
 	
@@ -1650,7 +1650,7 @@
 // Called when an instance was located. Delegates can instantiate.
 
 
-- (void) documentDidFindMatch: (NSNotification *) notification
+- (void)documentDidFindMatch: (NSNotification *)notification
 {
     if (self.toolbarFind)
         return;
@@ -1682,7 +1682,7 @@
 
 
 /*
-- (void) didMatchString: (PDFSelection *) instance
+- (void)didMatchString: (PDFSelection *)instance
 {
  
     if (self.toolbarFind)
@@ -1709,7 +1709,7 @@
 
 // -------------------------------------------------------------------------------------------------------------- endFind
 
-- (void) documentDidEndDocumentFind: (NSNotification *) notification
+- (void)documentDidEndDocumentFind: (NSNotification *)notification
 {
     
     if (self.toolbarFind)
@@ -1738,7 +1738,7 @@
 // The table view is used to hold search results.  Column 1 lists the page number for the search result,
 // column two the section in the PDF (x-ref with the PDF outline) where the result appears.
 
-- (NSInteger) numberOfRowsInTableView: (NSTableView *) aTableView
+- (NSInteger)numberOfRowsInTableView: (NSTableView *)aTableView
 {
 	if (self != [self.myDocument topView])
 		return ([[self.myDocument topView] numberOfRowsInTableView: aTableView]);
@@ -1748,7 +1748,7 @@
 
 // ------------------------------------------------------------------------------ tableView:objectValueForTableColumn:row
 
-- (id) tableView: (NSTableView *) aTableView objectValueForTableColumn: (NSTableColumn *) theColumn
+- (id)tableView: (NSTableView *)aTableView objectValueForTableColumn: (NSTableColumn *)theColumn
 		row: (NSInteger) rowIndex
 {
 	if (self != [self.myDocument topView])
@@ -1766,7 +1766,7 @@
 
 // ------------------------------------------------------------------------------------------ tableViewSelectionDidChange
 
-- (void) tableViewSelectionDidChange: (NSNotification *) notification
+- (void)tableViewSelectionDidChange: (NSNotification *)notification
 {
 	NSInteger				rowIndex;
 	NSMutableArray	*_firstSearchResults;
@@ -1802,7 +1802,7 @@
 	}
 }
 
-- (void) changeMouseMode: (id)sender
+- (void)changeMouseMode: (id)sender
 {
 	NSInteger	oldMouseMode;
 
@@ -2321,7 +2321,7 @@
 
 #pragma mark =====mouse routines=====
 
-- (void) mouseDown: (NSEvent *) theEvent
+- (void)mouseDown: (NSEvent *)theEvent
 {
     
     if (drawMark) {
@@ -2486,7 +2486,7 @@ The system then remembers the new number and sends is to the Timer which will di
  
 */
 
-- (void) increaseTimerNumber
+- (void)increaseTimerNumber
 {
     if (self.timerNumber < 5000)
         self.timerNumber = self.timerNumber + 1;
@@ -2495,7 +2495,7 @@ The system then remembers the new number and sends is to the Timer which will di
 }
 
 
-- (void) mouseMoved: (NSEvent *) theEvent
+- (void)mouseMoved: (NSEvent *)theEvent
 {
     
     
@@ -2704,7 +2704,7 @@ The system then remembers the new number and sends is to the Timer which will di
 
 // --------------------------------------------------------------------------------------------------------- mouseDragged
 
-- (void) mouseDragged: (NSEvent *) theEvent
+- (void)mouseDragged: (NSEvent *)theEvent
 {
 
 	if (downOverLink) {
@@ -2795,7 +2795,7 @@ The system then remembers the new number and sends is to the Timer which will di
 
 // -------------------------------------------------------------------------------------------------------------- mouseUp
 
-- (void) mouseUp: (NSEvent *) theEvent
+- (void)mouseUp: (NSEvent *)theEvent
 {
 
 	if (downOverLink) {
@@ -2836,7 +2836,7 @@ The system then remembers the new number and sends is to the Timer which will di
 
 
 
-- (BOOL) validateMenuItem:(NSMenuItem *)anItem
+- (BOOL)validateMenuItem:(NSMenuItem *)anItem
 {
 	
 		
@@ -2942,7 +2942,7 @@ The system then remembers the new number and sends is to the Timer which will di
 // -----------------------------------------------------------------------
 
 /*
-- (void) setOverView:(OverView *)theOverView
+- (void)setOverView:(OverView *)theOverView
 {
     overView = theOverView;
 }
@@ -3513,7 +3513,7 @@ The system then remembers the new number and sends is to the Timer which will di
 // end of routines for Mountain Lion and below
 // -------------------------------------------------------------------------
 
-- (void) printDocument: sender
+- (void)printDocument: sender
 {
 	[self.myDocument printDocument: sender];
 }
@@ -3978,7 +3978,7 @@ else
 
 
 // control image type popup
-- (void) chooseExportImageType: sender
+- (void)chooseExportImageType: sender
 {
 	NSInteger imageExportType;
 	NSSavePanel *savePanel;
@@ -4644,7 +4644,7 @@ else
 //-----------------------------------------------------
 
 /*
-- (BOOL)doNewSync: (NSPoint) thePoint
+- (BOOL)doNewSync: (NSPoint)thePoint
 {
 	NSInteger				theIndex;
 	NSInteger				testIndex;
@@ -5672,7 +5672,7 @@ else
 	while (remainingRange.length > 0);
 }
 
-- (void) cancelSearch
+- (void)cancelSearch
 {
 	if ([[self document] isFinding])
 		[[self document] cancelFindString];
@@ -5761,7 +5761,7 @@ else
 	oldMagnification = [self magnification];
 }
 
-- (void) revertMagnification:(NSNotification *)aNotification
+- (void)revertMagnification:(NSNotification *)aNotification
 {
 	if (oldMagnification != [self magnification])
 		[self setMagnification: oldMagnification];
@@ -6064,7 +6064,7 @@ else
 	protectFind = value;
 }
 
-- (void) setShowSync: (BOOL)value
+- (void)setShowSync: (BOOL)value
 {	
 	showSync = value;
 }

@@ -26,7 +26,7 @@
 {
 	IBOutlet id myController;
 }
-- (void) drawStripesInRect:(NSRect)clipRect;
+- (void)drawStripesInRect:(NSRect)clipRect;
 
 @end
 
