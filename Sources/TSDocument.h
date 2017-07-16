@@ -627,10 +627,6 @@ enum RootCommand
 - (void)setSourceTextColorFromPreferences:(NSNotification *)notification; // added by Terada
 - (void)setDocumentFontFromPreferences:(NSNotification *)notification;
 - (void)setConsoleFontFromPreferences:(NSNotification *)notification;
-- (void)reColor:(NSNotification *)notification;
-- (void)viewBoundsDidChange:(NSNotification *)notification;
-- (void)viewFrameDidChange:(NSNotification *)notification;
-- (void)checkATaskStatus:(NSNotification *)notification;
 - (void)setupFromPreferencesUsingWindowController:(NSWindowController *)windowController;
 - (void)makeMenuFromDirectory:(NSMenu *)menu basePath:(NSString *)basePath action:(SEL)action level:(NSUInteger)level; // added by S. Zenitani
 - (void)resetMacroButton:(NSNotification *)notification;
@@ -683,6 +679,7 @@ enum RootCommand
 - (void)autosaveFinished:(NSDocument *)doc didSave:(BOOL)didSave contextInfo:(void *)contextInfo;
 
 - (void)doTexCommand:(id)sender;
+- (void)checkATaskStatus:(NSNotification *)notification;
 - (void)convertDocument;
 - (void)abort:(id)sender;
 - (void)sheetDidEnd:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo;
@@ -716,6 +713,9 @@ enum RootCommand
 - (void)fixColor:(NSUInteger)from :(NSUInteger)to;
 - (void)colorizeAll;
 - (void)colorizeVisibleAreaInTextView:(NSTextView *)aTextView;
+- (void)viewBoundsDidChange:(NSNotification *)notification;
+- (void)viewFrameDidChange:(NSNotification *)notification;
+- (void)reColor:(NSNotification *)notification;
 @end
 
 
