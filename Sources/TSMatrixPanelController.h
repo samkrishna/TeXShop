@@ -90,7 +90,7 @@
 - (NSInteger)colCount;
 - (id)objectInRow:(NSUInteger)row inCol:(NSUInteger)col;
 - (id)myRowAtIndex:(NSUInteger)row;
-- (void)replaceObjectInRow:(NSUInteger)row inCol:(NSUInteger)col withObject:(id) anObj;
+- (void)replaceObjectInRow:(NSUInteger)row inCol:(NSUInteger)col withObject:(id)anObj;
 - (void)addRow;
 - (void)insertRow:(NSMutableArray*)row atIndex:(NSInteger)ind;
 - (void)removeRowAtIndex:(NSUInteger)ind;

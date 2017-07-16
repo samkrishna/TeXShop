@@ -86,35 +86,35 @@ IBOutlet		id                  myStepper1;
 // magnification
 - (double)magnification;
 - (void)setMagnification: (double)magSize;
-- (void)changeScale: sender;
-- (void)doStepper: sender;
+- (void)changeScale:(id)sender;
+- (void)doStepper:(id)sender;
 - (void)resetMagnification;
 // drawRect
 - (NSInteger)pageNumberForPoint: (NSPoint)aPoint;
 - (NSPoint)pointForPage: (NSInteger)aPage;
 - (NSImage *)imageFromRect: (NSRect)aRect;
 // moving
-- (void)previousPage: sender;
-- (void)firstPage: sender;
-- (void)up: sender;
-- (void)top: sender;
-- (void)nextPage: sender;
-- (void)lastPage: sender;
-- (void)down: sender;
-- (void)bottom: sender;
-- (void)left: sender;
-- (void)right: sender;
-- (void)goToPage: sender;
+- (void)previousPage:(id)sender;
+- (void)firstPage:(id)sender;
+- (void)up:(id)sender;
+- (void)top:(id)sender;
+- (void)nextPage:(id)sender;
+- (void)lastPage:(id)sender;
+- (void)down:(id)sender;
+- (void)bottom:(id)sender;
+- (void)left:(id)sender;
+- (void)right:(id)sender;
+- (void)goToPage:(id)sender;
 - (void)displayPage: (NSInteger)pagenumber;
 - (void)updateCurrentPage;
 - (void)wasScrolled: (NSNotification *)aNotification;
 // rotation
-- (void)rotateClockwise:sender;
-- (void)rotateCounterclockwise:sender;
+- (void)rotateClockwise:(id)sender;
+- (void)rotateCounterclockwise:(id)sender;
 - (void)fixRotation;
 - (CGFloat)rotationAmount;
 // printing
-- (void)printDocument: sender;
+- (void)printDocument:(id)sender;
 // mouseDown
 - (void)changeMouseMode: (id)sender;
 - (void)flagsChanged:(NSEvent *)theEvent;
@@ -130,7 +130,7 @@ IBOutlet		id                  myStepper1;
 - (BOOL)hasSelection;
 - (NSData *)imageDataFromSelectionType: (NSInteger)type;
 - (void)saveSelectionToFile: (id)sender;
-- (void)chooseExportImageType: sender;
+- (void)chooseExportImageType:(id)sender;
 // drag & drop
 - (void)startDragging: (NSEvent *)theEvent; // mitsu 1.29 drag & drop
 // others

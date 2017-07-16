@@ -421,8 +421,8 @@
 		4005D64D03D1217000000009 /* MetaFontAction.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = MetaFontAction.tiff; sourceTree = "<group>"; };
 		400980DA1F13E44200C02D8C /* synctex_parser_advanced.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = synctex_parser_advanced.h; sourceTree = "<group>"; };
 		4009C6D60D0BAA9C00B23013 /* hiero.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = hiero.icns; sourceTree = "<group>"; };
-		400CD8B80C66BD3900C450D6 /* HelpDocuments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpDocuments.h; sourceTree = "<group>"; };
-		400CD8B90C66BD3900C450D6 /* HelpDocuments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpDocuments.m; sourceTree = "<group>"; };
+		400CD8B80C66BD3900C450D6 /* HelpDocuments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = HelpDocuments.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		400CD8B90C66BD3900C450D6 /* HelpDocuments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = HelpDocuments.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		400CD8BE0C66BD4F00C450D6 /* TSMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSMovie.h; sourceTree = "<group>"; };
 		400CD8BF0C66BD4F00C450D6 /* TSMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSMovie.m; sourceTree = "<group>"; };
 		400CD8C00C66BD4F00C450D6 /* TSMovieWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSMovieWindow.h; sourceTree = "<group>"; };

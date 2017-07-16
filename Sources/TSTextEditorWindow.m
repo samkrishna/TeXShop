@@ -67,7 +67,7 @@
 
 
 
-- (void) becomeMainWindow
+- (void)becomeMainWindow
 {
  	[self refreshTitle]; // added by Terada
 	[super becomeMainWindow];
@@ -80,7 +80,7 @@
         [self.myDocument setSourceTextColorFromPreferences:nil]; // added by Terada
 }
 
-- (void) resignMainWindow
+- (void)resignMainWindow
 {
     [super resignMainWindow];
     [self.myDocument resignSpelling];
@@ -111,17 +111,17 @@
 	}
 }
 
-- (void) doChooseMethod: sender
+- (void)doChooseMethod:(id)sender
 {
 	[self.myDocument doChooseMethod: sender];
 }
 
-- (void) abort: sender
+- (void)abort:(id)sender
 {
 	[self.myDocument abort: sender];
 }
 
-- (void) trashAUXFiles: sender
+- (void)trashAUXFiles:(id)sender
 {
 	[self.myDocument trashAUXFiles: sender];
 }
@@ -199,13 +199,13 @@
 	[super sendEvent: theEvent];
 }
 
-- (void)saveSourcePosition: sender
+- (void)saveSourcePosition:(id)sender
 {
 	[self.myDocument saveSourcePosition];
 }
 
 
-- (void)savePortableSourcePosition: sender
+- (void)savePortableSourcePosition:(id)sender
 {
 	[self.myDocument savePortableSourcePosition];
 }

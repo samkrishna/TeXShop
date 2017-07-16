@@ -33,8 +33,8 @@
 
 @property (weak) TSDocument	*myDocument;
 
-- (void)displayLog: sender;
-- (void)displayConsole: sender;
+- (void)displayLog:(id)sender;
+- (void)displayConsole:(id)sender;
 - (NSRect)windowWillUseStandardFrame:(NSWindow *)window defaultFrame:(NSRect)defaultFrame;
 /*
 - (NSSize)windowWillResize:(NSWindow *)window toSize:(NSSize)proposedFrameSize;

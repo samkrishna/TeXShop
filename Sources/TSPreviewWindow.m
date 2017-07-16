@@ -128,7 +128,7 @@ extern NSPanel *pageNumberWindow;
 }
 
 
-- (void)doTextMagnify: sender
+- (void)doTextMagnify:(id)sender
 {
 	id	thePanel;
 
@@ -147,7 +147,7 @@ extern NSPanel *pageNumberWindow;
 	[sheet orderOut: self];
 }
 
-- (void)doTextPage: sender      // for toolbar in text mode
+- (void)doTextPage:(id)sender     // for toolbar in text mode
 {
 	id	thePanel;
 
@@ -166,87 +166,87 @@ extern NSPanel *pageNumberWindow;
 	[sheet orderOut: self];
 }
 
-- (void)displayLog: sender
+- (void)displayLog:(id)sender
 {
 	[self.myDocument displayLog: sender];
 }
 
-- (void)displayConsole: sender
+- (void)displayConsole:(id)sender
 {
 	[self.myDocument displayConsole: sender];
 }
 
-- (void)abort: sender
+- (void)abort:(id)sender
 {
 	[self.myDocument abort: sender];
 }
 
-- (void)trashAUXFiles: sender
+- (void)trashAUXFiles:(id)sender
 {
 	[self.myDocument trashAUXFiles: sender];
 }
 
-- (void)runPageLayout: sender
+- (void)runPageLayout:(id)sender
 {
 	[self.myDocument runPageLayout: sender];
 }
 
-- (void)printDocument: sender
+- (void)printDocument:(id)sender
 {
 	[self.myDocument printDocument: sender];
 }
 
-- (void)printSource: sender
+- (void)printSource:(id)sender
 {
 	[self.myDocument printSource: sender];
 }
 
-- (void)doTypeset: sender
+- (void)doTypeset:(id)sender
 {
 	[self.myDocument doTypeset: sender];
 }
 
-- (void)flipShowSync: sender
+- (void)flipShowSync:(id)sender
 {
 	[self.myDocument flipShowSync: sender];
 }
 
-- (void)doTex: sender
+- (void)doTex:(id)sender
 {
 	[self.myDocument doTex: sender];
 }
 
-- (void)doLatex: sender
+- (void)doLatex:(id)sender
 {
 	[self.myDocument doLatex: sender];
 }
 
-- (void)doBibtex: sender
+- (void)doBibtex:(id)sender
 {
 	[self.myDocument doBibtex: sender];
 }
 
-- (void)doIndex: sender
+- (void)doIndex:(id)sender
 {
 	[self.myDocument doIndex: sender];
 }
 
-- (void)doMetapost: sender
+- (void)doMetapost:(id)sender
 {
 	[self.myDocument doMetapost: sender];
 }
 
-- (void)doContext: sender
+- (void)doContext:(id)sender
 {
 	[self.myDocument doContext: sender];
 }
 
-- (void)doMetaFont: sender
+- (void)doMetaFont:(id)sender
 {
 	[self.myDocument doMetaFont: sender];
 }
 
-- (void)previousPage: sender
+- (void)previousPage:(id)sender
 {
 	if ([self.myDocument fromKit])
 		[[self.myDocument pdfKitView] previousPage: sender];
@@ -254,7 +254,7 @@ extern NSPanel *pageNumberWindow;
 		[[self.myDocument pdfView] previousPage: sender];
 }
 
-- (void)nextPage: sender;
+- (void)nextPage:(id)sender
 {	
 	
 	if ([self.myDocument fromKit])
@@ -264,22 +264,22 @@ extern NSPanel *pageNumberWindow;
 }
 
 
-- (void)doChooseMethod: sender
+- (void)doChooseMethod:(id)sender
 {
 	[self.myDocument doChooseMethod: sender];
 }
 
-- (void)doError: sender
+- (void)doError:(id)sender
 {
 	[self.myDocument doError: sender];
 }
 
-- (void)setProjectFile: sender
+- (void)setProjectFile:(id)sender
 {
 	[self.myDocument setProjectFile: sender];
 }
 
-- (void)rotateClockwise: sender
+- (void)rotateClockwise:(id)sender
 {
 	if ([self.myDocument fromKit])
 		[[self.myDocument pdfKitView] rotateClockwise: sender];
@@ -288,7 +288,7 @@ extern NSPanel *pageNumberWindow;
 	}
 }
 
-- (void)rotateCounterclockwise: sender
+- (void)rotateCounterclockwise:(id)sender
 {
 	if ([self.myDocument fromKit])
 		[[self.myDocument pdfKitView] rotateCounterclockwise: sender];
@@ -299,14 +299,14 @@ extern NSPanel *pageNumberWindow;
 
 ////////////////////// key movement ///////////////////////////////////
 
-- (void)firstPage: sender;
+- (void)firstPage:(id)sender
 {	if ([self.myDocument fromKit])
 		[[self.myDocument pdfKitView] firstPage: sender];
 	else
 		[[self.myDocument pdfView] firstPage: sender];
 }
 
-- (void)lastPage: sender
+- (void)lastPage:(id)sender
 {
 	if ([self.myDocument fromKit])
 		[[self.myDocument pdfKitView] lastPage: sender];
@@ -314,28 +314,28 @@ extern NSPanel *pageNumberWindow;
 		[[self.myDocument pdfView] lastPage: sender];
 }
 
-- (void)up: sender
+- (void)up:(id)sender
 {
 	if (![self.myDocument fromKit]) {
 		[[self.myDocument pdfView] up: sender];
 	}
 }
 
-- (void)down: sender
+- (void)down:(id)sender
 {
 	if (![self.myDocument fromKit]) {
 		[[self.myDocument pdfView] down: sender];
 	}
 }
 
-- (void)top: sender
+- (void)top:(id)sender
 {
 	if (![self.myDocument fromKit]) {
 		[[self.myDocument pdfView] top: sender];
 	}
 }
 
-- (void)bottom: sender
+- (void)bottom:(id)sender
 {
 	if (![self.myDocument fromKit]) {
 		[[self.myDocument pdfView] bottom: sender];
@@ -343,14 +343,14 @@ extern NSPanel *pageNumberWindow;
 }
 
 // mitsu 1.29 (O)
-- (void)left: sender
+- (void)left:(id)sender
 {
 	if (![self.myDocument fromKit]) {
 		[[self.myDocument pdfView] left: sender];
 	}
 }
 
-- (void)right: sender
+- (void)right:(id)sender
 {
 	if (![self.myDocument fromKit]) {
 		[[self.myDocument pdfView] right: sender];
@@ -365,7 +365,7 @@ extern NSPanel *pageNumberWindow;
 
 ////////// end key movement /////////////////////////
 
-- (void)orderOut:sender
+- (void)orderOut:(id)sender
 {
 	self.willClose = YES;
 	if ([self.myDocument externalEditor]) {
@@ -633,12 +633,12 @@ extern NSPanel *pageNumberWindow;
 		[self.myDocument fullscreen: sender];
 }
 
-- (void)savePreviewPosition: sender
+- (void)savePreviewPosition:(id)sender
 {
 	[self.myDocument savePreviewPosition];
 }
 
-- (void)savePortablePreviewPosition: sender
+- (void)savePortablePreviewPosition:(id)sender
 {
 	[self.myDocument savePortablePreviewPosition];
 }
@@ -662,7 +662,7 @@ extern NSPanel *pageNumberWindow;
 // end mitsu 1.29
 
 /*
-- (void) configurePaperSize: sender
+- (void) configurePaperSize:(id)sender
 {
     [myDocument configurePaperSize: self];
 }
@@ -763,29 +763,29 @@ extern NSPanel *pageNumberWindow;
 }
 */
 
-- (void)changeMouseMode: sender
+- (void)changeMouseMode:(id)sender
 {
 	[(MyPDFKitView *)self.myPDFKitView changeMouseMode: sender];
 	[(MyPDFKitView *)self.myPDFKitView2 changeMouseMode: sender];
 }
 
-- (void)doStepper: sender;
+- (void)doStepper:(id)sender
 {
 		[(MyPDFKitView *)self.activeView doStepper: sender];
 }
 
-- (void)changeScale: sender;
+- (void)changeScale:(id)sender
 {
 	[(MyPDFKitView *)self.activeView changeScale: sender];
 }
 
-- (void)goToKitPage: sender
+- (void)goToKitPage:(id)sender
 {
 	[(MyPDFKitView *)self.activeView goToKitPage: sender];
 }
 
 /*
-- (void)doFind: sender
+- (void)doFind:(id)sender
 {
 	[(MyPDFKitView *)self.activeView doFind: sender];
 }

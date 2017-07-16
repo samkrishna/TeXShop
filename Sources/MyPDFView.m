@@ -722,7 +722,7 @@ failed. If you change the code below, be sure to test carefully!
 	[(NSClipView *)[self superview] setCopiesOnScroll: copiesOnScroll];
 }
 
-- (void)changeScale: sender
+- (void)changeScale:(id)sender
 {
 	NSInteger		scale;
 	double	magSize;
@@ -765,7 +765,7 @@ failed. If you change the code below, be sure to test carefully!
 	// end mitsu 1.29
 }
 
-- (void)doStepper: sender
+- (void)doStepper:(id)sender
 {
 	if (sender == myStepper)
 		[myScale setIntegerValue:[myStepper integerValue]];
@@ -1073,7 +1073,7 @@ failed. If you change the code below, be sure to test carefully!
 
 #pragma mark =====moving=====
 
-- (void)previousPage: sender
+- (void)previousPage:(id)sender
 {
 	NSInteger		pagenumber;
 	NSRect	myBounds, myVisible, newVisible;
@@ -1159,7 +1159,7 @@ failed. If you change the code below, be sure to test carefully!
 	}
 }
 
-- (void)firstPage: sender
+- (void)firstPage:(id)sender
 {
 	NSInteger		pagenumber;
 
@@ -1183,7 +1183,7 @@ failed. If you change the code below, be sure to test carefully!
 }
 
 
-- (void)up: sender
+- (void)up:(id)sender
 {
 	NSRect	myBounds, myVisible, newVisible;
 	// mitsu 1.29 (O)  commented out--this should work with TIFF etc.
@@ -1201,7 +1201,7 @@ failed. If you change the code below, be sure to test carefully!
 	[self display];
 }
 
-- (void)top: sender
+- (void)top:(id)sender
 {
 	NSRect	myBounds, myVisible, newVisible;
 
@@ -1219,7 +1219,7 @@ failed. If you change the code below, be sure to test carefully!
 
 
 
-- (void)nextPage: sender
+- (void)nextPage:(id)sender
 {
 	NSInteger		pagenumber;
 	NSRect	myBounds, myVisible, newVisible;
@@ -1291,7 +1291,7 @@ failed. If you change the code below, be sure to test carefully!
 	}
 }
 
-- (void)lastPage: sender
+- (void)lastPage:(id)sender
 {
 	NSInteger		pagenumber;
 
@@ -1315,7 +1315,7 @@ failed. If you change the code below, be sure to test carefully!
 }
 
 
-- (void)down: sender
+- (void)down:(id)sender
 {
 	NSRect	myBounds, myVisible, newVisible;
 	// mitsu 1.29 (O)  commented out--this should work with TIFF etc.
@@ -1332,7 +1332,7 @@ failed. If you change the code below, be sure to test carefully!
 	[self display];
 }
 
-- (void)bottom: sender
+- (void)bottom:(id)sender
 {
 	NSRect	myBounds, myVisible, newVisible;
 	// mitsu 1.29 (O)  commented out--this should work with TIFF etc.
@@ -1470,7 +1470,7 @@ failed. If you change the code below, be sure to test carefully!
 }
 
 
-- (void)goToPage: sender
+- (void)goToPage:(id)sender
 {
 		NSInteger		pagenumber;
 	NSRect		myBounds, myVisible, newVisible;
@@ -1604,7 +1604,7 @@ failed. If you change the code below, be sure to test carefully!
 
 #pragma mark =====rotation=====
 
-- (void)rotateClockwise:sender
+- (void)rotateClockwise:(id)sender
 {
 	rotationAmount = rotationAmount - 90;
 	if (rotationAmount < -90)
@@ -1614,7 +1614,7 @@ failed. If you change the code below, be sure to test carefully!
 }
 
 
-- (void)rotateCounterclockwise:sender
+- (void)rotateCounterclockwise:(id)sender
 {
 	rotationAmount = rotationAmount + 90;
 	if (rotationAmount > 180)
@@ -1668,12 +1668,12 @@ failed. If you change the code below, be sure to test carefully!
 
 #pragma mark =====printing=====
 
-- (void)printDocument: sender
+- (void)printDocument:(id)sender
 {
 	[self.myDocument printDocument: sender];
 }
 
-- (void)printSource: sender
+- (void)printSource:(id)sender
 {
 	[self.myDocument printSource: sender];
 }
@@ -3377,7 +3377,7 @@ failed. If you change the code below, be sure to test carefully!
 
 
 // control image type popup
-- (void)chooseExportImageType: sender
+- (void)chooseExportImageType:(id)sender
 {
 	NSInteger imageExportType;
 	NSSavePanel *savePanel;

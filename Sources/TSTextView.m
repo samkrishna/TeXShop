@@ -259,7 +259,7 @@ static const CFAbsoluteTime MAX_WAIT_TIME = 10.0;
 #pragma mark =====others=====
 
 // drag & drop support --- added by zenitani, Feb 13, 2003
-- (NSUInteger) dragOperationForDraggingInfo : (id <NSDraggingInfo>) sender
+- (NSUInteger)dragOperationForDraggingInfo : (id <NSDraggingInfo>)sender
 {
 	NSPasteboard *pb = [sender draggingPasteboard];
 	NSString *type = [pb availableTypeFromArray:
@@ -285,25 +285,25 @@ static const CFAbsoluteTime MAX_WAIT_TIME = 10.0;
 	return NSDragOperationNone;
 }
 
-- (NSDragOperation) draggingEntered : (id <NSDraggingInfo>) sender
+- (NSDragOperation)draggingEntered : (id <NSDraggingInfo>)sender
 {
 	return [self dragOperationForDraggingInfo:sender];
 }
-- (NSDragOperation) draggingUpdated : (id <NSDraggingInfo>) sender
+- (NSDragOperation)draggingUpdated : (id <NSDraggingInfo>)sender
 {
 	return [self dragOperationForDraggingInfo:sender];
 }
 
-- (void) draggingExited : (id <NSDraggingInfo>) sender
+- (void)draggingExited : (id <NSDraggingInfo>)sender
 {
 	return;
 }
 
-- (BOOL) prepareForDragOperation : (id <NSDraggingInfo>) sender
+- (BOOL)prepareForDragOperation : (id <NSDraggingInfo>)sender
 {
 	return YES;
 }
-- (BOOL) performDragOperation : (id <NSDraggingInfo>) sender
+- (BOOL)performDragOperation : (id <NSDraggingInfo>)sender
 {
    // return YES;    this fix, by Koch on May 1, 2005, seems required in Tiger when dragging text from one spot to another
    return [super performDragOperation: sender];
@@ -311,7 +311,7 @@ static const CFAbsoluteTime MAX_WAIT_TIME = 10.0;
 
 
 // zenitani 1.33 begin
-- (void) concludeDragOperation : (id <NSDraggingInfo>) sender {
+- (void)concludeDragOperation : (id <NSDraggingInfo>)sender {
     [_window makeFirstResponder:self]; // added by Terada (required in the case of split window)
 	NSPasteboard *pb = [ sender draggingPasteboard ];
 	NSString *type = [ pb availableTypeFromArray:
@@ -1246,7 +1246,7 @@ static BOOL launchBibDeskAndOpenURLs(NSArray *fileURLs)
 */
 
 // Beginning of the code added by Soheil Hassas Yeganeh
-- (void) autoComplete:(NSMenuItem *)theMenu
+- (void)autoComplete:(NSMenuItem *)theMenu
 {
 	NSDictionary *dictionary = [theMenu representedObject];
 	NSNumber *selectedLocationObj = [dictionary valueForKey:@"sloc"];

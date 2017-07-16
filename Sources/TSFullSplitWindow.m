@@ -67,68 +67,68 @@
     [self.myDocument newTag: sender];
 }
 
-- (void)doChooseMethod: sender
+- (void)doChooseMethod:(id)sender
 {
 	[self.myDocument doChooseMethod: sender];
 }
 
-- (void)abort: sender
+- (void)abort:(id)sender
 {
 	[self.myDocument abort: sender];
 }
 
-- (void)trashAUXFiles: sender
+- (void)trashAUXFiles:(id)sender
 {
 	[self.myDocument trashAUXFiles: sender];
 }
 
 
-- (void)doTypeset: sender
+- (void)doTypeset:(id)sender
 {
 	[self.myDocument doTypeset: sender];
 }
 
-- (void)doTex: sender
+- (void)doTex:(id)sender
 {
 	[self.myDocument doTex: sender];
 }
 
-- (void)doLatex: sender
+- (void)doLatex:(id)sender
 {
 	[self.myDocument doLatex: sender];
 }
 
-- (void)doBibtex: sender
+- (void)doBibtex:(id)sender
 {
 	[self.myDocument doBibtex: sender];
 }
 
-- (void)doIndex: sender
+- (void)doIndex:(id)sender
 {
 	[self.myDocument doIndex: sender];
 }
 
-- (void)doMetapost: sender
+- (void)doMetapost:(id)sender
 {
 	[self.myDocument doMetapost: sender];
 }
 
-- (void)doContext: sender
+- (void)doContext:(id)sender
 {
 	[self.myDocument doContext: sender];
 }
 
-- (void)closeCurrentEnvironment: sender
+- (void)closeCurrentEnvironment:(id)sender
 {
 	[self.myDocument closeCurrentEnvironment: sender];
 }
 
-- (void)changeAutoComplete: sender
+- (void)changeAutoComplete:(id)sender
 {
 	[self.myDocument changeAutoComplete: sender];
 }
 
-- (void)showHideLineNumbers: sender
+- (void)showHideLineNumbers:(id)sender
 {
 	[self.myDocument showHideLineNumbers: sender];
 }
@@ -138,7 +138,7 @@
 	[self.myDocument showHideInvisibleCharacters: sender];
 }
 
-- (void)saveSourcePosition: sender
+- (void)saveSourcePosition:(id)sender
 {
 	[self.myDocument saveSourcePosition];
 }
@@ -462,17 +462,17 @@
 }
 
 
-- (void) doChooseMethod: sender
+- (void) doChooseMethod:(id)sender
 {
 	[self.myDocument doChooseMethod: sender];
 }
 
-- (void) abort: sender
+- (void) abort:(id)sender
 {
 	[self.myDocument abort: sender];
 }
 
-- (void) trashAUXFiles: sender
+- (void) trashAUXFiles:(id)sender
 {
 	[self.myDocument trashAUXFiles: sender];
 }
@@ -549,13 +549,13 @@
 	[super sendEvent: theEvent];
 }
 
-- (void)saveSourcePosition: sender
+- (void)saveSourcePosition:(id)sender
 {
 	[self.myDocument saveSourcePosition];
 }
 
 
-- (void)savePortableSourcePosition: sender
+- (void)savePortableSourcePosition:(id)sender
 {
 	[self.myDocument savePortableSourcePosition];
 }

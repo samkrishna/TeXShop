@@ -42,75 +42,75 @@
 //	BOOL		willClose;
 }
 
-@property               BOOL            willClose;
-@property               BOOL            windowIsSplit;
-@property               BOOL            firstClose;
-@property (retain)      PDFView         *activeView;
-@property (retain)      PDFView         *myPDFKitView;
-@property (retain)      PDFView        *myPDFKitView2;
-@property (weak)      NSSplitView    *pdfKitSplitView;
-@property (weak)      TSDocument      *myDocument;
+@property             BOOL          willClose;
+@property             BOOL          windowIsSplit;
+@property             BOOL          firstClose;
+@property (retain)    PDFView       *activeView;
+@property (retain)    PDFView       *myPDFKitView;
+@property (retain)    PDFView       *myPDFKitView2;
+@property (weak)      NSSplitView   *pdfKitSplitView;
+@property (weak)      TSDocument    *myDocument;
 
 - (NSRect)windowWillUseStandardFrame:(NSWindow *)window defaultFrame:(NSRect)defaultFrame;
 
 - (void)close;
-- (void)doTextMagnify: sender;   // for toolbar in text mode
-- (void)doTextPage: sender;      // for toolbar in text mode
-- (void)magnificationDidEnd:(NSWindow *)sheet returnCode: (NSInteger)returnCode contextInfo: (void *)contextInfo;
+- (void)doTextMagnify:(id)sender;   // for toolbar in text mode
+- (void)doTextPage:(id)sender;      // for toolbar in text mode
+- (void)magnificationDidEnd:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo: (void *)contextInfo;
 - (void)pagenumberDidEnd:(NSWindow *)sheet returnCode: (NSInteger)returnCode contextInfo: (void *)contextInfo;
-- (void)previousPage: sender;
-- (void)nextPage: sender;
-- (void)zoomIn: sender;
-- (void)zoomOut: sender;
+- (void)previousPage:(id)sender;
+- (void)nextPage:(id)sender;
+- (void)zoomIn:(id)sender;
+- (void)zoomOut:(id)sender;
 
-- (void)displayLog: sender;
-- (void)displayConsole: sender;
-- (void)trashAUXFiles: sender;
-- (void)abort: sender;
+- (void)displayLog:(id)sender;
+- (void)displayConsole:(id)sender;
+- (void)trashAUXFiles:(id)sender;
+- (void)abort:(id)sender;
 
-- (void)firstPage: sender;
-- (void)lastPage: sender;
-- (void)up: sender;
-- (void)down: sender;
-- (void)top: sender;
-- (void)bottom: sender;
-- (void)left: sender; // mitsu 1.29 (O)
-- (void)right: sender; // mitsu 1.29 (O)
+- (void)firstPage:(id)sender;
+- (void)lastPage:(id)sender;
+- (void)up:(id)sender;
+- (void)down:(id)sender;
+- (void)top:(id)sender;
+- (void)bottom:(id)sender;
+- (void)left:(id)sender; // mitsu 1.29 (O)
+- (void)right:(id)sender; // mitsu 1.29 (O)
 
 
-- (void)doError: sender;
-- (void)doChooseMethod: sender;
-- (void)rotateClockwise: sender;
-- (void)rotateCounterclockwise: sender;
-- (void)savePreviewPosition: sender;
-- (void)savePortablePreviewPosition: sender;
-- (void)orderOut: sender;
+- (void)doError:(id)sender;
+- (void)doChooseMethod:(id)sender;
+- (void)rotateClockwise:(id)sender;
+- (void)rotateCounterclockwise:(id)sender;
+- (void)savePreviewPosition:(id)sender;
+- (void)savePortablePreviewPosition:(id)sender;
+- (void)orderOut:(id)sender;
 - (void)sendEvent:(NSEvent *)theEvent;
-- (void)associatedWindow: sender;
+- (void)associatedWindow:(id)sender;
 - (BOOL)validateMenuItem:(NSMenuItem *)anItem;
-- (void)doMove: (id)sender;
+- (void)doMove:(id)sender;
 - (void)resignMainWindow;
 
 
 - (TSDocument *)document;
 #ifdef MITSU_PDF
-- (void)changePageStyle: (id)sender; // mitsu 1.29 (O)
-- (void)changePDFViewSize: (id)sender; // mitsu 1.29 (O)
-- (void)saveSelectionToFile: (id)sender; // mitsu 1.29 (O)
+- (void)changePageStyle:(id)sender; // mitsu 1.29 (O)
+- (void)changePDFViewSize:(id)sender; // mitsu 1.29 (O)
+- (void)saveSelectionToFile:(id)sender; // mitsu 1.29 (O)
 #endif
 // - (void)pagenumberDidEnd:(NSWindow *)sheet returnCode: (NSInteger)returnCode contextInfo: (void *)contextInfo;
 // - (void)magnificationDidEnd:(NSWindow *)sheet returnCode: (NSInteger)returnCode contextInfo: (void *)contextInfo;
-//- (void)configurePaperSize: sender;
-- (void)splitPdfKitWindow: (id)sender; 
-- (void)splitWindow: (id)sender; // so menu item can split both source and preview window
-- (void)fixAfterRotation: (BOOL)clockwise;
+//- (void)configurePaperSize:(id)sender;
+- (void)splitPdfKitWindow:(id)sender; 
+- (void)splitWindow:(id)sender; // so menu item can split both source and preview window
+- (void)fixAfterRotation:(BOOL)clockwise;
 // - (BOOL)validateMenuItem:(NSMenuItem *)anItem;
-- (void)changeMouseMode: sender;
-- (void)doStepper: sender;
-- (void)changeScale: sender;
-- (IBAction)goToKitPage: sender;
-// - (void)doFind: sender;
-- (IBAction)takeDestinationFromOutline: (id)sender;
+- (void)changeMouseMode:(id)sender;
+- (void)doStepper:(id)sender;
+- (void)changeScale:(id)sender;
+- (IBAction)goToKitPage:(id)sender;
+// - (void)doFind:(id)sender;
+- (IBAction)takeDestinationFromOutline:(id)sender;
 - (IBAction)convertTiff:(id)sender;
 
 - (BOOL)windowIsSplit;

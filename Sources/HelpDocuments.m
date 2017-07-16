@@ -53,7 +53,7 @@
 		}
 }
 
-- (IBAction)displayThisRelease:sender
+- (IBAction)displayThisRelease:(id)sender
 {
 	NSString				*fileName;
 	
@@ -62,7 +62,7 @@
 }
 
 
-- (IBAction)displayGettingStartedTeXShop:sender
+- (IBAction)displayGettingStartedTeXShop:(id)sender
 {
 	NSString				*fileName;
  	
@@ -70,7 +70,7 @@
 	[self displayFile: fileName];
 }
 
-- (IBAction)displayGPLLicense:sender
+- (IBAction)displayGPLLicense:(id)sender
 {
     NSString				*fileName;
     
@@ -78,7 +78,7 @@
     [self displayFile: fileName];
 }
 
-- (IBAction)displayFileEncoding:sender
+- (IBAction)displayFileEncoding:(id)sender
 {
     NSString				*fileName;
     
@@ -86,7 +86,7 @@
     [self displayFile: fileName];
 }
 
-- (IBAction)displayTipsandTricks:sender
+- (IBAction)displayTipsandTricks:(id)sender
 {
 	NSString				*fileName;
  	
@@ -94,7 +94,7 @@
 	[self displayFile: fileName];
 }
 
-- (IBAction)displayTeXShopConfusion:sender
+- (IBAction)displayTeXShopConfusion:(id)sender
 {
     NSString				*fileName;
     
@@ -103,7 +103,7 @@
 }
 
 
-- (IBAction)displayRecentTeXFonts:sender;
+- (IBAction)displayRecentTeXFonts:(id)sender
 {
     NSString				*fileName;
     
@@ -112,7 +112,7 @@
 }
 
 
-- (IBAction)displayNotesonApplescript:sender
+- (IBAction)displayNotesonApplescript:(id)sender
 {
     NSString				*fileName;
  	
@@ -120,7 +120,7 @@
 	[self displayFile: fileName];
 }
 
-- (IBAction)displayGettingStartedLatex:sender
+- (IBAction)displayGettingStartedLatex:(id)sender
 {
 	NSString				*fileName;
  	
@@ -129,11 +129,11 @@
 }
 
 // Currently not enabled in interface
-- (IBAction)displayGettingStartedConTeXt:sender
+- (IBAction)displayGettingStartedConTeXt:(id)sender
 {
 }
 
-- (IBAction)displayGettingStartedXeTeX:sender
+- (IBAction)displayGettingStartedXeTeX:(id)sender
 {
 	NSString				*fileName;
  	
@@ -142,7 +142,7 @@
 
 }
 
-- (IBAction)displayShortCourse:sender
+- (IBAction)displayShortCourse:(id)sender
 {
 	NSString				*fileName;
  	
@@ -150,7 +150,7 @@
 	[self displayFile: fileName];
 }
 
-- (IBAction)displayHelpForPackage:sender
+- (IBAction)displayHelpForPackage:(id)sender
 {
 	NSDate				*myDate;
 	NSString			*packageString;
@@ -206,7 +206,7 @@
 	[displayPackageHelpTask launch];
 }
 
-- (IBAction)displayStyleFile:sender
+- (IBAction)displayStyleFile:(id)sender
 {
 	// added by Terada (- (void) displayStyleFile:)
 		
@@ -319,7 +319,7 @@
 
 
 
-- (IBAction)displayHG:sender
+- (IBAction)displayHG:(id)sender
 {
 	NSString				*fileName;
  	
@@ -327,7 +327,7 @@
 	[self displayFile: fileName];
 }
 
-- (IBAction)displayBinary:sender
+- (IBAction)displayBinary:(id)sender
 {
 	NSString				*fileName;
  	
@@ -335,7 +335,7 @@
 	[self displayFile: fileName];
 }
 
-- (IBAction)displayMoreBinary:sender
+- (IBAction)displayMoreBinary:(id)sender
 {
 	NSString				*fileName;
  	
@@ -343,7 +343,7 @@
 	[self displayFile: fileName];
 }
 
-- (IBAction)displayNegatedBinary:sender
+- (IBAction)displayNegatedBinary:(id)sender
 {
 	NSString				*fileName;
  	
@@ -351,7 +351,7 @@
 	[self displayFile: fileName];
 }
 
-- (IBAction)displayBinaryOperations:sender
+- (IBAction)displayBinaryOperations:(id)sender
 {
 	NSString				*fileName;
  	
@@ -359,7 +359,7 @@
 	[self displayFile: fileName];
 }
 
-- (IBAction)displayArrows:sender
+- (IBAction)displayArrows:(id)sender
 {
 	NSString				*fileName;
  	
@@ -367,7 +367,7 @@
 	[self displayFile: fileName];
 }
 
-- (IBAction)displayMiscSymbols:sender
+- (IBAction)displayMiscSymbols:(id)sender
 {
 	NSString				*fileName;
  	
@@ -375,7 +375,7 @@
 	[self displayFile: fileName];
 }
 
-- (IBAction)displayDelimiters:sender
+- (IBAction)displayDelimiters:(id)sender
 {
 	NSString				*fileName;
  	
@@ -383,7 +383,7 @@
 	[self displayFile: fileName];
 }
 
-- (IBAction)displayOperators:sender
+- (IBAction)displayOperators:(id)sender
 {
 	NSString				*fileName;
  	
@@ -391,7 +391,7 @@
 	[self displayFile: fileName];
 }
 
-- (IBAction)displayLargeOperators:sender
+- (IBAction)displayLargeOperators:(id)sender
 {
 	NSString				*fileName;
  	
@@ -399,7 +399,7 @@
 	[self displayFile: fileName];
 }
 
-- (IBAction)displayMathAccents:sender
+- (IBAction)displayMathAccents:(id)sender
 {
 	NSString				*fileName;
  	
@@ -407,7 +407,7 @@
 	[self displayFile: fileName];
 }
 
-- (IBAction)displayMathSpacing:sender
+- (IBAction)displayMathSpacing:(id)sender
 {
 	NSString				*fileName;
  	
@@ -415,7 +415,7 @@
 	[self displayFile: fileName];
 }
 
-- (IBAction)displayEuropean:sender
+- (IBAction)displayEuropean:(id)sender
 {
 	NSString				*fileName;
  	
@@ -423,7 +423,7 @@
 	[self displayFile: fileName];
 }
 
-- (IBAction)displayTextAccents:sender
+- (IBAction)displayTextAccents:(id)sender
 {
 	NSString				*fileName;
  	
@@ -431,7 +431,7 @@
 	[self displayFile: fileName];
 }
 
-- (IBAction)displayTextSizes:sender
+- (IBAction)displayTextSizes:(id)sender
 {
 	NSString				*fileName;
  	
@@ -439,7 +439,7 @@
 	[self displayFile: fileName];
 }
 
-- (IBAction)displayTextSymbols:sender
+- (IBAction)displayTextSymbols:(id)sender
 {
 	NSString				*fileName;
  	
@@ -447,7 +447,7 @@
 	[self displayFile: fileName];
 }
 
-- (IBAction)displayTextSpacing:sender
+- (IBAction)displayTextSpacing:(id)sender
 {
 	NSString				*fileName;
  	
@@ -455,7 +455,7 @@
 	[self displayFile: fileName];
 }
 
-- (IBAction)displayTables:sender
+- (IBAction)displayTables:(id)sender
 {
 	NSString				*fileName;
  	
@@ -463,7 +463,7 @@
 	[self displayFile: fileName];
 }
 
-- (IBAction)supplementsToDesktop:sender
+- (IBAction)supplementsToDesktop:(id)sender
 {
 		NSFileManager *fileManager = [NSFileManager defaultManager];
 		
@@ -474,12 +474,12 @@
 
 }
 
-- (void)okForPanel: sender
+- (void)okForPanel:(id)sender
 {
 	[NSApp stopModalWithCode: 0];
 }
 
-- (void)cancelForPanel: sender
+- (void)cancelForPanel:(id)sender
 {
 	[NSApp stopModalWithCode:1];
 }

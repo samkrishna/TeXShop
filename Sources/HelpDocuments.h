@@ -19,42 +19,42 @@
 
 }
 
-- (IBAction)displayGettingStartedTeXShop:sender;
-- (IBAction)displayGettingStartedLatex:sender;
-- (IBAction)displayGettingStartedConTeXt:sender;
-- (IBAction)displayGettingStartedXeTeX:sender;
-- (IBAction)displayHelpForPackage:sender;
-- (IBAction)displayStyleFile:sender;
-- (IBAction)displayFileEncoding:sender;
-- (IBAction)displayTipsandTricks:sender;
-- (IBAction)displayTeXShopConfusion:sender;
-- (IBAction)displayNotesonApplescript:sender;
-- (IBAction)displayRecentTeXFonts:sender;
-- (IBAction)displayGPLLicense:sender;
+- (IBAction)displayGettingStartedTeXShop:(id)sender;
+- (IBAction)displayGettingStartedLatex:(id)sender;
+- (IBAction)displayGettingStartedConTeXt:(id)sender;
+- (IBAction)displayGettingStartedXeTeX:(id)sender;
+- (IBAction)displayHelpForPackage:(id)sender;
+- (IBAction)displayStyleFile:(id)sender;
+- (IBAction)displayFileEncoding:(id)sender;
+- (IBAction)displayTipsandTricks:(id)sender;
+- (IBAction)displayTeXShopConfusion:(id)sender;
+- (IBAction)displayNotesonApplescript:(id)sender;
+- (IBAction)displayRecentTeXFonts:(id)sender;
+- (IBAction)displayGPLLicense:(id)sender;
 
-- (IBAction)displayShortCourse:sender;
-- (IBAction)displayHG:sender;
-- (IBAction)displayBinary:sender;
-- (IBAction)displayMoreBinary:sender;
-- (IBAction)displayNegatedBinary:sender;
-- (IBAction)displayBinaryOperations:sender;
-- (IBAction)displayArrows:sender;
-- (IBAction)displayMiscSymbols:sender;
-- (IBAction)displayDelimiters:sender;
-- (IBAction)displayOperators:sender;
-- (IBAction)displayLargeOperators:sender;
-- (IBAction)displayMathAccents:sender;
-- (IBAction)displayMathSpacing:sender;
-- (IBAction)displayEuropean:sender;
-- (IBAction)displayTextAccents:sender;
-- (IBAction)displayTextSizes:sender;
-- (IBAction)displayTextSymbols:sender;
-- (IBAction)displayTextSpacing:sender;
-- (IBAction)supplementsToDesktop:sender;
-- (IBAction)displayTables:sender;
-- (IBAction)displayThisRelease:sender;
+- (IBAction)displayShortCourse:(id)sender;
+- (IBAction)displayHG:(id)sender;
+- (IBAction)displayBinary:(id)sender;
+- (IBAction)displayMoreBinary:(id)sender;
+- (IBAction)displayNegatedBinary:(id)sender;
+- (IBAction)displayBinaryOperations:(id)sender;
+- (IBAction)displayArrows:(id)sender;
+- (IBAction)displayMiscSymbols:(id)sender;
+- (IBAction)displayDelimiters:(id)sender;
+- (IBAction)displayOperators:(id)sender;
+- (IBAction)displayLargeOperators:(id)sender;
+- (IBAction)displayMathAccents:(id)sender;
+- (IBAction)displayMathSpacing:(id)sender;
+- (IBAction)displayEuropean:(id)sender;
+- (IBAction)displayTextAccents:(id)sender;
+- (IBAction)displayTextSizes:(id)sender;
+- (IBAction)displayTextSymbols:(id)sender;
+- (IBAction)displayTextSpacing:(id)sender;
+- (IBAction)supplementsToDesktop:(id)sender;
+- (IBAction)displayTables:(id)sender;
+- (IBAction)displayThisRelease:(id)sender;
 
-- (void)okForPanel:sender;
-- (void)cancelForPanel:sender;
+- (void)okForPanel:(id)sender;
+- (void)cancelForPanel:(id)sender;
 
 @end

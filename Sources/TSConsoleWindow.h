@@ -35,15 +35,15 @@
 @property           BOOL        firstResize;
 @property (weak)  TSDocument   *myDocument;
 
-- (void)doChooseMethod: sender;
-- (void)doError: sender;
-- (void)doTypeset: sender;
-- (void)displayLog: sender;
-- (void)displayConsole: sender;
-- (void)associatedWindow: (id)sender;
-- (void)abort: sender;
-- (void)trashAUXFiles: sender;
-- (IBAction)convertTiff:(id)sender;
+- (void)doChooseMethod:(id)sender;
+- (void)doError:(id)sender;
+- (void)doTypeset:(id)sender;
+- (void)displayLog:(id)sender;
+- (void)displayConsole:(id)sender;
+- (void)associatedWindow: (id)sender;;
+- (void)abort:(id)sender;
+- (void)trashAUXFiles:(id)sender;
+- (IBAction)convertTiff:(id)sender;;
 - (TSDocument *)document;
 - (NSRect)windowWillUseStandardFrame:(NSWindow *)window defaultFrame:(NSRect)defaultFrame;
 - (NSSize)windowWillResize:(NSWindow *)window toSize:(NSSize)proposedFrameSize;

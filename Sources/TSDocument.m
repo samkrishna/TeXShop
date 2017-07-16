@@ -7135,7 +7135,7 @@ static NSArray *tabStopArrayForFontAndTabWidth(NSFont *font, NSUInteger tabWidth
     return useFullSplitWindow;
 }
 
-- (void)runPageLayout:sender;
+- (void)runPageLayout:(id)sender
 {
     if (useFullSplitWindow)
         return;

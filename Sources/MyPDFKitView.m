@@ -848,7 +848,7 @@
 }
 
 
-- (void)rotateClockwise:sender
+- (void)rotateClockwise:(id)sender
 {
 	
 	
@@ -876,7 +876,7 @@
 	}
 }
 
-- (void)rotateCounterclockwise:sender
+- (void)rotateCounterclockwise:(id)sender
 {
 	
 	
@@ -889,14 +889,14 @@
 	// [self layoutDocumentView];
 }
 
-- (void)goBack:sender
+- (void)goBack:(id)sender
 {
 	if  ((pageStyle == PDF_SINGLE_PAGE_STYLE) || (pageStyle == PDF_TWO_PAGE_STYLE))
 		[self cleanupMarquee: YES];
 	[super goBack:sender];
 }
 
-- (void)goForward: sender
+- (void)goForward:(id)sender
 {
 	if  ((pageStyle == PDF_SINGLE_PAGE_STYLE) || (pageStyle == PDF_TWO_PAGE_STYLE))
 		[self cleanupMarquee: YES];
@@ -1010,7 +1010,7 @@
 	return magsize;
 }
 
-- (void)zoomIn: sender
+- (void)zoomIn:(id)sender
 {
 	
 	NSInteger	scale;
@@ -1025,7 +1025,7 @@
 	[self changeScale: self];
 }
 
-- (void)zoomOut: sender
+- (void)zoomOut:(id)sender
 {
 	NSInteger	scale;
 	
@@ -1040,7 +1040,7 @@
 }
 
 
-- (void)changeScale: sender
+- (void)changeScale:(id)sender
 {
 	NSInteger		scale;
 	double	magSize;
@@ -1101,7 +1101,7 @@
 */
 }
 
-- (void)doStepper: sender
+- (void)doStepper:(id)sender
 {
     if (sender == myStepper)
         [myScale setStringValue:[myStepper stringValue]]; // Strangely, setIntegerValue doesn't work correctly
@@ -2560,7 +2560,7 @@ The system then remembers the new number and sends is to the Timer which will di
 	}
 }
 
-- (void)handleLink: (NSTimer *) theTimer
+- (void)handleLink: (NSTimer *)theTimer
 {
     
     NSPoint         mouseDownLoc, mouseLocDocumentView;
@@ -3513,7 +3513,7 @@ The system then remembers the new number and sends is to the Timer which will di
 // end of routines for Mountain Lion and below
 // -------------------------------------------------------------------------
 
-- (void)printDocument: sender
+- (void)printDocument:(id)sender
 {
 	[self.myDocument printDocument: sender];
 }
@@ -3978,7 +3978,7 @@ else
 
 
 // control image type popup
-- (void)chooseExportImageType: sender
+- (void)chooseExportImageType:(id)sender
 {
 	NSInteger imageExportType;
 	NSSavePanel *savePanel;
@@ -4308,7 +4308,7 @@ else
 
 }
 
-- (BOOL)doSyncTeX: (NSPoint) thePoint
+- (BOOL)doSyncTeX: (NSPoint)thePoint
 {
     
 /* // this section moved to TSDocument-SyncTeX
@@ -4350,7 +4350,7 @@ else
 
 /*
 
-- (BOOL)doNewSync: (NSPoint) thePoint
+- (BOOL)doNewSync: (NSPoint)thePoint
 {
     return NO;
 }

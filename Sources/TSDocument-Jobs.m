@@ -1407,13 +1407,13 @@ if ((whichEngineLocal != 3) && (whichEngineLocal != 4) && (! fromMenu)) { //don'
 	}
 }
 
-- (void)doTex: sender
+- (void)doTex:(id)sender
 {
 	fromMenu = YES;
 	[self doTex1: sender];
 }
 
-- (void)doTex1: sender
+- (void)doTex1:(id)sender
 {
 // added by mitsu --(J++) Program popup button indicating Program name
 	[programButton selectItemWithTitle: @"Plain TeX"];
@@ -1424,13 +1424,13 @@ if ((whichEngineLocal != 3) && (whichEngineLocal != 4) && (! fromMenu)) { //don'
 	[self doJob:TexEngine withError:YES runContinuously:NO];
 }
 
-- (void)doLatex: sender
+- (void)doLatex:(id)sender
 {
 	fromMenu = YES;
 	[self doLatex1: sender];
 }
 
-- (void)doLatex1: sender
+- (void)doLatex1:(id)sender
 {
 // added by mitsu --(J++) Program popup button indicating Program name
 	[programButton selectItemWithTitle: @"LaTeX"];
@@ -1451,13 +1451,13 @@ if ((whichEngineLocal != 3) && (whichEngineLocal != 4) && (! fromMenu)) { //don'
 	[self doJob:whichEngine withError:YES runContinuously:NO];
 }
 
-- (void)doContext: sender
+- (void)doContext:(id)sender
 {
 	fromMenu = YES;
 	[self doContext1: sender];
 }
 
-- (void)doContext1: sender
+- (void)doContext1:(id)sender
 {
 // added by mitsu --(J++) Program popup button indicating Program name
 	[programButton selectItemWithTitle: @"ConTeXt"];
@@ -1467,13 +1467,13 @@ if ((whichEngineLocal != 3) && (whichEngineLocal != 4) && (! fromMenu)) { //don'
 	[self doJob:ContextEngine withError:YES runContinuously:NO];
 }
 
-- (void)doMetapost: sender
+- (void)doMetapost:(id)sender
 {
 	fromMenu = YES;
 	[self doMetapost1: sender];
 }
 
-- (void)doMetapost1: sender
+- (void)doMetapost1:(id)sender
 {
 // added by mitsu --(J++) Program popup button indicating Program name
 	[programButton selectItemWithTitle: @"MetaPost"];
@@ -1484,7 +1484,7 @@ if ((whichEngineLocal != 3) && (whichEngineLocal != 4) && (! fromMenu)) { //don'
 	[self doJob:MetapostEngine withError:YES runContinuously:NO];
 }
 
-- (void)doBibtex: sender
+- (void)doBibtex:(id)sender
 {
 // added by mitsu --(J++) Program popup button indicating Program name
 	// [programButton selectItemWithTitle: @"BibTeX"];
@@ -1495,7 +1495,7 @@ if ((whichEngineLocal != 3) && (whichEngineLocal != 4) && (! fromMenu)) { //don'
 	[self doJob:BibtexEngine withError:NO runContinuously:NO];
 }
 
-- (void)doIndex: sender
+- (void)doIndex:(id)sender
 {
 // added by mitsu --(J++) Program popup button indicating Program name
 	// [programButton selectItemWithTitle: @"MakeIndex"];
@@ -1506,13 +1506,13 @@ if ((whichEngineLocal != 3) && (whichEngineLocal != 4) && (! fromMenu)) { //don'
 	[self doJob:IndexEngine withError:NO runContinuously:NO];
 }
 
-- (void)doMetaFont: sender
+- (void)doMetaFont:(id)sender
 {
 	// fromMenu = YES;
 	// [self doMetaFont1: sender];
 }
 
-- (void)doMetaFont1: sender
+- (void)doMetaFont1:(id)sender
 {
 // added by mitsu --(J++) Program popup button indicating Program name
 	// [programButton selectItemWithTitle: @"MetaFont"];
@@ -1523,41 +1523,41 @@ if ((whichEngineLocal != 3) && (whichEngineLocal != 4) && (! fromMenu)) { //don'
 }
 
 // The temp forms which follow do not reset the default typeset buttons
-- (void)doTexTemp: sender
+- (void)doTexTemp:(id)sender
 {
 	[self doJob:TexEngine withError:YES runContinuously:NO];
 }
 
-- (void)doLatexTemp: sender
+- (void)doLatexTemp:(id)sender
 {
 	[self doJobForScript:LatexEngine withError:YES runContinuously:NO];
 }
 
-- (void)doBibtexTemp: sender
+- (void)doBibtexTemp:(id)sender
 {
 	[self doJobForScript:BibtexEngine withError:YES runContinuously:NO];
 }
 
-- (void)doMetapostTemp: sender
+- (void)doMetapostTemp:(id)sender
 {
 	[self doJobForScript:MetapostEngine withError:YES runContinuously:NO];
 }
-- (void)doContextTemp: sender
+- (void)doContextTemp:(id)sender
 {
 	[self doJobForScript:ContextEngine withError:YES runContinuously:NO];
 }
 
-- (void)doIndexTemp: sender
+- (void)doIndexTemp:(id)sender
 {
 	[self doJobForScript:IndexEngine withError:YES runContinuously:NO];
 }
 
-- (void)doMetaFontTemp: sender
+- (void)doMetaFontTemp:(id)sender
 {
 	// [self doJobForScript:MetafontEngine withError:YES runContinuously:NO];
 }
 
-- (void)doTypesetEE: sender
+- (void)doTypesetEE:(id)sender
 {
 	[self doTypeset: sender];
 }
@@ -1577,7 +1577,7 @@ if ((whichEngineLocal != 3) && (whichEngineLocal != 4) && (! fromMenu)) { //don'
 // end change
 }
 
-- (void)doTypeset: sender
+- (void)doTypeset:(id)sender
 {
 //    NSString	*titleString;
 	BOOL	useError;
@@ -1618,7 +1618,7 @@ if ((whichEngineLocal != 3) && (whichEngineLocal != 4) && (! fromMenu)) { //don'
 */
 }
 
-- (void)doTexCommand: sender
+- (void)doTexCommand:(id)sender
 {
 	NSData *myData;
 	NSString *command;

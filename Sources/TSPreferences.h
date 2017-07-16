@@ -169,98 +169,98 @@
 //------------------------------------------------------------------------------
 // target/action methods
 //------------------------------------------------------------------------------
-- (IBAction)showPreferences:sender;
+- (IBAction)showPreferences:(id)sender;
 
-- (IBAction)changeDocumentFont:sender;
-- (IBAction)changeConsoleFont:sender;
-- (IBAction)sourceWindowPosChanged:sender;
-- (IBAction)currentDocumentWindowPosDefault:sender;
-- (IBAction)syntaxColorPressed:sender;
-- (IBAction)selectActivatePressed:sender;
-- (IBAction)parensMatchPressed:sender;
-- (IBAction)spellCheckPressed:sender;
-- (IBAction)spellCorrectPressed:sender;
-- (IBAction)autoCompletePressed:sender;
-- (IBAction)bibDeskCompletePressed:sender;
-- (IBAction)tagMenuButtonPressed:sender;
-- (IBAction)showInvisibleCharacterButtonPressed:sender; // added by Terada
-- (IBAction)midEastButtonPressed:sender;
-- (IBAction)autoSaveButtonPressed:sender;
-- (IBAction)emptyButtonPressed:sender;
-- (IBAction)externalEditorButtonPressed:sender;
-- (IBAction)encodingChanged:sender;
-- (IBAction)tabsChanged:sender;
-- (IBAction)useTabPressed:sender;
-- (IBAction)commandCompletionChanged:sender;
-- (IBAction)findPanelChanged:sender;
-- (IBAction)defaultEngineCall:sender;
+- (IBAction)changeDocumentFont:(id)sender;
+- (IBAction)changeConsoleFont:(id)sender;
+- (IBAction)sourceWindowPosChanged:(id)sender;
+- (IBAction)currentDocumentWindowPosDefault:(id)sender;
+- (IBAction)syntaxColorPressed:(id)sender;
+- (IBAction)selectActivatePressed:(id)sender;
+- (IBAction)parensMatchPressed:(id)sender;
+- (IBAction)spellCheckPressed:(id)sender;
+- (IBAction)spellCorrectPressed:(id)sender;
+- (IBAction)autoCompletePressed:(id)sender;
+- (IBAction)bibDeskCompletePressed:(id)sender;
+- (IBAction)tagMenuButtonPressed:(id)sender;
+- (IBAction)showInvisibleCharacterButtonPressed:(id)sender; // added by Terada
+- (IBAction)midEastButtonPressed:(id)sender;
+- (IBAction)autoSaveButtonPressed:(id)sender;
+- (IBAction)emptyButtonPressed:(id)sender;
+- (IBAction)externalEditorButtonPressed:(id)sender;
+- (IBAction)encodingChanged:(id)sender;
+- (IBAction)tabsChanged:(id)sender;
+- (IBAction)useTabPressed:(id)sender;
+- (IBAction)commandCompletionChanged:(id)sender;
+- (IBAction)findPanelChanged:(id)sender;
+- (IBAction)defaultEngineCall:(id)sender;
 
 
-- (IBAction)pdfWindowPosChanged:sender;
-- (IBAction)currentPdfWindowPosDefault:sender;
-- (IBAction)magChanged:sender;
-- (IBAction)scrollPressed:sender;
-- (IBAction)firstDoublePageChanged:sender;
+- (IBAction)pdfWindowPosChanged:(id)sender;
+- (IBAction)currentPdfWindowPosDefault:(id)sender;
+- (IBAction)magChanged:(id)sender;
+- (IBAction)scrollPressed:(id)sender;
+- (IBAction)firstDoublePageChanged:(id)sender;
 
-- (IBAction)texProgramChanged:sender;
-- (IBAction)latexProgramChanged:sender;
-- (IBAction)escapeWarningChanged:sender;
-- (IBAction)texGSProgramChanged:sender;
-- (IBAction)latexGSProgramChanged:sender;
-- (IBAction)savePSPressed:sender;
-- (IBAction)tetexBinPathChanged:sender;
-- (IBAction)gsBinPathChanged:sender;
-- (IBAction)texScriptProgramChanged:sender;
-- (IBAction)latexScriptProgramChanged:sender;
-- (IBAction)defaultScriptChanged:sender;
-- (IBAction)syncChanged:sender;
-// - (IBAction)defaultMetaPostChanged:sender;
-//- (IBAction)defaultBibtexChanged:sender; // comment out by Terada
-- (IBAction)distillerChanged:sender;
-- (IBAction)defaultProgramChanged:sender;
-- (IBAction)setEngine:sender;
-- (IBAction)consoleBehaviorChanged:sender;
-- (IBAction)saveRelatedButtonPressed:sender;
-- (IBAction)autoPDFChanged:sender;
-- (IBAction)antialiasChanged:sender;
-- (IBAction)ptexUtfOutputPressed:sender; // zenitani 1.35 (C)
-- (IBAction)convertUTFPressed:sender;
-- (IBAction)openRootFilePressed:sender;
-- (IBAction)miniaturizeRootFilePressed:sender;
-- (IBAction)afterTypesettingChanged:sender;
-- (IBAction)setSourceBackgroundColor:sender;
-- (IBAction)setSourceTextColor:sender;
-- (IBAction)setPreviewBackgroundColor:sender;
-- (IBAction)setHighlightBracesColor:sender;
-- (IBAction)setConsoleBackgroundColor:sender;
-- (IBAction)setConsoleForegroundColor:sender;
-- (IBAction)changeConsoleResize:sender;
-- (IBAction)oneWindowChanged:sender;
+- (IBAction)texProgramChanged:(id)sender;
+- (IBAction)latexProgramChanged:(id)sender;
+- (IBAction)escapeWarningChanged:(id)sender;
+- (IBAction)texGSProgramChanged:(id)sender;
+- (IBAction)latexGSProgramChanged:(id)sender;
+- (IBAction)savePSPressed:(id)sender;
+- (IBAction)tetexBinPathChanged:(id)sender;
+- (IBAction)gsBinPathChanged:(id)sender;
+- (IBAction)texScriptProgramChanged:(id)sender;
+- (IBAction)latexScriptProgramChanged:(id)sender;
+- (IBAction)defaultScriptChanged:(id)sender;
+- (IBAction)syncChanged:(id)sender;
+// - (IBAction)defaultMetaPostChanged:(id)sender;
+//- (IBAction)defaultBibtexChanged:(id)sender; // comment out by Terada
+- (IBAction)distillerChanged:(id)sender;
+- (IBAction)defaultProgramChanged:(id)sender;
+- (IBAction)setEngine:(id)sender;
+- (IBAction)consoleBehaviorChanged:(id)sender;
+- (IBAction)saveRelatedButtonPressed:(id)sender;
+- (IBAction)autoPDFChanged:(id)sender;
+- (IBAction)antialiasChanged:(id)sender;
+- (IBAction)ptexUtfOutputPressed:(id)sender; // zenitani 1.35 (C)
+- (IBAction)convertUTFPressed:(id)sender;
+- (IBAction)openRootFilePressed:(id)sender;
+- (IBAction)miniaturizeRootFilePressed:(id)sender;
+- (IBAction)afterTypesettingChanged:(id)sender;
+- (IBAction)setSourceBackgroundColor:(id)sender;
+- (IBAction)setSourceTextColor:(id)sender;
+- (IBAction)setPreviewBackgroundColor:(id)sender;
+- (IBAction)setHighlightBracesColor:(id)sender;
+- (IBAction)setConsoleBackgroundColor:(id)sender;
+- (IBAction)setConsoleForegroundColor:(id)sender;
+- (IBAction)changeConsoleResize:(id)sender;
+- (IBAction)oneWindowChanged:(id)sender;
 
 #ifdef MITSU_PDF
-- (IBAction)pageStyleChanged:sender; // mitsu 1.29 (O)
-- (IBAction)resizeOptionChanged:sender; // mitsu 1.29 (O)
-- (IBAction)imageCopyTypeChanged:sender; // mitsu 1.29 (O)
+- (IBAction)pageStyleChanged:(id)sender; // mitsu 1.29 (O)
+- (IBAction)resizeOptionChanged:(id)sender; // mitsu 1.29 (O)
+- (IBAction)imageCopyTypeChanged:(id)sender; // mitsu 1.29 (O)
 - (NSPopUpButton *)imageCopyTypePopup; // mitsu 1.29b
-- (IBAction)mouseModeChanged:sender; // mitsu 1.29 (O)
-- (IBAction)colorMapChanged:sender; // mitsu 1.29 (O)
-- (IBAction)copyForeColorChanged:sender; // mitsu 1.29 (O)
-- (IBAction)copyBackColorChanged:sender; // mitsu 1.29 (O)
-- (IBAction)colorParam1Changed:sender; // mitsu 1.29 (O)
+- (IBAction)mouseModeChanged:(id)sender; // mitsu 1.29 (O)
+- (IBAction)colorMapChanged:(id)sender; // mitsu 1.29 (O)
+- (IBAction)copyForeColorChanged:(id)sender; // mitsu 1.29 (O)
+- (IBAction)copyBackColorChanged:(id)sender; // mitsu 1.29 (O)
+- (IBAction)colorParam1Changed:(id)sender; // mitsu 1.29 (O)
 #endif
 
-- (IBAction)okButtonPressed:sender;
-- (IBAction)cancelButtonPressed:sender;
-- (IBAction)setDefaults:sender;
+- (IBAction)okButtonPressed:(id)sender;
+- (IBAction)cancelButtonPressed:(id)sender;
+- (IBAction)setDefaults:(id)sender;
 
-- (IBAction)highlightChanged:sender; // added by Terada
-- (IBAction)invisibleCharacterChanged:sender; // added by Terada
-- (IBAction)kpsetoolChanged:sender; // added by Terada
-- (IBAction)bibTeXengineChanged:sender; // added by Terada
-// - (IBAction)makeatletterChanged:sender; // added by Terada
+- (IBAction)highlightChanged:(id)sender; // added by Terada
+- (IBAction)invisibleCharacterChanged:(id)sender; // added by Terada
+- (IBAction)kpsetoolChanged:(id)sender; // added by Terada
+- (IBAction)bibTeXengineChanged:(id)sender; // added by Terada
+// - (IBAction)makeatletterChanged:(id)sender; // added by Terada
 
-- (IBAction)sparkleAutomaticCheck:sender;
-- (IBAction)sparkleInterval:sender;
+- (IBAction)sparkleAutomaticCheck:(id)sender;
+- (IBAction)sparkleInterval:(id)sender;
 
 
 //------------------------------------------------------------------------------

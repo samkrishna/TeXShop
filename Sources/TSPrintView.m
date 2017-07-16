@@ -27,7 +27,7 @@
 
 @implementation TSPrintView : NSView
 
-- (TSPrintView *)initWithImageRep: (NSImageRep *) aRep
+- (TSPrintView *)initWithImageRep:(NSImageRep *)aRep
 {
 	NSRect	frame;
 

@@ -41,27 +41,27 @@
 	return result;
 }
 
-- (void)doChooseMethod: sender
+- (void)doChooseMethod:(id)sender
 {
 	[self.myDocument doChooseMethod: sender];
 }
 
-- (void)doError: sender
+- (void)doError:(id)sender
 {
 	[self.myDocument doError: sender];
 }
 
-- (void)doTypeset: sender
+- (void)doTypeset:(id)sender
 {
 	[self.myDocument doTypeset: sender];
 }
 
-- (void)displayLog: sender
+- (void)displayLog:(id)sender
 {
 	[self.myDocument displayLog: sender];
 }
 
-- (void)displayConsole: sender
+- (void)displayConsole:(id)sender
 {
 	[self.myDocument displayConsole: sender];
 }
@@ -86,12 +86,12 @@
     }
 }
 
-- (void)abort: sender
+- (void)abort:(id)sender
 {
 	[self.myDocument abort: sender];
 }
 
-- (void)trashAUXFiles: sender
+- (void)trashAUXFiles:(id)sender
 {
 	[self.myDocument trashAUXFiles: sender];
 }

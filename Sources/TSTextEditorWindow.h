@@ -37,12 +37,12 @@
 // following is OK; it returns myDocument
  - (TSDocument *)document;
 // end addition
-- (void)doChooseMethod: sender;
-- (void)saveSourcePosition: sender;
-- (void)savePortableSourcePosition: sender;
+- (void)doChooseMethod:(id)sender;
+- (void)saveSourcePosition:(id)sender;
+- (void)savePortableSourcePosition:(id)sender;
 - (void)makeKeyAndOrderFront:(id)sender;
-- (void)trashAUXFiles: sender;
-- (void)abort: sender;
+- (void)trashAUXFiles:(id)sender;
+- (void)abort:(id)sender;
 - (void)becomeMainWindow;
 - (void)resignMainWindow;
 - (void)sendEvent:(NSEvent *)theEvent;

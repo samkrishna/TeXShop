@@ -145,57 +145,57 @@
 - (void)setFirstPageStyle: (NSInteger)theFirstPageStyle;
 - (void)setResizeOption: (NSInteger)theResizeOption;
 
-- (void)rotateClockwise:sender;
-- (void)rotateCounterclockwise:sender;
+- (void)rotateClockwise:(id)sender;
+- (void)rotateCounterclockwise:(id)sender;
 - (void)rotateClockwisePrimary;
 - (void)rotateCounterclockwisePrimary;
 
-- (void)goBack:sender;
-- (void)goForward: sender;
+- (void)goBack:(id)sender;
+- (void)goForward:(id)sender;
 
 - (void)goToKitPageNumber: (NSInteger)thePage;
-- (void)goToKitPage: (id)sender;
-- (void)previousPage: (id)sender;
-- (void)nextPage: (id)sender;
-- (void)firstPage: (id)sender;
-- (void)lastPage: (id)sender;
-- (IBAction)changeScale: sender;
-- (IBAction)doStepper: sender;
-- (IBAction)doFind: sender;
-- (IBAction)doFindOne: sender;
+- (void)goToKitPage:(id)sender;
+- (void)previousPage:(id)sender;
+- (void)nextPage:(id)sender;
+- (void)firstPage:(id)sender;
+- (void)lastPage:(id)sender;
+- (IBAction)changeScale:(id)sender;
+- (IBAction)doStepper:(id)sender;
+- (IBAction)doFind:(id)sender;
+- (IBAction)doFindOne:(id)sender;
 - (void)doFindAgain;
 - (double)magnification;
 - (void)setMagnification: (double)magnification;
-- (void)changePageStyle: (id)sender;
-- (void)changePDFViewSize: (id)sender;
-- (void)copy: (id)sender;
-- (void)saveSelectionToFile: (id)sender;
-- (IBAction)toggleDrawer: (id)sender;
-- (void)takeDestinationFromOutline: (id)sender;
-- (void)changeMouseMode: (id)sender;
+- (void)changePageStyle:(id)sender;
+- (void)changePDFViewSize:(id)sender;
+- (void)copy:(id)sender;
+- (void)saveSelectionToFile:(id)sender;
+- (IBAction)toggleDrawer:(id)sender;
+- (void)takeDestinationFromOutline:(id)sender;
+- (void)changeMouseMode:(id)sender;
 - (void)mouseDown: (NSEvent *)theEvent;
 - (void)mouseUp: (NSEvent *)theEvent;
 - (void)mouseDragged: (NSEvent *)theEvent;
 - (void)mouseMoved: (NSEvent *)theEvent;
 - (void)scrollByDragging: (NSEvent *)theEvent;
-- (void)zoomIn: (id)sender;
-- (void)zoomOut: (id)sender;
+- (void)zoomIn:(id)sender;
+- (void)zoomOut:(id)sender;
 
 - (BOOL)validateMenuItem:(NSMenuItem *)anItem;
 
 // printing
-- (void)printDocument: sender;
+- (void)printDocument:(id)sender;
 
 - (void)selectARect: (NSEvent *)theEvent;
-- (void)selectAll: (id)sender;
+- (void)selectAll:(id)sender;
 - (void)updateMarquee: (NSTimer *)timer;
 - (void)cleanupMarquee: (BOOL)terminate;
 - (void)recacheMarquee;
 - (BOOL)hasSelection;
 - (NSData *)imageDataFromSelectionType: (NSInteger)type;
 - (NSData *)PDFImageDataFromSelection;
-// - (void)saveSelectionToFile: (id)sender;
-- (void)chooseExportImageType: sender;
+// - (void)saveSelectionToFile:(id)sender;
+- (void)chooseExportImageType:(id)sender;
 // drag & drop
 - (void)startDragging: (NSEvent *)theEvent; // mitsu 1.29 drag & drop
 - (void)flagsChanged:(NSEvent *)theEvent;

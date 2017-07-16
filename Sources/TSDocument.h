@@ -512,9 +512,9 @@ enum RootCommand
 - (NSWindow *)getCallingWindow;
 - (void)setCallingWindow:(NSWindow *)thisWindow;
 - (void)setPdfSyncLine:(NSInteger)line;
-- (void)showSyncMarks:sender;
+- (void)showSyncMarks:(id)sender;
 - (void)flipShowSync:(id)sender;
-- (void)showIndexColor:sender;
+- (void)showIndexColor:(id)sender;
 - (BOOL)indexColorState;
 - (void)flipIndexColorState:(id)sender;
 - (void)doPreviewSyncWithFilename:(NSString *)fileName andLine:(NSInteger)line andCharacterIndex:(NSUInteger)idx andTextView:(id)aTextView;
@@ -560,7 +560,7 @@ enum RootCommand
 - (void)doSeparateWindows:(id)sender;
 - (void)doAssociatedWindow;
 - (void)makeWindowControllers;
-- (void)runPageLayout:sender;
+- (void)runPageLayout:(id)sender;
 - (NSSearchField *)pdfKitSearchField;
 
 
@@ -684,7 +684,7 @@ enum RootCommand
 
 - (void)doTexCommand:(id)sender;
 - (void)convertDocument;
-- (void)abort:sender;
+- (void)abort:(id)sender;
 - (void)sheetDidEnd:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo;
 - (BOOL)getWillClose;
 - (void)setWillClose:(BOOL)value;
