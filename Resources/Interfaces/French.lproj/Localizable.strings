@@ -50,8 +50,8 @@
 "Autocompletion" = "Expression liée";
 "Completion" = "Complétion";
 "Path: %@\nFile size: %d bytes\nCreation date: %@\nModification date: %@" = "Chemin : %@\nFile size: %d octets\nCreation date : %@\nModification date : %@";
-"Info: %@" = "Informations : %@";
-"%@\n\nCharacters: %d" = "%@\n\nCharacters : %d";
+"Info: %@" = "Informations: %@";
+"%@\n\nCharacters: %lu" = "%@\n\nCharacters: %lu";
 "The file encoding changed; characters can be lost if the wrong encoding is used." = "L'encodage du fichier a changé ; des caractères risquent d'être perdus si le mauvais encodage est utilisé.";
 "Currently open files retain their old encoding." = "Les fichiers déjà ouverts gardent leurs encodages.";
 "Drag && Drop" = "Glisser && Déposer";

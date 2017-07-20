@@ -51,7 +51,7 @@
 "Completion" = "Completar";
 "Path: %@\nFile size: %d bytes\nCreation date: %@\nModification date: %@" = "Caminho: %@\nTamanho do arquivo: %d bytes\nData de criação: %@\nData de modificação: %@";
 "Info: %@" = "Info: %@";
-"%@\n\nCharacters: %d" = "%@\n\nCaracteres: %d";
+"%@\n\nCharacters: %lu" = "%@\n\nCaracteres: %lu";
 "The file encoding changed; characters can be lost if the wrong encoding is used." = "A codificação do arquivo foi alterada; caracteres podem ser perdidos se uma codificação errada for usada.";
 "Currently open files retain their old encoding." = "Arquivos abertos continuarão a manter a codificação antiga.";
 "Drag && Drop" = "Arrastar && Soltar";
