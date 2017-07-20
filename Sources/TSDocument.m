@@ -1933,7 +1933,6 @@ in other code when an external editor is being used. */
 {
 	if (showBadEncodingDialog) {
 		NSString *theEncoding = [[TSEncodingSupport sharedInstance] localizedNameForStringEncoding:_badEncoding];
-#warning 64BIT:Check formatting arguments
 		NSBeginAlertSheet(NSLocalizedString(@"This file was opened with IsoLatin9 encoding.", @"This file was opened with IsoLatin9 encoding."),
 						  nil, nil, nil, theWindow, nil, nil, nil, nil,
 						  NSLocalizedString(@"The file could not be opened with %@ encoding because it was not saved with that encoding. If you wish to open in another encoding, close the window and open again.",
@@ -5188,26 +5187,23 @@ static NSArray *tabStopArrayForFontAndTabWidth(NSFont *font, NSUInteger tabWidth
 		fsize = [fileAttrs objectForKey:NSFileSize];
 		creationDate = [fileAttrs objectForKey:NSFileCreationDate];
 		modificationDate = [fileAttrs objectForKey:NSFileModificationDate];
-#warning 64BIT:Check formatting arguments
-		fileInfo = [NSString stringWithFormat:
-					NSLocalizedString(@"Path:%@\nFile size:%d bytes\nCreation date:%@\nModification date:%@", @"File Info"),
-		filePath,
-		fsize?[fsize integerValue]:0,
-		creationDate?[creationDate description]:@"",
-		modificationDate?[modificationDate description]:@""];
-	} else
+        fileInfo = createLocalizedStringWithArgs(@"Path: %@\nFile size: %d bytes\nCreation date: %@\nModification date: %@",
+                                                 filePath,
+                                                 (long)(fsize ? [fsize integerValue] : 0),
+                                                 creationDate ? [creationDate description] : @"",
+                                                 modificationDate ? [modificationDate description] : @"");
+    }
+    else {
 		fileInfo = @"Not saved";
+    }
 
-#warning 64BIT:Check formatting arguments
-	infoTitle = [NSString stringWithFormat:
-					NSLocalizedString(@"Info:%@", @"Info:%@"),
-					[self displayName]];
-#warning 64BIT:Check formatting arguments
-	infoText = [NSString stringWithFormat:
-					NSLocalizedString(@"%@\n\nCharacters:%d", @"InfoText"),
-					fileInfo,
-					[[textView string] length]];
-	NSRunAlertPanel(infoTitle, infoText, nil, nil, nil);
+    infoTitle = createLocalizedStringWithArgs(@"Info: %@", [self displayName]);
+    infoText = createLocalizedStringWithArgs(@"%@\n\nCharacters: %lu", fileInfo, [[textView string] length]);
+
+    NSAlert *alert = [[NSAlert alloc] init];
+    alert.messageText = infoTitle;
+    alert.informativeText = infoText;
+    [alert runModal];
 }
 
 - (BOOL)isDoAutoCompleteEnabled
@@ -5300,10 +5296,7 @@ static NSArray *tabStopArrayForFontAndTabWidth(NSFont *font, NSUInteger tabWidth
 	[textView replaceCharactersInRange:oldRange withString:newString];
 
 	// register undo
-	[self registerUndoWithString:oldString location:oldRange.location
-						length:[newString length] key:key];
-	//[textView registerUndoWithString:oldString location:oldRange.location
-	//					length:[newString length] key:key];
+	[self registerUndoWithString:oldString location:oldRange.location length:[newString length] key:key];
 
 	from = oldRange.location;
 	to = from + [newString length];
@@ -5438,7 +5431,8 @@ static NSArray *tabStopArrayForFontAndTabWidth(NSFont *font, NSUInteger tabWidth
                     increment--;
                     if (oldRange.location == blockStart && firstLine) fixRangeStart = YES;
                     theCommand = NSLocalizedString(@"Uncomment", @"Uncomment");
-                }else if (firstLine) {
+                }
+                else if (firstLine) {
                     fixRangeStart = YES;
                 }
                 break;
@@ -5454,7 +5448,8 @@ static NSArray *tabStopArrayForFontAndTabWidth(NSFont *font, NSUInteger tabWidth
                     blockEnd++;
                     lineEnd++;
                     increment++;
-                }else{
+                }
+                else {
                     [textView replaceCharactersInRange:modifyRange withString:indentString];
                     blockEnd = blockEnd + tabWidth;
                     lineEnd = lineEnd + tabWidth;
@@ -5477,8 +5472,7 @@ static NSArray *tabStopArrayForFontAndTabWidth(NSFont *font, NSUInteger tabWidth
                     // remove leading spaces -- at most "tabWidth" of them
                     modifyRange.location = lineStart;
                     modifyRange.length = 1;
-                    for (i = 0; ((lineStart + i) < lineContentsEnd) && (i < tabWidth) && ([text characterAtIndex:lineStart] == ' '); i++)
-                    {
+                    for (i = 0; ((lineStart + i) < lineContentsEnd) && (i < tabWidth) && ([text characterAtIndex:lineStart] == ' '); i++) {
                         [textView replaceCharactersInRange:modifyRange withString:@""];
                         blockEnd--;
                         lineEnd--;
@@ -5607,16 +5601,6 @@ static NSArray *tabStopArrayForFontAndTabWidth(NSFont *font, NSUInteger tabWidth
 		trashPDF = NO;
 	
 	while ((theURL = [dirEnumerator nextObject])) {
-        /*
-        [theURL getResourceValue:&dirName forKey:NSURLNameKey error:NULL];
-        [theURL getResourceValue:&isDirectory forKey:NSURLIsDirectoryKey error:NULL];
-        if (([dirName caseInsensitiveCompare:@".git"]==NSOrderedSame) &&
-            ([isDirectory boolValue]==YES))
-        {
-             [dirEnumerator skipDescendants];
-        }
-        */
-        
         anObject = [theURL path];
 		doMove = YES;
 		extension = [anObject pathExtension];
@@ -5706,8 +5690,7 @@ static NSArray *tabStopArrayForFontAndTabWidth(NSFont *font, NSUInteger tabWidth
         [fileToBeMoved replaceObjectAtIndex:0 withObject:[anObject lastPathComponent]];
    //     NSLog(path2);
    //     NSLog([anObject lastPathComponent]);
-        [[NSWorkspace sharedWorkspace]
-            performFileOperation:NSWorkspaceRecycleOperation source:path2 destination:nil files:fileToBeMoved tag:&myTag];
+        [[NSWorkspace sharedWorkspace] performFileOperation:NSWorkspaceRecycleOperation source:path2 destination:nil files:fileToBeMoved tag:&myTag];
     }
 	
 }
@@ -5964,22 +5947,24 @@ static NSArray *tabStopArrayForFontAndTabWidth(NSFont *font, NSUInteger tabWidth
 	NSInteger modeNew = [sender tag];
 	switch (modeNew)
 	{
-		case 0:lineBreakMode = NSLineBreakByClipping;          break;
-		case 1:lineBreakMode = NSLineBreakByWordWrapping;		break;
-		case 2:lineBreakMode = NSLineBreakByCharWrapping;		break;
+		case 0:
+            lineBreakMode = NSLineBreakByClipping;
+            break;
+		case 1:
+            lineBreakMode = NSLineBreakByWordWrapping;
+            break;
+		case 2:
+            lineBreakMode = NSLineBreakByCharWrapping;
+            break;
 	}
 		
 	//Setup the stuff
 	switch (lineBreakMode)
 	{
-		case NSLineBreakByClipping:
-        {
-			
+		case NSLineBreakByClipping: {
 			// modified by Terada
 			NSTextContainer *container;
-#warning 64BIT:Inspect use of MAX/MIN constant; consider one of LONG_MAX/LONG_MIN/ULONG_MAX/DBL_MAX/DBL_MIN, or better yet, NSIntegerMax/Min, NSUIntegerMax, CGFLOAT_MAX/MIN
-#warning 64BIT:Inspect use of MAX/MIN constant; consider one of LONG_MAX/LONG_MIN/ULONG_MAX/DBL_MAX/DBL_MIN, or better yet, NSIntegerMax/Min, NSUIntegerMax, CGFLOAT_MAX/MIN
-			NSSize maximumSize = NSMakeSize(FLT_MAX, FLT_MAX);
+			NSSize maximumSize = NSMakeSize(DBL_MAX, DBL_MAX);
 			
 			[scrollView setAutoresizingMask:NSViewWidthSizable];
 			[[scrollView contentView] setAutoresizesSubviews:YES];
@@ -6004,35 +5989,6 @@ static NSArray *tabStopArrayForFontAndTabWidth(NSFont *font, NSUInteger tabWidth
 			[textView2 setMaxSize:maximumSize];
 			[textView2 setHorizontallyResizable:YES];
 			
-			/*
-            NSTextContainer *   container       = [textView textContainer];
-            NSSize              containerSize   = [container containerSize];
-                                containerSize.width = FLT_MAX;
-            
-			[scrollView setHasHorizontalScroller:YES];
-			[textView setHorizontallyResizable:YES];
-            [container setWidthTracksTextView:NO];
-			[container setContainerSize:containerSize];
-            
-			//Apparently, the frame must be made the largest possible so as to make the scroll bars correct.
-			[textView setFrameSize:containerSize];
-			
-			//The above code causes the text to be incorrectly drawn. This fixes that.
-			[textView setFrameSize:[scrollView contentSize]];
-			
-			//Do the same for the second textView:
-            container       = [textView2 textContainer];
-            containerSize   = [container containerSize];
-            containerSize.width = FLT_MAX;
-            
-			[scrollView2 setHasHorizontalScroller:YES];
-			[textView2 setHorizontallyResizable:YES];
-            [container setWidthTracksTextView:NO];
-			[container setContainerSize:containerSize];
-			[textView2 setFrameSize:containerSize];
-            [textView2 setFrameSize:[scrollView contentSize]];
-			*/
-            
 			break;
 		}
 		//case NSLineBreakByWordWrapping:
@@ -6055,10 +6011,10 @@ static NSArray *tabStopArrayForFontAndTabWidth(NSFont *font, NSUInteger tabWidth
 	}
         	
 	//Reformat the text
-	NSUInteger						textStorageLength	= [_textStorage length];
-    NSMutableParagraphStyle		*	styleNew;
-    if (textStorageLength)
-    {
+	NSUInteger					textStorageLength = [_textStorage length];
+    NSMutableParagraphStyle		*styleNew;
+
+    if (textStorageLength) {
         styleNew = [[_textStorage attribute:NSParagraphStyleAttributeName atIndex:0 effectiveRange:nil] mutableCopy] ;
         [styleNew setLineBreakMode:lineBreakMode];
         [_textStorage addAttribute:NSParagraphStyleAttributeName value:styleNew range:NSMakeRange(0, textStorageLength)];
