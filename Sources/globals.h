@@ -551,3 +551,13 @@ extern NSString *placeholderString;
 extern NSString *startcommentString;
 extern NSString *endcommentString;
 extern NSString *ConsoleWindowNameKey;
+
+static inline NSString *createLocalizedStringWithArgs(NSString *formatKey, ...)
+{
+    va_list args;
+    va_start(args, formatKey);
+    NSString *format = [[NSBundle mainBundle] localizedStringForKey:formatKey value:@"" table:nil];
+    NSString *result =  [[NSString alloc] initWithFormat:format arguments:args];
+    va_end (args);
+    return result;
+}

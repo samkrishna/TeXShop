@@ -339,4 +339,3 @@ NSString *placeholderString;
 NSString *startcommentString;
 NSString *endcommentString;
 NSString *ConsoleWindowNameKey = @"ConsoleWindow";
-
