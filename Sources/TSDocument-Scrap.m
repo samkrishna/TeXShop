@@ -175,7 +175,7 @@
     
 }
 
-- (NSDictionary *)environmentWithNewPath: (NSString *)additionalPath;
+- (NSDictionary *)environmentWithNewPath:(NSString *)additionalPath;
 {
 	NSMutableDictionary *env;
     
@@ -227,7 +227,7 @@
 	return env;
 }
 
-- (void)searchFile: (NSString *)theSource
+- (void)searchFile:(NSString *)theSource
 {
     NSUInteger  length, start, end, irrelevant, offset;
     BOOL        programDone, encodingDone;
@@ -327,7 +327,7 @@
 
 
 
-- (void)typesetFile: (NSURL *)fileURL withAdditionalPath: (NSString *)additionalPath
+- (void)typesetFile:(NSURL *)fileURL withAdditionalPath:(NSString *)additionalPath
 {
     
     NSString        *sourcePath;

@@ -32,7 +32,7 @@
 
 @implementation TSDocument (SyncTeX)
 
-- (BOOL)checkForUniqueMatch: (NSString *)previewString withStart: (NSInteger)start andOffsetLength: (NSInteger)offset inSource: (NSString *)sourceString returnedRange: (NSRange *)foundRangeLocation multipleMatch: (BOOL *)multiple
+- (BOOL)checkForUniqueMatch:(NSString *)previewString withStart:(NSInteger)start andOffsetLength:(NSInteger)offset inSource:(NSString *)sourceString returnedRange:(NSRange *)foundRangeLocation multipleMatch:(BOOL *)multiple
 {
 	NSRange		searchRange, resultRange, newResultRange;
 	NSInteger			end;
@@ -50,7 +50,7 @@
 	resultRange = [sourceString rangeOfString: searchString];
 	if (resultRange.location == NSNotFound)
 		return NO;
-	clipString = [sourceString substringFromIndex: (resultRange.location + resultRange.length)];
+	clipString = [sourceString substringFromIndex:(resultRange.location + resultRange.length)];
 	newResultRange = [clipString rangeOfString: searchString];
 	if (newResultRange.location != NSNotFound) {
 		*multiple = YES;
@@ -87,7 +87,7 @@
 }
 
 
-- (BOOL)doSyncTeXForPage: (NSInteger)pageNumber x: (CGFloat)xPosition y: (CGFloat)yPosition yOriginal: (CGFloat)yOriginalPosition
+- (BOOL)doSyncTeXForPage:(NSInteger)pageNumber x:(CGFloat)xPosition y:(CGFloat)yPosition yOriginal:(CGFloat)yOriginalPosition
 {
 	NSString		*myFileName, *mySyncTeXFileName;
 	//const char		*fileString;
@@ -229,7 +229,7 @@
 		viewPosition.x = xPosition;
 		viewPosition.y = yOriginalPosition;
 		PDFDocument *pdfDocument = [[self pdfKitView] document];
-		PDFPage *thePage = [pdfDocument pageAtIndex: (pageNumber - 1)]; 
+		PDFPage *thePage = [pdfDocument pageAtIndex:(pageNumber - 1)]; 
 		NSString *fullText = [thePage string];
 		length = [fullText length];
 		theIndex = [thePage characterIndexAtPoint:viewPosition];
@@ -374,7 +374,7 @@
 /*
 
 
- - (BOOL)doSyncTeXForPage: (NSInteger)pageNumber x: (CGFloat)xPosition y: (CGFloat)yPosition yOriginal: (CGFloat)yOriginalPosition
+ - (BOOL)doSyncTeXForPage:(NSInteger)pageNumber x:(CGFloat)xPosition y:(CGFloat)yPosition yOriginal:(CGFloat)yOriginalPosition
 {
 
 	NSDate          *myDate;
@@ -487,7 +487,7 @@
 	if (range1.location == NSNotFound)
 		return NO;
 		
-	outputString = [outputString substringFromIndex: (range1.location + 20)];
+	outputString = [outputString substringFromIndex:(range1.location + 20)];
 	
 	range2 = [outputString rangeOfString:@"Input:"];
 	if (range2.location == NSNotFound)
@@ -534,7 +534,7 @@
 	viewPosition.x = xPosition;
 	viewPosition.y = yOriginalPosition;
 	PDFDocument *pdfDocument = [[self pdfKitView] document];
-	PDFPage *thePage = [pdfDocument pageAtIndex: (pageNumber - 1)]; 
+	PDFPage *thePage = [pdfDocument pageAtIndex:(pageNumber - 1)]; 
 	NSString *fullText = [thePage string];
 	length = [fullText length];
 	theIndex = [thePage characterIndexAtPoint:viewPosition];
@@ -879,7 +879,7 @@
 	range1 =  [outputString rangeOfString:@"SyncTeX result begin"];
 	if (range1.location == NSNotFound)
 		return NO;
-	outputString = [outputString substringFromIndex: (range1.location + 20)];
+	outputString = [outputString substringFromIndex:(range1.location + 20)];
 	
 	range1 = [outputString rangeOfString: @"Magnification:"];
 	if (range1.location == NSNotFound) {
@@ -1055,12 +1055,12 @@
 	
 	i = 0;
 	
-		thePage = [[self.myPDFKitView document] pageAtIndex: (pageNumber[i] - 1)];
+		thePage = [[self.myPDFKitView document] pageAtIndex:(pageNumber[i] - 1)];
 		pageSize = [thePage boundsForBox: kPDFDisplayBoxMediaBox];
 		myOval.size.height = HNumber[i] + 10; myOval.size.width = WNumber[i] + 10;
 		myOval.origin.x = hNumber[i] - 5; myOval.origin.y = pageSize.size.height - vNumber[i] - 5;
 	
-		[(MyPDFKitView *)self.pdfKitWindow.activeView setIndexForMark: (pageNumber[i] - 1)];
+		[(MyPDFKitView *)self.pdfKitWindow.activeView setIndexForMark:(pageNumber[i] - 1)];
 		[(MyPDFKitView *)self.pdfKitWindow.activeView setBoundsForMark: myOval];
 		[(MyPDFKitView *)self.pdfKitWindow.activeView setDrawMark: YES];
 		[self.pdfKitWindow.activeView goToPage: thePage];
@@ -1083,7 +1083,7 @@
 	// for each box, get the text inside the box
 	
 	while (i < boxNumber) {
-		thePage = [[self.pdfKitWindow.activeView document] pageAtIndex: (pageNumber[i] - 1)];
+		thePage = [[self.pdfKitWindow.activeView document] pageAtIndex:(pageNumber[i] - 1)];
 		pageSize = [thePage boundsForBox: kPDFDisplayBoxMediaBox];
 		
 		
@@ -1160,12 +1160,12 @@
 				// theRange = [sourceLineString rangeOfString: pieceText];
 				// if (theRange.location != NSNotFound) {
 			
-			thePage = [[self.myPDFKitView document] pageAtIndex: (pageNumber[i] - 1)];
+			thePage = [[self.myPDFKitView document] pageAtIndex:(pageNumber[i] - 1)];
 			theSelection = [thePage selectionForRange: theRanges[i]];
 			myOval = [theSelection boundsForPage:thePage];
 			pageSize = [thePage boundsForBox: kPDFDisplayBoxMediaBox];
 			Param = 65536;
-			[(MyPDFKitView *)self.pdfKitWindow.activeView setIndexForMark: (pageNumber[i] - 1)];
+			[(MyPDFKitView *)self.pdfKitWindow.activeView setIndexForMark:(pageNumber[i] - 1)];
 			[(MyPDFKitView *)self.pdfKitWindow.activeView setBoundsForMark: myOval];
 			[(MyPDFKitView *)self.pdfKitWindow.activeView setDrawMark: YES];
 			[self.pdfKitWindow.activeView goToPage: thePage];
@@ -1218,7 +1218,7 @@
 				middle = theRange.length;
 				middle = middle / [boxText[i] length];
 				
-				thePage = [[self.myPDFKitView document] pageAtIndex: (pageNumber[i] - 1)];
+				thePage = [[self.myPDFKitView document] pageAtIndex:(pageNumber[i] - 1)];
 				theSelection = [thePage selectionForRange: theRanges[i]];
 				
 				/*
@@ -1234,7 +1234,7 @@
 				myOval.size.width = myOval.size.width * middle;
 
 				pageSize = [thePage boundsForBox: kPDFDisplayBoxMediaBox];
-				[(MyPDFKitView *)self.pdfKitWindow.activeView setIndexForMark: (pageNumber[i] - 1)];
+				[(MyPDFKitView *)self.pdfKitWindow.activeView setIndexForMark:(pageNumber[i] - 1)];
 				[(MyPDFKitView *)self.pdfKitWindow.activeView setBoundsForMark: myOval];
 				[(MyPDFKitView *)self.pdfKitWindow.activeView setDrawMark: YES];
 				[self.pdfKitWindow.activeView goToPage: thePage];
@@ -1282,7 +1282,7 @@
 				middle = middle / [boxText[i] length];
 				
 				
-				thePage = [[self.myPDFKitView document] pageAtIndex: (pageNumber[i] - 1)];
+				thePage = [[self.myPDFKitView document] pageAtIndex:(pageNumber[i] - 1)];
 				theSelection = [thePage selectionForRange: theRanges[i]];
 				
 				/*
@@ -1298,7 +1298,7 @@
 				myOval.size.width = myOval.size.width * middle;
 				
 				pageSize = [thePage boundsForBox: kPDFDisplayBoxMediaBox];
-				[(MyPDFKitView *)self.pdfKitWindow.activeView setIndexForMark: (pageNumber[i] - 1)];
+				[(MyPDFKitView *)self.pdfKitWindow.activeView setIndexForMark:(pageNumber[i] - 1)];
 				[(MyPDFKitView *)self.pdfKitWindow.activeView setBoundsForMark: myOval];
 				[(MyPDFKitView *)self.pdfKitWindow.activeView setDrawMark: YES];
 				[self.pdfKitWindow.activeView goToPage: thePage];
@@ -1348,12 +1348,12 @@
 				theRange = [sourceLineString rangeOfString: pieceText];
 				if (theRange.location != NSNotFound) {
 					
-					thePage = [[self.myPDFKitView document] pageAtIndex: (pageNumber[i] - 1)];
+					thePage = [[self.myPDFKitView document] pageAtIndex:(pageNumber[i] - 1)];
 					theSelection = [thePage selectionForRange: theRanges[i]];
 					myOval = [theSelection boundsForPage:thePage];
 					pageSize = [thePage boundsForBox: kPDFDisplayBoxMediaBox];
 					Param = 65536;
-					[(MyPDFKitView *)self.pdfKitWindow.activeView setIndexForMark: (pageNumber[i] - 1)];
+					[(MyPDFKitView *)self.pdfKitWindow.activeView setIndexForMark:(pageNumber[i] - 1)];
 					[(MyPDFKitView *)self.pdfKitWindow.activeView setBoundsForMark: myOval];
 					[(MyPDFKitView *)self.pdfKitWindow.activeView setDrawMark: YES];
 					[self.pdfKitWindow.activeView goToPage: thePage];
@@ -1385,7 +1385,7 @@
 	mainPageNumber = 0;
 	if ((boxNumber > 1) && ( ! firstPage[1]))
 		mainPageNumber = 1;
-	thePage = [[self.myPDFKitView document] pageAtIndex: (pageNumber[mainPageNumber] - 1)];
+	thePage = [[self.myPDFKitView document] pageAtIndex:(pageNumber[mainPageNumber] - 1)];
 		pageSize = [thePage boundsForBox: kPDFDisplayBoxMediaBox];
 
 	myOval.size.height = HNumber[mainPageNumber] / Param + 10; myOval.size.width = WNumber[mainPageNumber]/ Param + 10;
@@ -1404,9 +1404,9 @@
 		}
 	
 	if (mainPageNumber == 0)
-		[(MyPDFKitView *)self.pdfKitWindow.activeView setIndexForMark: (initialFirstPage - 1)];
+		[(MyPDFKitView *)self.pdfKitWindow.activeView setIndexForMark:(initialFirstPage - 1)];
 	else
-		[(MyPDFKitView *)self.pdfKitWindow.activeView setIndexForMark: (initialSecondPage - 1)];
+		[(MyPDFKitView *)self.pdfKitWindow.activeView setIndexForMark:(initialSecondPage - 1)];
 	[(MyPDFKitView *)self.pdfKitWindow.activeView setBoundsForMark: myOval];
 	[(MyPDFKitView *)self.pdfKitWindow.activeView setDrawMark: YES];
 	[self.pdfKitWindow.activeView goToPage: thePage];
@@ -1433,14 +1433,14 @@
 	i = 0;
 	while (i < boxNumber) {
 		
-	thePage = [[self.myPDFKitView document] pageAtIndex: (pageNumber[i] - 1)];
+	thePage = [[self.myPDFKitView document] pageAtIndex:(pageNumber[i] - 1)];
 	pageSize = [thePage boundsForBox: kPDFDisplayBoxMediaBox];
 	
 		Param = 65536; 
 	myOval.size.height = HNumber[i] / Param + 10; myOval.size.width = WNumber[i]/ Param + 10;
 	myOval.origin.x = hNumber[i] / Param - 5; myOval.origin.y = pageSize.size.height - vNumber[i]/ Param - 5;
 	
-	[self.myPDFKitView setIndexForMark: (pageNumber[i] - 1)];
+	[self.myPDFKitView setIndexForMark:(pageNumber[i] - 1)];
 	[self.myPDFKitView setBoundsForMark: myOval];
 	[self.myPDFKitView setDrawMark: YES];
 	[self.myPDFKitView goToPage: thePage];
@@ -1618,7 +1618,7 @@
 	range1 =  [outputString rangeOfString:@"SyncTeX result begin"];
 	if (range1.location == NSNotFound)
 		return NO;
-	outputString = [outputString substringFromIndex: (range1.location + 20)];
+	outputString = [outputString substringFromIndex:(range1.location + 20)];
 	
 	
 	// BEGIN ADDITIONS
@@ -1777,7 +1777,7 @@
 	
 	i = 0;
 	while (i < boxNumber) {
-		thePage = [[self.pdfKitWindow.activeView document] pageAtIndex: (pageNumber[i] - 1)];
+		thePage = [[self.pdfKitWindow.activeView document] pageAtIndex:(pageNumber[i] - 1)];
 		pageSize = [thePage boundsForBox: kPDFDisplayBoxMediaBox];
 		
 		 // Param = 65536;
@@ -1825,12 +1825,12 @@
 		theRange = [sourceLineString rangeOfString: theText[i]];
 		if ((theRange.location != NSNotFound) && (theRange.location <= (searchIndex + 5)) && (searchIndex < (theRange.location + theRange.length + 5))) {
 			
-			thePage = [[self.myPDFKitView document] pageAtIndex: (pageNumber[i] - 1)];
+			thePage = [[self.myPDFKitView document] pageAtIndex:(pageNumber[i] - 1)];
 			theSelection = [thePage selectionForRange: theRanges[i]];
 			myOval = [theSelection boundsForPage:thePage];
 			pageSize = [thePage boundsForBox: kPDFDisplayBoxMediaBox];
 			//Param = 65536;
-			[(MyPDFKitView *)self.pdfKitWindow.activeView setIndexForMark: (pageNumber[i] - 1)];
+			[(MyPDFKitView *)self.pdfKitWindow.activeView setIndexForMark:(pageNumber[i] - 1)];
 			[(MyPDFKitView *)self.pdfKitWindow.activeView setBoundsForMark: myOval];
 			[(MyPDFKitView *)self.pdfKitWindow.activeView setDrawMark: YES];
 			[self.pdfKitWindow.activeView goToPage: thePage];
@@ -1851,7 +1851,7 @@
 	/* In case of failure, guess the full box where the text occurs. */
 	
 	
-	thePage = [[self.myPDFKitView document] pageAtIndex: (pageNumber[0] - 1)];
+	thePage = [[self.myPDFKitView document] pageAtIndex:(pageNumber[0] - 1)];
 	pageSize = [thePage boundsForBox: kPDFDisplayBoxMediaBox];
 	
 	
@@ -1871,7 +1871,7 @@
 		i++;
 	}
 	
-	[(MyPDFKitView *)self.pdfKitWindow.activeView setIndexForMark: (initialFirstPage - 1)];
+	[(MyPDFKitView *)self.pdfKitWindow.activeView setIndexForMark:(initialFirstPage - 1)];
 	[(MyPDFKitView *)self.pdfKitWindow.activeView setBoundsForMark: myOval];
 	[(MyPDFKitView *)self.pdfKitWindow.activeView setDrawMark: YES];
 	[self.pdfKitWindow.activeView goToPage: thePage];
@@ -2059,7 +2059,7 @@
 	range1 =  [outputString rangeOfString:@"SyncTeX result begin"];
 	if (range1.location == NSNotFound)
 		return NO;
-	outputString = [outputString substringFromIndex: (range1.location + 20)];
+	outputString = [outputString substringFromIndex:(range1.location + 20)];
 	
 
 // BEGIN ADDITIONS
@@ -2218,7 +2218,7 @@
 	
 	i = 0;
 	while (i < boxNumber) {
-		thePage = [[self.pdfKitWindow.activeView document] pageAtIndex: (pageNumber[i] - 1)];
+		thePage = [[self.pdfKitWindow.activeView document] pageAtIndex:(pageNumber[i] - 1)];
 		pageSize = [thePage boundsForBox: kPDFDisplayBoxMediaBox];
 		
 		Param = 65536;
@@ -2266,12 +2266,12 @@
 		theRange = [sourceLineString rangeOfString: theText[i]];
 		if ((theRange.location != NSNotFound) && (theRange.location <= (searchIndex + 5)) && (searchIndex < (theRange.location + theRange.length + 5))) {
 			
-			thePage = [[self.myPDFKitView document] pageAtIndex: (pageNumber[i] - 1)];
+			thePage = [[self.myPDFKitView document] pageAtIndex:(pageNumber[i] - 1)];
 			theSelection = [thePage selectionForRange: theRanges[i]];
 			myOval = [theSelection boundsForPage:thePage];
 			pageSize = [thePage boundsForBox: kPDFDisplayBoxMediaBox];
 			Param = 65536;
-			[(MyPDFKitView *)self.pdfKitWindow.activeView setIndexForMark: (pageNumber[i] - 1)];
+			[(MyPDFKitView *)self.pdfKitWindow.activeView setIndexForMark:(pageNumber[i] - 1)];
 			[(MyPDFKitView *)self.pdfKitWindow.activeView setBoundsForMark: myOval];
 			[(MyPDFKitView *)self.pdfKitWindow.activeView setDrawMark: YES];
 			[self.pdfKitWindow.activeView goToPage: thePage];
@@ -2292,7 +2292,7 @@
 	// In case of failure, guess the full box where the text occurs. 
 	
 	
-	thePage = [[self.myPDFKitView document] pageAtIndex: (pageNumber[0] - 1)];
+	thePage = [[self.myPDFKitView document] pageAtIndex:(pageNumber[0] - 1)];
 	pageSize = [thePage boundsForBox: kPDFDisplayBoxMediaBox];
 	
 	
@@ -2312,7 +2312,7 @@
 		i++;
 	}
 	
-	[(MyPDFKitView *)self.pdfKitWindow.activeView setIndexForMark: (initialFirstPage - 1)];
+	[(MyPDFKitView *)self.pdfKitWindow.activeView setIndexForMark:(initialFirstPage - 1)];
 	[(MyPDFKitView *)self.pdfKitWindow.activeView setBoundsForMark: myOval];
 	[(MyPDFKitView *)self.pdfKitWindow.activeView setDrawMark: YES];
 	[self.pdfKitWindow.activeView goToPage: thePage];
@@ -2455,7 +2455,7 @@
 		while (((node = synctex_scanner_next_result(scanner)) != NULL) && (boxNumber < 200)) {
 			if (page == -1) {
 				page = synctex_node_page(node);
-				thePage = [[self.myPDFKitView document] pageAtIndex: (page - 1)];
+				thePage = [[self.myPDFKitView document] pageAtIndex:(page - 1)];
 				pageSize = [thePage boundsForBox: kPDFDisplayBoxMediaBox];
             }
 			if (synctex_node_page(node) != page)
@@ -2593,7 +2593,7 @@
      range1 =  [outputString rangeOfString:@"SyncTeX result begin"];
      if (range1.location == NSNotFound)
      return NO;
-     outputString = [outputString substringFromIndex: (range1.location + 20)];
+     outputString = [outputString substringFromIndex:(range1.location + 20)];
      
      
      // BEGIN ADDITIONS
@@ -2754,7 +2754,7 @@
     /*	
      i = 0;
      while (i < boxNumber) {
-     thePage = [[self.pdfKitWindow.activeView document] pageAtIndex: (pageNumber[i] - 1)];
+     thePage = [[self.pdfKitWindow.activeView document] pageAtIndex:(pageNumber[i] - 1)];
      pageSize = [thePage boundsForBox: kPDFDisplayBoxMediaBox];
      
      Param = 65536;
@@ -2802,12 +2802,12 @@
      theRange = [sourceLineString rangeOfString: theText[i]];
      if ((theRange.location != NSNotFound) && (theRange.location <= (searchIndex + 5)) && (searchIndex < (theRange.location + theRange.length + 5))) {
      
-     thePage = [[self.myPDFKitView document] pageAtIndex: (pageNumber[i] - 1)];
+     thePage = [[self.myPDFKitView document] pageAtIndex:(pageNumber[i] - 1)];
      theSelection = [thePage selectionForRange: theRanges[i]];
      myOval = [theSelection boundsForPage:thePage];
      pageSize = [thePage boundsForBox: kPDFDisplayBoxMediaBox];
      Param = 65536;
-     [(MyPDFKitView *)self.pdfKitWindow.activeView setIndexForMark: (pageNumber[i] - 1)];
+     [(MyPDFKitView *)self.pdfKitWindow.activeView setIndexForMark:(pageNumber[i] - 1)];
      [(MyPDFKitView *)self.pdfKitWindow.activeView setBoundsForMark: myOval];
      [(MyPDFKitView *)self.pdfKitWindow.activeView setDrawMark: YES];
      [self.pdfKitWindow.activeView goToPage: thePage];
@@ -2829,7 +2829,7 @@
      
      */	
 	initialFirstPage = pageNumber[0];
-	thePage = [[self.myPDFKitView document] pageAtIndex: (pageNumber[0] - 1)];
+	thePage = [[self.myPDFKitView document] pageAtIndex:(pageNumber[0] - 1)];
 	pageSize = [thePage boundsForBox: kPDFDisplayBoxMediaBox];
 	
 	
@@ -2874,7 +2874,7 @@
 	//		i++;
 	//	}
 	
-	[(MyPDFKitView *)self.pdfKitWindow.activeView setIndexForMark: (initialFirstPage - 1)];
+	[(MyPDFKitView *)self.pdfKitWindow.activeView setIndexForMark:(initialFirstPage - 1)];
 	[(MyPDFKitView *)self.pdfKitWindow.activeView setBoundsForMark: myOval];
 	[(MyPDFKitView *)self.pdfKitWindow.activeView setDrawMark: YES];
 	[self.pdfKitWindow.activeView goToPage: thePage];

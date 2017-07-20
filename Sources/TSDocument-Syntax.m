@@ -416,7 +416,7 @@ static BOOL isValidTeXCommandChar(NSInteger c)
 
 
 // This is the main syntax coloring routine, used for everything except opening documents
-- (void)fixColor: (NSUInteger)from : (NSUInteger)to
+- (void)fixColor:(NSUInteger)from :(NSUInteger)to
 {
 	NSRange			colorRange;
 	NSUInteger		length;

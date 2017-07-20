@@ -38,7 +38,7 @@
 }
 */
 
-- (BOOL)checkRootFile: (NSString *)nameString forTask:(NSInteger)task
+- (BOOL)checkRootFile:(NSString *)nameString forTask:(NSInteger)task
 {
 	NSArray 			*wlist;
 	NSEnumerator 		*en;

@@ -281,7 +281,7 @@
 }
 
     
-- (void)autosaveFinished: (NSDocument *)doc didSave:(BOOL)didSave contextInfo:(void *)contextInfo
+- (void)autosaveFinished:(NSDocument *)doc didSave:(BOOL)didSave contextInfo:(void *)contextInfo
 {
     if(showFullPath) [textWindow performSelector:@selector(refreshTitle) withObject:nil afterDelay:0.2]; // added by Terada
 }
@@ -289,7 +289,7 @@
     
 
 
-- (NSString *)separate: (NSString *)myEngine into:(NSMutableArray *)args
+- (NSString *)separate:(NSString *)myEngine into:(NSMutableArray *)args
 {
 	NSArray		*myList;
 	NSString		*myString, *middleString = 0;
@@ -548,7 +548,7 @@
 // The only reason for its current name seems to be that before we typeset a document,
 // we always first save it. And at the end of that save process, we perform the
 // typesetting.
-- (void)saveFinished: (NSDocument *)doc didSave:(BOOL)didSave contextInfo:(void *)contextInfo
+- (void)saveFinished:(NSDocument *)doc didSave:(BOOL)didSave contextInfo:(void *)contextInfo
 {
 	NSArray			*myList;
 	NSString		*theSource, *theKey, *myEngine, *testString, *programString;
@@ -754,7 +754,7 @@ if ((whichEngineLocal != 3) && (whichEngineLocal != 4) && (! fromMenu)) { //don'
 					j = [programButton numberOfItems];
 					while ((i <= j) && (! done)) {
 						i++;
-						if ([[[[programButton itemAtIndex: (i - 2)] title] lowercaseString] isEqualToString:programString]) {
+						if ([[[[programButton itemAtIndex:(i - 2)] title] lowercaseString] isEqualToString:programString]) {
 							done = YES;
 							useTempEngine = YES;
 							tempEngine = i - 1;
@@ -853,7 +853,7 @@ if ((whichEngineLocal != 3) && (whichEngineLocal != 4) && (! fromMenu)) { //don'
 					done = NO;
 					while ((i <= j) && (! done)) {
 						i++;
-						if ([[[[programButton itemAtIndex: (i - 2)] title] lowercaseString] isEqualToString:[programName lowercaseString]]) {
+						if ([[[[programButton itemAtIndex:(i - 2)] title] lowercaseString] isEqualToString:[programName lowercaseString]]) {
 							done = YES;
 							useTempEngine = YES;
 							tempEngine = i - 1;
@@ -894,7 +894,7 @@ if ((whichEngineLocal != 3) && (whichEngineLocal != 4) && (! fromMenu)) { //don'
 }
 
 
-- (BOOL)startTask: (NSTask*) task running: (NSString*) leafname withArgs: (NSMutableArray*)args inDirectoryContaining: (NSString*)sourcePath withEngine: (NSInteger)theEngine
+- (BOOL)startTask:(NSTask*) task running:(NSString*) leafname withArgs:(NSMutableArray*)args inDirectoryContaining:(NSString*)sourcePath withEngine:(NSInteger)theEngine
 {
 	BOOL            isFile;
 	BOOL            isExecutable;
@@ -1440,7 +1440,7 @@ if ((whichEngineLocal != 3) && (whichEngineLocal != 4) && (! fromMenu)) { //don'
 	[self doJob:LatexEngine withError:YES runContinuously:NO];
 }
 
-- (void)doUser: (NSInteger)theEngine
+- (void)doUser:(NSInteger)theEngine
 {
 	fromMenu = NO;
 	[programButton selectItemAtIndex:(theEngine - 1)];
@@ -1661,23 +1661,10 @@ if ((whichEngineLocal != 3) && (whichEngineLocal != 4) && (! fromMenu)) { //don'
 	system tries to save a new version. If the source file is open,
 	NSDocument makes a backup in /tmp which is never removed. */
 
-
-   // [outputText setSelectable: YES];
-   // [outputText selectAll:self];
 	[outputText replaceCharactersInRange: [outputText selectedRange] withString:@"\nProcess aborted\n"];
 	[outputText scrollRangeToVisible:[outputText selectedRange]];
-	
-	// NSString *theString = @"very strange\n"; 
-	// NSData *theData = [theString dataUsingEncoding: NSASCIIStringEncoding];
-	// [[inputPipe fileHandleForWriting] writeData: theData ];
-	
-   // [outputText setSelectable: NO];
-
 	taskDone = YES;
-
 	[self killRunningTasks];
-
-//	[self.inputPipe release];
 	self.inputPipe = 0;
 }
 
@@ -1687,36 +1674,27 @@ if ((whichEngineLocal != 3) && (whichEngineLocal != 4) && (! fromMenu)) { //don'
 	NSString		*alternatePath;
 	NSDictionary	*myAttributes;
 	NSDate			*endDate;
-	NSInteger				status;
-	BOOL			alreadyFound;
-	BOOL			front;
+	NSInteger       status;
+	BOOL            alreadyFound;
+	BOOL            front;
     
     status = [[aNotification object] terminationStatus];
     NSLog(@"The termination status is %d", (int) status);
 
 	[outputText setSelectable: YES];
-    // [texCommand setSelectable: NO];
-    // [outputText setEditable: YES];
-    
-    // [outputText setEditable: YES];
 
 	if (([aNotification object] == self.bibTask) || ([aNotification object] == self.indexTask) || ([aNotification object] == self.metaFontTask)) {
 		if (self.inputPipe == [[aNotification object] standardInput]) {
-	//		[self.outputPipe release];
 			[self.writeHandle closeFile];
-	//		[self.inputPipe release];
 			self.inputPipe = 0;
 			if ([aNotification object] == self.bibTask) {
 				[self.bibTask terminate];
-	//			[self.bibTask release];
 				self.bibTask = nil;
 			} else if ([aNotification object] == self.indexTask) {
 				[self.indexTask terminate];
-	//			[self.indexTask release];
 				self.indexTask = nil;
 			} else if ([aNotification object] == self.metaFontTask) {
 				[self.metaFontTask terminate];
-	//			[self.metaFontTask release];
 				self.metaFontTask = nil;
 			}
 		}
@@ -1797,7 +1775,7 @@ if ((whichEngineLocal != 3) && (whichEngineLocal != 4) && (! fromMenu)) { //don'
 	return willClose;
 }
 
-- (void)setWillClose: (BOOL)value
+- (void)setWillClose:(BOOL)value
 {
 	willClose = value;
 }
