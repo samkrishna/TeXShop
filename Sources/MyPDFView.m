@@ -103,7 +103,7 @@ NSData *draggedData;
 }
 // end mitsu 1.29
 
-- (void)drawDotsForPage:(NSInteger)page atPoint: (NSPoint)p
+- (void)drawDotsForPage:(NSInteger)page atPoint:(NSPoint)p
 {
 	NSFileManager	*fileManager;
 	NSInteger             pageNumber;
@@ -300,12 +300,12 @@ NSData *draggedData;
 
 }
 
-- (void)setImageType: (NSInteger)theType
+- (void)setImageType:(NSInteger)theType
 {
 	documentType = theType;
 }
 
-- (void)setDocument: (id)theDocument
+- (void)setDocument:(id)theDocument
 {
 	self.myDocument = theDocument;
 }
@@ -325,7 +325,7 @@ is the most common case and does not require resetting any bounds,
 it is separated out for special minimal treatment to preserve
 scroller position.
 */
-- (void)setImageRep: (NSPDFImageRep *)theRep
+- (void)setImageRep:(NSPDFImageRep *)theRep
 {
 // mitsu 1.29 (O) completely changed
 	[self renewGState];
@@ -390,7 +390,7 @@ scroller position.
 // set frame and bounds via "fitToSize"
 // scroll so that top left corner is the same as previous imageRep
 // 		calls "fitToSize" which calls "setFrameAndBounds" and "setMagnification"
-- (void)setupForPDFRep: (NSPDFImageRep *)newRep style: (NSInteger)newPageStyle{
+- (void)setupForPDFRep:(NSPDFImageRep *)newRep style:(NSInteger)newPageStyle{
 	NSInteger		pagenumber; // 0 to [newRep pageCount]-1
 	NSPoint topLeft = {0,0}, aPoint, theOrigin;
 	NSRect	myBounds, visRect;
@@ -671,7 +671,7 @@ possible to fix those sizes inside setMagnification.
 The commands below work, and were found after various unpleasant experiments
 failed. If you change the code below, be sure to test carefully!
 */
-- (void)setMagnification: (double)magSize
+- (void)setMagnification:(double)magSize
 {
 	NSRect	myBounds, visRect;
 	NSPoint topLeft, theOrigin;
@@ -953,7 +953,7 @@ failed. If you change the code below, be sure to test carefully!
 }
 
 // calculate the page number(0 to pageCount-1) from point
-- (NSInteger)pageNumberForPoint: (NSPoint)aPoint
+- (NSInteger)pageNumberForPoint:(NSPoint)aPoint
 {
 	if (pageStyle == PDF_MULTI_PAGE_STYLE)
 	{
@@ -988,7 +988,7 @@ failed. If you change the code below, be sure to test carefully!
 }
 
 // calculate the origin from page number
-- (NSPoint)pointForPage: (NSInteger)aPage
+- (NSPoint)pointForPage:(NSInteger)aPage
 {
 	NSPoint thePoint = { 0, 0 };
 	if (pageStyle == PDF_MULTI_PAGE_STYLE)
@@ -1029,7 +1029,7 @@ failed. If you change the code below, be sure to test carefully!
 // We imitate by NSAffineTransform what System does to calculate the coordinate
 // transformation from  view's coordinate to window.  move the origin to (0,0).
 // then drawRect into an image.
-- (NSImage *)imageFromRect: (NSRect)aRect
+- (NSImage *)imageFromRect:(NSRect)aRect
 {
 	NSImage *image;
 	NSAffineTransform *aMap;
@@ -1347,7 +1347,7 @@ failed. If you change the code below, be sure to test carefully!
 	[self display];
 }
 
-- (void)left: (id)sender
+- (void)left:(id)sender
 {
 	NSRect	myBounds, newVisible;
 
@@ -1408,7 +1408,7 @@ failed. If you change the code below, be sure to test carefully!
 }
 
 
-- (void)right: (id)sender
+- (void)right:(id)sender
 {
 	NSRect	myBounds, newVisible;
 
@@ -1498,7 +1498,7 @@ failed. If you change the code below, be sure to test carefully!
 	{
 		if (pagenumber != [self.myRep currentPage])
 			[self cleanupMarquee: YES];
-		[self.myRep setCurrentPage: (pagenumber - 1)];
+		[self.myRep setCurrentPage:(pagenumber - 1)];
 		if (![SUD boolForKey:NoScrollEnabledKey]) {
 			myBounds = [self bounds];
 			myVisible = [self visibleRect];
@@ -1515,7 +1515,7 @@ failed. If you change the code below, be sure to test carefully!
 }
 
 // go to page number
-- (void)displayPage: (NSInteger)pagenumber
+- (void)displayPage:(NSInteger)pagenumber
 {
 	NSRect myBounds, newVisible;
 	NSPoint thePoint;
@@ -1591,7 +1591,7 @@ failed. If you change the code below, be sure to test carefully!
 }
 
 // receive notification from clip view when pdfView is scrolled
-- (void)wasScrolled: (NSNotification *)aNotification
+- (void)wasScrolled:(NSNotification *)aNotification
 {
 		if (((documentType == isTeX) || (documentType == isPDF)) &&
 		((pageStyle == PDF_MULTI_PAGE_STYLE) || (pageStyle ==
@@ -1681,7 +1681,7 @@ failed. If you change the code below, be sure to test carefully!
 #pragma mark =====sync=====
 
 
-- (void)doSync: (NSEvent *)theEvent
+- (void)doSync:(NSEvent *)theEvent
 {
 	NSFileManager	*fileManager;
 	NSNumber        *thePageNumber;
@@ -2131,8 +2131,7 @@ failed. If you change the code below, be sure to test carefully!
 				#ifndef SELECTION_SHOUND_PERSIST
 				[self cleanupMarquee: YES];
 				#endif
-		[self doMagnifyingGlass: theEvent level:
-			((mouseMode==MOUSE_MODE_MAG_GLASS_L)?1:((mouseMode==MOUSE_MODE_MAG_GLASS)?0:(-1)))];
+		[self doMagnifyingGlass: theEvent level:((mouseMode==MOUSE_MODE_MAG_GLASS_L)?1:((mouseMode==MOUSE_MODE_MAG_GLASS)?0:(-1)))];
 	}
 	else
 	{
@@ -2176,7 +2175,7 @@ failed. If you change the code below, be sure to test carefully!
 }
 
 // change mouse mode in response to mouseModeMatrix or mouseModeMenu
-- (void)changeMouseMode: (id)sender
+- (void)changeMouseMode:(id)sender
 {
 	if ([sender isKindOfClass: [NSButton class]] || [sender isKindOfClass: [NSMenuItem class]])
 	{
@@ -2256,7 +2255,7 @@ failed. If you change the code below, be sure to test carefully!
 //		control ket sets magScale to 0.66666 (150%)
 //		you may combine shift key to shrink
 
-- (void)doMagnifyingGlass:(NSEvent *)theEvent level: (NSInteger)level
+- (void)doMagnifyingGlass:(NSEvent *)theEvent level:(NSInteger)level
 {
     
     [self doMagnifyingGlassMavericks:theEvent level: level];
@@ -2432,7 +2431,7 @@ failed. If you change the code below, be sure to test carefully!
 // end Magnifying Glass
 
 
-- (void)doMagnifyingGlassMavericks:(NSEvent *)theEvent level: (NSInteger)level
+- (void)doMagnifyingGlassMavericks:(NSEvent *)theEvent level:(NSInteger)level
 {
 	NSPoint mouseLocWindow, mouseLocView, mouseLocDocumentView;
 	NSRect magRectWindow, tempRect;
@@ -2544,7 +2543,7 @@ failed. If you change the code below, be sure to test carefully!
 
 // mitsu 1.29 (S2)
 // derived from Apple's Sample code PDFView/DraggableScrollView.m
-- (void)scrollByDragging: (NSEvent *)theEvent
+- (void)scrollByDragging:(NSEvent *)theEvent
 {
 	NSPoint 		initialLocation;
 	NSRect			visibleRect;
@@ -2650,7 +2649,7 @@ failed. If you change the code below, be sure to test carefully!
 //		set the imageCopyType elsewhere (in Preferences; see also TSAppDelegate's changeImageCopyType)
 //		supply the rescaling part of imageDataFromSelectionType for PDF/EPS (not necessary?)
 
-- (void)selectARect: (NSEvent *)theEvent
+- (void)selectARect:(NSEvent *)theEvent
 {
 	NSPoint mouseLocWindow, startPoint, currentPoint;
 	NSRect myBounds, selRectWindow, selRectSuper;
@@ -2825,7 +2824,7 @@ failed. If you change the code below, be sure to test carefully!
 #endif
 }
 
-- (void)selectAll: (id)sender
+- (void)selectAll:(id)sender
 {
 	if ((mouseMode == MOUSE_MODE_SELECT) &&
 		((pageStyle == PDF_SINGLE_PAGE_STYLE) || (pageStyle == PDF_TWO_PAGE_STYLE) || ([self.myRep pageCount] <= 20)))
@@ -2888,7 +2887,7 @@ failed. If you change the code below, be sure to test carefully!
 
 
 // updates the frame of selected rectangle
-- (void)updateMarquee: (NSTimer *)timer
+- (void)updateMarquee:(NSTimer *)timer
 {
 	static NSInteger phase = 0;
 	CGFloat pattern[2] = {3,3};
@@ -2935,7 +2934,7 @@ failed. If you change the code below, be sure to test carefully!
 }
 
 // earses the frame of selected rectangle and cleans up the cached image
-- (void)cleanupMarquee: (BOOL)terminate
+- (void)cleanupMarquee:(BOOL)terminate
 {
 	if (self.selRectTimer)
 	{
@@ -2975,7 +2974,7 @@ failed. If you change the code below, be sure to test carefully!
 	}
 }
 
-- (void)moveSelection: (NSEvent *)theEvent
+- (void)moveSelection:(NSEvent *)theEvent
 {
 	NSPoint startPointWindow, startPointView, mouseLocWindow, mouseLocView, mouseLocScreen;
 	NSRect originalSelRect, selRectWindow, selRectSuper, screenFrame;
@@ -3088,7 +3087,7 @@ failed. If you change the code below, be sure to test carefully!
 
 
 // get image data from the selected rectangle with specified type
-- (NSData *)imageDataFromSelectionType: (NSInteger)type
+- (NSData *)imageDataFromSelectionType:(NSInteger)type
 {
 	NSRect visRect, newRect = NSMakeRect(0,0,0,0), selRectWindow;
 	NSData *data = nil;
@@ -3280,7 +3279,7 @@ failed. If you change the code below, be sure to test carefully!
 
 
 // put the image data from selected rectangle into pasteboard
-- (void)copy: (id)sender
+- (void)copy:(id)sender
 {
 	NSString *dataType = 0;
 	NSPasteboard *pboard = [NSPasteboard generalPasteboard];
@@ -3310,7 +3309,7 @@ failed. If you change the code below, be sure to test carefully!
 
 
 // start save-dialog as a sheet
--(void)saveSelectionToFile: (id)sender
+-(void)saveSelectionToFile:(id)sender
 {
 	NSSavePanel *savePanel = [NSSavePanel savePanel];
 	[savePanel  setAccessoryView: imageTypeView];
@@ -3397,7 +3396,7 @@ failed. If you change the code below, be sure to test carefully!
 // mitsu 1.29 drag & drop
 #pragma mark =====drag & drop=====
 
-- (void)startDragging: (NSEvent *)theEvent
+- (void)startDragging:(NSEvent *)theEvent
 {
 	NSPasteboard *pboard;
 	NSInteger imageCopyType;
@@ -3518,7 +3517,7 @@ failed. If you change the code below, be sure to test carefully!
 
 // action for menu items "Single Page/Two Page/Multi-Page/Double Multi-Page"
 // -- tags should be correctly set
-- (void)changePageStyle: (id)sender
+- (void)changePageStyle:(id)sender
 {
 	if (!(documentType == isTeX || documentType == isPDF)) return;
 
@@ -3563,7 +3562,7 @@ failed. If you change the code below, be sure to test carefully!
 // tags of menu items should be correctly set.
 // also if you add items with positive tag, it is interpreted as
 // the magnification
-- (void)changePDFViewSize: (id)sender
+- (void)changePDFViewSize:(id)sender
 {
 	if (![sender tag]) return;
 	// mitsu 1.29b uncheck menu item Preview=>Magnification
@@ -3590,7 +3589,7 @@ failed. If you change the code below, be sure to test carefully!
 	}
 	else // possibley called by a menu in toolbar
 	{
-		[self setMagnification: ((double)resizeOption)/100];
+		[self setMagnification:((double)resizeOption)/100];
 		resizeOption = PDF_FIT_TO_NONE;
 	}
 
@@ -3600,7 +3599,7 @@ failed. If you change the code below, be sure to test carefully!
 	// end mitsu 1.29b
 }
 
-- (void)setShowSync: (BOOL)value
+- (void)setShowSync:(BOOL)value
 {	
 	showSync = value;
 }
@@ -3670,7 +3669,7 @@ NSBitmapImageRep *transformColor(NSBitmapImageRep *srcBitmap, NSColor *foreColor
 			hasAlpha: destHasAlpha  isPlanar: NO
 			colorSpaceName: NSCalibratedRGBColorSpace
 			bytesPerRow: 0     // passing zero means "you figure it out."
-			bitsPerPixel: (8 * destSamplesPerPixel)];  // = bitsPerSample * samplesPerPixel
+			bitsPerPixel:(8 * destSamplesPerPixel)];  // = bitsPerSample * samplesPerPixel
 	if (!newBitmap) return nil;
 
 	// setup address etc

@@ -44,7 +44,7 @@
 }
 */
 
-- (void)setImageRep: (NSPDFImageRep *)theRep
+- (void)setImageRep:(NSPDFImageRep *)theRep
 {	
 	if (theRep != nil)
 		self.myRep = theRep;

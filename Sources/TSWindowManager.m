@@ -212,10 +212,10 @@ static id _sharedInstance = nil;
 }
 
 
-- (void)checkProgramMenuItem: (NSInteger)programID checked: (BOOL)flag
+- (void)checkProgramMenuItem:(NSInteger)programID checked:(BOOL)flag
 {
 	[[[[[NSApp mainMenu] itemWithTitle:NSLocalizedString(@"Typeset", @"Typeset")] submenu]
-		itemWithTag:programID] setState: (flag)?NSOnState:NSOffState];
+		itemWithTag:programID] setState:(flag)?NSOnState:NSOffState];
 }
 
 

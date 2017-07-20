@@ -86,7 +86,7 @@
 	// returns YES if any 'node' in the array 'nodes' is an ancestor of ours.
 - (void)recursiveSortChildren;
 
-+ (NSArray *)minimumNodeCoverFromNodesInArray: (NSArray *)allNodes;
++ (NSArray *)minimumNodeCoverFromNodesInArray:(NSArray *)allNodes;
 	// Returns the minimum nodes from 'allNodes' required to cover the nodes in 'allNodes'.
 	// This methods returns an array containing nodes from 'allNodes' such that no node in
 	// the returned array has an ancestor in the returned array.
@@ -97,12 +97,12 @@
 // modified from DragNDropOutlineView/SimpleTreeNode
 
 + (id)nodeWithName:(NSString*)name content:(NSString*)content key:(NSString*)key;
-+ (id)submenuNodeWithName: (NSString*)name;
++ (id)submenuNodeWithName:(NSString*)name;
 + (id)separatorNode;
 
 // getting and setting properties
 // - (NSString*)name;
-// - (void)setName: (NSString*)name;
+// - (void)setName:(NSString*)name;
 
 // - (NSString*)content;
 // - (void)setContent:(NSString*)aContent;
@@ -120,12 +120,12 @@
 - (void)examine;
 
 - (TSMacroTreeNode *)duplicateNode;
-+ (NSArray *)duplicateNodeArray: (NSArray *)srcNodeArray;
++ (NSArray *)duplicateNodeArray:(NSArray *)srcNodeArray;
 
 // building tree from dictionary
-+ (id)nodeFromDictionary: (NSDictionary*)dict;
-+ (NSArray *)nodeArrayFromPropertyList: (id)propertyList;
-- (void)appendNodesFromPropertyList: (id)propertyList;
++ (id)nodeFromDictionary:(NSDictionary*)dict;
++ (NSArray *)nodeArrayFromPropertyList:(id)propertyList;
+- (void)appendNodesFromPropertyList:(id)propertyList;
 
 // building dictionary from tree
 - (NSMutableDictionary*)makeDictionary;
@@ -137,7 +137,7 @@
 // ================================================================
 
 @interface NSArray (MyExtensions)
-- (BOOL)containsObjectIdenticalTo: (id)object;
+- (BOOL)containsObjectIdenticalTo:(id)object;
 @end
 
 @interface NSMutableArray (MyExtensions)

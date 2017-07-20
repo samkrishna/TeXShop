@@ -30,7 +30,7 @@ typedef NSInteger NSInteger;
 @property (retain)NSMutableArray		*sourceData;
 @property (retain)NSMutableArray		*commentData;
 
-- (IBAction)newFromStationery: (id)sender;
+- (IBAction)newFromStationery:(id)sender;
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView;
 - (id)tableView:(NSTableView *)tableView

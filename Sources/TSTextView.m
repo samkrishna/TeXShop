@@ -79,7 +79,7 @@ static const CFAbsoluteTime MAX_WAIT_TIME = 10.0;
 	
 }
 
-- (void)pasteAsComment: (id)sender;
+- (void)pasteAsComment:(id)sender;
 {
     NSRange     insertRange, newRange, pasteRange;
     NSString    *text;
@@ -108,7 +108,7 @@ static const CFAbsoluteTime MAX_WAIT_TIME = 10.0;
 	BOOL value;
 	
 	value = [SUD boolForKey:SmartInsertDeleteKey];
-	[SUD setBool: (!value) forKey:SmartInsertDeleteKey];
+	[SUD setBool:(!value) forKey:SmartInsertDeleteKey];
 	[super toggleSmartInsertDelete:sender];
 }
 
@@ -118,7 +118,7 @@ static const CFAbsoluteTime MAX_WAIT_TIME = 10.0;
 	
 	if ([super respondsToSelector:@selector(isAutomaticQuoteSubstitutionEnabled)]) {
 		value = [SUD boolForKey:AutomaticQuoteSubstitutionKey];
-		[SUD setBool: (!value) forKey:AutomaticQuoteSubstitutionKey];
+		[SUD setBool:(!value) forKey:AutomaticQuoteSubstitutionKey];
 		[super toggleAutomaticQuoteSubstitution:sender];
 		}
 }
@@ -129,7 +129,7 @@ static const CFAbsoluteTime MAX_WAIT_TIME = 10.0;
 	
 	if ([super respondsToSelector:@selector(isAutomaticLinkDetectionEnabled)]) {
 		value = [SUD boolForKey:AutomaticLinkDetectionKey];
-		[SUD setBool: (!value) forKey:AutomaticLinkDetectionKey];
+		[SUD setBool:(!value) forKey:AutomaticLinkDetectionKey];
 		[super toggleAutomaticLinkDetection:sender];
 		}
 }
@@ -140,7 +140,7 @@ static const CFAbsoluteTime MAX_WAIT_TIME = 10.0;
 	
 	if ([super respondsToSelector:@selector(isAutomaticDataDetectionEnabled)]) {
 		value = [SUD boolForKey:AutomaticDataDetectionKey];
-		[SUD setBool: (!value) forKey:AutomaticDataDetectionKey];
+		[SUD setBool:(!value) forKey:AutomaticDataDetectionKey];
 		[super toggleAutomaticDataDetection:sender];
 		}
 }
@@ -151,7 +151,7 @@ static const CFAbsoluteTime MAX_WAIT_TIME = 10.0;
 	
 	if ([super respondsToSelector:@selector(isAutomaticDashSubstitutionEnabled)]) {
 		value = [SUD boolForKey:AutomaticDashSubstitutionKey];
-		[SUD setBool: (!value) forKey:AutomaticDashSubstitutionKey];
+		[SUD setBool:(!value) forKey:AutomaticDashSubstitutionKey];
 		[super toggleAutomaticDashSubstitution:sender];
 		}
 }
@@ -162,7 +162,7 @@ static const CFAbsoluteTime MAX_WAIT_TIME = 10.0;
 	
 	if ([super respondsToSelector:@selector(isAutomaticTextReplacementEnabled)]) {
 		value = [SUD boolForKey:AutomaticTextReplacementKey];
-		[SUD setBool: (!value) forKey:AutomaticTextReplacementKey];
+		[SUD setBool:(!value) forKey:AutomaticTextReplacementKey];
 		[super toggleAutomaticTextReplacement:sender];
 		}
 }
@@ -259,7 +259,7 @@ static const CFAbsoluteTime MAX_WAIT_TIME = 10.0;
 #pragma mark =====others=====
 
 // drag & drop support --- added by zenitani, Feb 13, 2003
-- (NSUInteger)dragOperationForDraggingInfo : (id <NSDraggingInfo>)sender
+- (NSUInteger)dragOperationForDraggingInfo :(id <NSDraggingInfo>)sender
 {
 	NSPasteboard *pb = [sender draggingPasteboard];
 	NSString *type = [pb availableTypeFromArray:
@@ -285,25 +285,25 @@ static const CFAbsoluteTime MAX_WAIT_TIME = 10.0;
 	return NSDragOperationNone;
 }
 
-- (NSDragOperation)draggingEntered : (id <NSDraggingInfo>)sender
+- (NSDragOperation)draggingEntered :(id <NSDraggingInfo>)sender
 {
 	return [self dragOperationForDraggingInfo:sender];
 }
-- (NSDragOperation)draggingUpdated : (id <NSDraggingInfo>)sender
+- (NSDragOperation)draggingUpdated :(id <NSDraggingInfo>)sender
 {
 	return [self dragOperationForDraggingInfo:sender];
 }
 
-- (void)draggingExited : (id <NSDraggingInfo>)sender
+- (void)draggingExited :(id <NSDraggingInfo>)sender
 {
 	return;
 }
 
-- (BOOL)prepareForDragOperation : (id <NSDraggingInfo>)sender
+- (BOOL)prepareForDragOperation :(id <NSDraggingInfo>)sender
 {
 	return YES;
 }
-- (BOOL)performDragOperation : (id <NSDraggingInfo>)sender
+- (BOOL)performDragOperation :(id <NSDraggingInfo>)sender
 {
    // return YES;    this fix, by Koch on May 1, 2005, seems required in Tiger when dragging text from one spot to another
    return [super performDragOperation: sender];
@@ -311,7 +311,7 @@ static const CFAbsoluteTime MAX_WAIT_TIME = 10.0;
 
 
 // zenitani 1.33 begin
-- (void)concludeDragOperation : (id <NSDraggingInfo>)sender {
+- (void)concludeDragOperation :(id <NSDraggingInfo>)sender {
     [_window makeFirstResponder:self]; // added by Terada (required in the case of split window)
 	NSPasteboard *pb = [ sender draggingPasteboard ];
 	NSString *type = [ pb availableTypeFromArray:
@@ -398,7 +398,7 @@ static const CFAbsoluteTime MAX_WAIT_TIME = 10.0;
 }
 
 /* Koch: this method comes from ADC Reference Library/Cocoa/LowLevelFileManagement */
-- (NSString *)resolveAlias: (NSString *)path
+- (NSString *)resolveAlias:(NSString *)path
 {
 	NSString *resolvedPath = nil;
 	CFURLRef url;
@@ -425,7 +425,7 @@ static const CFAbsoluteTime MAX_WAIT_TIME = 10.0;
 	return resolvedPath;
 }
 
-- (NSString *)getDragnDropMacroString: (NSString *)fileNameExtension
+- (NSString *)getDragnDropMacroString:(NSString *)fileNameExtension
 {
 	NSDictionary *dict1, *dict2;
 	NSEnumerator *enum1, *enum2;
@@ -1238,7 +1238,7 @@ static BOOL launchBibDeskAndOpenURLs(NSArray *fileURLs)
 // end Adam Maxwell addition
 
 /*
-- (void)setDocument: (TSDocument *)doc
+- (void)setDocument:(TSDocument *)doc
 {
 
 	self.document = doc;
@@ -1508,7 +1508,7 @@ static BOOL launchBibDeskAndOpenURLs(NSArray *fileURLs)
 				// search the string in the completion list
 				foundRange = [g_commandCompletionList rangeOfString:
 						[@"\n" stringByAppendingString: self.originalString]
-						options: (([theEvent modifierFlags] & NSShiftKeyMask)?NSBackwardsSearch:0)
+						options:(([theEvent modifierFlags] & NSShiftKeyMask)?NSBackwardsSearch:0)
 						range: searchRange];
 */
                 if (!([theEvent modifierFlags] & NSShiftKeyMask) && wasCompleted) {
@@ -1523,7 +1523,7 @@ static BOOL launchBibDeskAndOpenURLs(NSArray *fileURLs)
 				// search the string in the completion list
 				foundRange = [g_commandCompletionList rangeOfString:
                         [@"\n" stringByAppendingString: self.originalString]
-                        options: (!(([theEvent modifierFlags] & NSShiftKeyMask))?NSBackwardsSearch:0)
+                        options:(!(([theEvent modifierFlags] & NSShiftKeyMask))?NSBackwardsSearch:0)
                         range: searchRange];
 // End of modification to reverse search
 				if (foundRange.location == NSNotFound) { // a completion candidate was not found
@@ -1907,7 +1907,7 @@ static BOOL launchBibDeskAndOpenURLs(NSArray *fileURLs)
 
 */
 
-- (void)registerForCommandCompletion: (id)sender
+- (void)registerForCommandCompletion:(id)sender
 {
 	NSString		*initialWord, *aWord, *completionPath, *backupPath;
 	NSData 			*myData;
@@ -1961,7 +1961,7 @@ static BOOL launchBibDeskAndOpenURLs(NSArray *fileURLs)
 #pragma mark ========Ruler==========
 
 //mfwitten@mit.edu: delegate methods for rulers"
-- (void)rulerView: (NSRulerView*)aRulerView didMoveMarker: (NSRulerMarker*)aMarker
+- (void)rulerView:(NSRulerView*)aRulerView didMoveMarker:(NSRulerMarker*)aMarker
 {
 
     NSRange selectedRange = [self selectedRange];

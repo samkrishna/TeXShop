@@ -96,8 +96,7 @@
 
 
 
-- (void)registerUndoWithString:(NSString *)oldString location:(NSUInteger)oldLocation
-                        length: (NSUInteger)newLength key:(NSString *)key
+- (void)registerUndoWithString:(NSString *)oldString location:(NSUInteger)oldLocation length:(NSUInteger)newLength key:(NSString *)key
 {
 	NSUndoManager	*myManager;
 	NSMutableDictionary	*myDictionary;
@@ -548,7 +547,7 @@
                  // search the string in the completion list
                  foundRange = [g_commandCompletionList rangeOfString:
                  [@"\n" stringByAppendingString: self.originalString]
-                 options: (([theEvent modifierFlags] & NSShiftKeyMask)?NSBackwardsSearch:0)
+                 options:(([theEvent modifierFlags] & NSShiftKeyMask)?NSBackwardsSearch:0)
                  range: searchRange];
                  */
                 if (!([theEvent modifierFlags] & NSShiftKeyMask) && wasCompleted) {
@@ -563,7 +562,7 @@
 				// search the string in the completion list
 				foundRange = [g_commandCompletionList rangeOfString:
                               [@"\n" stringByAppendingString: self.originalString]
-                                                            options: (!(([theEvent modifierFlags] & NSShiftKeyMask))?NSBackwardsSearch:0)
+                                                            options:(!(([theEvent modifierFlags] & NSShiftKeyMask))?NSBackwardsSearch:0)
                                                               range: searchRange];
                 // End of modification to reverse search
 				if (foundRange.location == NSNotFound) { // a completion candidate was not found
@@ -712,7 +711,7 @@
 }
 
 
-- (void)doNextBullet: (id)sender // modified by (HS)
+- (void)doNextBullet:(id)sender // modified by (HS)
 {
     NSRange tempRange, forwardRange, markerRange, commentRange;
     NSString *text;
@@ -745,7 +744,7 @@
     //NSLog(@"Next • hit");
 }
 
-- (void)doPreviousBullet: (id)sender // modified by (HS)
+- (void)doPreviousBullet:(id)sender // modified by (HS)
 {
     NSRange tempRange, backwardRange, markerRange, commentRange;
     NSString *text;
@@ -777,7 +776,7 @@
     //NSLog(@"Next • hit");
 }
 
-- (void)doNextBulletAndDelete: (id)sender // modified by (HS)
+- (void)doNextBulletAndDelete:(id)sender // modified by (HS)
 {
     NSRange tempRange, forwardRange, markerRange, commentRange;
     NSString *text;
@@ -816,7 +815,7 @@
     //NSLog(@"Next • hit");
 }
 
-- (void)doPreviousBulletAndDelete: (id)sender // modified by (HS)
+- (void)doPreviousBulletAndDelete:(id)sender // modified by (HS)
 {
     NSRange tempRange, backwardRange, markerRange, commentRange;
     NSString *text;
@@ -854,7 +853,7 @@
     //NSLog(@"Next • hit");
 }
 
-- (void)placeBullet: (id)sender // modified by (HS)to be a simple insertion (replacing the selection)
+- (void)placeBullet:(id)sender // modified by (HS)to be a simple insertion (replacing the selection)
 {
     NSRange		myRange;
     
@@ -867,7 +866,7 @@
     //NSLog(@"Place • hit");
 }
 
-- (void)placeComment: (id)sender // by (HS)to be a simple insertion (replacing the selection)
+- (void)placeComment:(id)sender // by (HS)to be a simple insertion (replacing the selection)
 {
     NSRange		myRange;
     

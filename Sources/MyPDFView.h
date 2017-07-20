@@ -76,23 +76,23 @@ IBOutlet		id                  myStepper1;
 @property (retain) OverView                        *overView;
 
 // set up the view
-- (void)setImageType: (NSInteger)theType;
-- (void)setDocument: (id)theDocument;
-- (void)setImageRep: (NSPDFImageRep *)theRep;
-- (void)setupForPDFRep: (NSPDFImageRep *)newRep style: (NSInteger)newPageStyle;
+- (void)setImageType:(NSInteger)theType;
+- (void)setDocument:(id)theDocument;
+- (void)setImageRep:(NSPDFImageRep *)theRep;
+- (void)setupForPDFRep:(NSPDFImageRep *)newRep style:(NSInteger)newPageStyle;
 - (void)setFrameAndBounds; // mitsu 1.29 (O)
 - (void)fitToSize;
 - (BOOL)acceptsFirstResponder;
 // magnification
 - (double)magnification;
-- (void)setMagnification: (double)magSize;
+- (void)setMagnification:(double)magSize;
 - (void)changeScale:(id)sender;
 - (void)doStepper:(id)sender;
 - (void)resetMagnification;
 // drawRect
-- (NSInteger)pageNumberForPoint: (NSPoint)aPoint;
-- (NSPoint)pointForPage: (NSInteger)aPage;
-- (NSImage *)imageFromRect: (NSRect)aRect;
+- (NSInteger)pageNumberForPoint:(NSPoint)aPoint;
+- (NSPoint)pointForPage:(NSInteger)aPage;
+- (NSImage *)imageFromRect:(NSRect)aRect;
 // moving
 - (void)previousPage:(id)sender;
 - (void)firstPage:(id)sender;
@@ -105,9 +105,9 @@ IBOutlet		id                  myStepper1;
 - (void)left:(id)sender;
 - (void)right:(id)sender;
 - (void)goToPage:(id)sender;
-- (void)displayPage: (NSInteger)pagenumber;
+- (void)displayPage:(NSInteger)pagenumber;
 - (void)updateCurrentPage;
-- (void)wasScrolled: (NSNotification *)aNotification;
+- (void)wasScrolled:(NSNotification *)aNotification;
 // rotation
 - (void)rotateClockwise:(id)sender;
 - (void)rotateCounterclockwise:(id)sender;
@@ -116,32 +116,32 @@ IBOutlet		id                  myStepper1;
 // printing
 - (void)printDocument:(id)sender;
 // mouseDown
-- (void)changeMouseMode: (id)sender;
+- (void)changeMouseMode:(id)sender;
 - (void)flagsChanged:(NSEvent *)theEvent;
-- (void)doMagnifyingGlass:(NSEvent *)theEvent level: (NSInteger)level;
-- (void)scrollByDragging: (NSEvent *)theEvent;
+- (void)doMagnifyingGlass:(NSEvent *)theEvent level:(NSInteger)level;
+- (void)scrollByDragging:(NSEvent *)theEvent;
 // select and copy
-- (void)selectARect: (NSEvent *)theEvent;
-- (void)selectAll: (id)sender;
-- (void)updateMarquee: (NSTimer *)timer;
-- (void)cleanupMarquee: (BOOL)terminate;
+- (void)selectARect:(NSEvent *)theEvent;
+- (void)selectAll:(id)sender;
+- (void)updateMarquee:(NSTimer *)timer;
+- (void)cleanupMarquee:(BOOL)terminate;
 - (void)recacheMarquee;
-- (void)moveSelection: (NSEvent *)theEvent;
+- (void)moveSelection:(NSEvent *)theEvent;
 - (BOOL)hasSelection;
-- (NSData *)imageDataFromSelectionType: (NSInteger)type;
-- (void)saveSelectionToFile: (id)sender;
+- (NSData *)imageDataFromSelectionType:(NSInteger)type;
+- (void)saveSelectionToFile:(id)sender;
 - (void)chooseExportImageType:(id)sender;
 // drag & drop
-- (void)startDragging: (NSEvent *)theEvent; // mitsu 1.29 drag & drop
+- (void)startDragging:(NSEvent *)theEvent; // mitsu 1.29 drag & drop
 // others
 - (NSInteger)pageStyle;
-- (void)changePageStyle: (id)sender;
+- (void)changePageStyle:(id)sender;
 - (NSInteger)resizeOption;
-- (void)changePDFViewSize: (id)sender;
-- (void)doSync: (NSEvent *)theEvent;
-- (void)drawDotsForPage:(NSInteger)page atPoint: (NSPoint)p;
-- (void)setShowSync: (BOOL)value;
-- (void)doMagnifyingGlassMavericks:(NSEvent *)theEvent level: (NSInteger)level;
+- (void)changePDFViewSize:(id)sender;
+- (void)doSync:(NSEvent *)theEvent;
+- (void)drawDotsForPage:(NSInteger)page atPoint:(NSPoint)p;
+- (void)setShowSync:(BOOL)value;
+- (void)doMagnifyingGlassMavericks:(NSEvent *)theEvent level:(NSInteger)level;
 
 @end
 

@@ -49,17 +49,17 @@
 // - (NSDictionary *)macroDictionary;
 - (void)loadMacros;
 - (void)setupMainMacroMenu;
-- (void)reloadMacros: (id)sender;
+- (void)reloadMacros:(id)sender;
 - (void)reloadMacrosOnly;
-- (void)addItemsToMenu: (NSMenu *)menu fromArray: (NSArray *)array withKey: (BOOL)flag;
-- (void)addItemsToPopupButton: (NSPopUpButton *)popupButton;
-- (void)doMacro: (id)sender;
-- (void)doNothing: (id)sender;
+- (void)addItemsToMenu:(NSMenu *)menu fromArray:(NSArray *)array withKey:(BOOL)flag;
+- (void)addItemsToPopupButton:(NSPopUpButton *)popupButton;
+- (void)doMacro:(id)sender;
+- (void)doNothing:(id)sender;
 
 - (BOOL)validateMenuItem:(NSMenuItem *)anItem;
 
-- (void)listKeyEquivalents: (NSMenu *)menu;
-- (BOOL)isAlreadyDefined: (NSString *)keyEquiv modifier: (NSUInteger)modifier;
+- (void)listKeyEquivalents:(NSMenu *)menu;
+- (BOOL)isAlreadyDefined:(NSString *)keyEquiv modifier:(NSUInteger)modifier;
 @end
 
 NSString *getKeyEquivalentFromString(NSString *string);

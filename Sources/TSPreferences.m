@@ -1615,7 +1615,7 @@ A tag of 0 means "always", a tag of 1 means "when errors occur".
 //==============================================================================
 
 /*" This method returns a relative path name of 'path', based on fromFile: file. If the second argument 'file' is nil, it will return an absolute path of 'path'. Added by zenitani, Feb 13, 2003. "*/
-- (NSString *)relativePath: (NSString *)path fromFile: (NSString *)file
+- (NSString *)relativePath:(NSString *)path fromFile:(NSString *)file
 {
 	NSArray *a, *b;
 	NSString *rpath = @"", *astr, *bstr;
@@ -1638,7 +1638,7 @@ A tag of 0 means "always", a tag of 1 means "when errors occur".
 		rpath = [rpath stringByAppendingFormat: @"%@/", [b objectAtIndex: j]];
 //        NSLog( @"%@\n", rpath );
 	}
-	rpath = [rpath stringByAppendingFormat: @"%@", [b objectAtIndex: (bi-1)]];
+	rpath = [rpath stringByAppendingFormat: @"%@", [b objectAtIndex:(bi-1)]];
 	return rpath;
 }
 

@@ -61,7 +61,7 @@
     [super sendEvent:anEvent];
 }
 
-- (IBAction)GotoLibraryTeXShop: (id)sender;
+- (IBAction)GotoLibraryTeXShop:(id)sender;
 {
     NSString *myString = @"~/Library/TeXShop";
     myString = [myString stringByExpandingTildeInPath];

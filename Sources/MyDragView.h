@@ -34,6 +34,6 @@
 @property (retain) NSPDFImageRep	*myRep;
 
 // set up the view
-- (void)setImageRep: (NSPDFImageRep *)theRep;
+- (void)setImageRep:(NSPDFImageRep *)theRep;
 @end
 

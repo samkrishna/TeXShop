@@ -242,7 +242,7 @@
 // the returned array has an ancestor in the returned array.
 
 // There are better ways to compute this, but this implementation should be efficient for our app.
-+ (NSArray *) minimumNodeCoverFromNodesInArray: (NSArray *)allNodes
++ (NSArray *) minimumNodeCoverFromNodesInArray:(NSArray *)allNodes
 {
 	NSMutableArray *minimumCover = [NSMutableArray array];
 	NSMutableArray *nodeQueue = [NSMutableArray arrayWithArray:allNodes];
@@ -270,10 +270,10 @@
 // Method specific for this implementation
 // ================================================================
 
-+ (id)nodeWithName: (NSString*)aName content: (NSString*)aContent key: (NSString*)keyEquiv
++ (id)nodeWithName:(NSString*)aName content:(NSString*)aContent key:(NSString*)keyEquiv
 {
 	TSMacroTreeNode *node = [[TSMacroTreeNode alloc] initWithParent: nil children: nil];
-	[node setName: (aName)?aName:@""];
+	[node setName:(aName)?aName:@""];
 	if (aContent)
 		[node setContent: aContent];
 	if (keyEquiv)
@@ -284,11 +284,11 @@
 	return node;
 }
 
-+ (id)submenuNodeWithName: (NSString*)aName
++ (id)submenuNodeWithName:(NSString*)aName
 {
 	NSMutableArray *children = [[NSMutableArray alloc] init];
 	TSMacroTreeNode *node = [[TSMacroTreeNode alloc] initWithParent: nil children: children];
-	[node setName: (aName)?aName:@""];
+	[node setName:(aName)?aName:@""];
 #ifdef DEBUG_TREE
 	PRINT(@"SubmenuNode created", aName);
 #endif
@@ -315,7 +315,7 @@
 
 
 
-- (void)setName: (NSString*)aName
+- (void)setName:(NSString*)aName
 {
     self.realName = aName;
 //	[aName retain];
@@ -348,7 +348,7 @@
 }
 
 
-- (void)setKey: (NSString*)aKey
+- (void)setKey:(NSString*)aKey
 {
     self.realKey = aKey;
 //	[aKey retain];
@@ -411,7 +411,7 @@
 - (TSMacroTreeNode *)duplicateNode
 {
 	TSMacroTreeNode *newNode = [[TSMacroTreeNode alloc] initWithParent: nil
-						children: (self.nodeChildren)?[NSArray array]:nil];
+						children:(self.nodeChildren)?[NSArray array]:nil];
 	[newNode setName: [self name]];
 	if ([self content])
 		[newNode setContent: [self content]];
@@ -429,7 +429,7 @@
 	return newNode;
 }
 
-+ (NSArray *)duplicateNodeArray: (NSArray *)srcNodeArray
++ (NSArray *)duplicateNodeArray:(NSArray *)srcNodeArray
 {
 	NSArray *tempArray;
 	NSMutableArray *newArray = [NSMutableArray array];
@@ -447,7 +447,7 @@
 // Building tree from dictionary.
 // ================================================================
 
-+ (id)nodeFromDictionary: (NSDictionary*)dict
++ (id)nodeFromDictionary:(NSDictionary*)dict
 {
 	TSMacroTreeNode *node, *child;
 	NSString *aName, *aContent, *keyEquiv;
@@ -484,7 +484,7 @@
 }
 
 
-+ (NSArray *)nodeArrayFromPropertyList: (id)propertyList
++ (NSArray *)nodeArrayFromPropertyList:(id)propertyList
 {
 	NSMutableArray *nodeArray;
 	NSArray *dictArray = nil;
@@ -539,7 +539,7 @@
 }
 
 // do not add directly --for notification, use addNewDataArrayToSelection
-- (void)appendNodesFromPropertyList: (id)propertyList
+- (void)appendNodesFromPropertyList:(id)propertyList
 {
 	NSArray *array=nil;
 	NSEnumerator *enumerator, *keyEnum;
@@ -625,7 +625,7 @@
 
 @implementation NSArray (MyExtensions)
 
-- (BOOL)containsObjectIdenticalTo: (id)obj {
+- (BOOL)containsObjectIdenticalTo:(id)obj {
 	return [self indexOfObjectIdenticalTo: obj] != NSNotFound;
 }
 

@@ -22,27 +22,27 @@
 }
 */
 
-- (void)setSelectionRect: (NSRect)theRect
+- (void)setSelectionRect:(NSRect)theRect
 {
     theSelectionRect = theRect;
 }
 
-- (void)setMagnifiedRect: (NSRect)theRect
+- (void)setMagnifiedRect:(NSRect)theRect
 {
     magnifiedRect = theRect;
 }
 
-- (void)setDrawRubberBand: (BOOL)value
+- (void)setDrawRubberBand:(BOOL)value
 {
     drawRubberBand = value;
 }
 
-- (void)setDrawMagnifiedRect: (BOOL)value
+- (void)setDrawMagnifiedRect:(BOOL)value
 {
     drawMagnifiedRect = value;
 }
 
-- (void)setDrawMagnifiedImage: (BOOL)value
+- (void)setDrawMagnifiedImage:(BOOL)value
 {
     drawMagnifiedImage = value;
 }

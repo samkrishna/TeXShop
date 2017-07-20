@@ -169,7 +169,7 @@ static id sharedMacroMenuController = nil;
 }
 
 // reload
-- (void)reloadMacros: (id)sender
+- (void)reloadMacros:(id)sender
 {
 	[self reloadMacrosOnly];
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"ResetMacroButtonNotification" object:self];
@@ -186,7 +186,7 @@ static id sharedMacroMenuController = nil;
 
 
 // build menu from property list
-- (void)addItemsToMenu: (NSMenu *)menu fromArray: (NSArray *)array withKey: (BOOL)flag
+- (void)addItemsToMenu:(NSMenu *)menu fromArray:(NSArray *)array withKey:(BOOL)flag
 {
 	NSDictionary *dict;
 	NSEnumerator *enumerator = [array objectEnumerator];
@@ -222,7 +222,7 @@ static id sharedMacroMenuController = nil;
 }
 
 // build a menu for popup button in the toolbar
-- (void)addItemsToPopupButton: (NSPopUpButton *)popupButton
+- (void)addItemsToPopupButton:(NSPopUpButton *)popupButton
 {
 	NSDictionary *dict;
 	id newItem;
@@ -265,7 +265,7 @@ static id sharedMacroMenuController = nil;
 }
 
 // now simply call doCompletion routine via notification center
-- (void)doMacro: (id)sender
+- (void)doMacro:(id)sender
 {
 	BOOL            result;
 	NSString        *reason = 0;
@@ -437,7 +437,7 @@ static id sharedMacroMenuController = nil;
 }
 
 // dummy action for submenu items-- by assigning this to submenu items, they can be disabled
-- (void)doNothing: (id)sender
+- (void)doNothing:(id)sender
 {
 }
 
@@ -462,7 +462,7 @@ static id sharedMacroMenuController = nil;
 }
 
 // list key equivalents which are already assigned
-- (void)listKeyEquivalents: (NSMenu *)menu
+- (void)listKeyEquivalents:(NSMenu *)menu
 {
 	NSArray *menuitems = [menu itemArray];
 	NSEnumerator *enumerator = [menuitems objectEnumerator];
@@ -486,7 +486,7 @@ static id sharedMacroMenuController = nil;
 }
 
 // check with the list of key equivalents which are already assigned
-- (BOOL)isAlreadyDefined: (NSString *)keyEquiv modifier: (NSUInteger)modifier
+- (BOOL)isAlreadyDefined:(NSString *)keyEquiv modifier:(NSUInteger)modifier
 {
 	NSEnumerator *enumerator = [self.keyEquivalents objectEnumerator];
 	NSArray *item;

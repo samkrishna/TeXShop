@@ -45,12 +45,12 @@
 
 - (NSRange)selectionRangeForProposedRange:(NSRange)proposedSelRange granularity:(NSSelectionGranularity)granularity;
 
-// - (void)setDocument: (TSDocument *)doc;
-- (void)registerForCommandCompletion: (id)sender;
-- (NSString *)getDragnDropMacroString: (NSString *)fileExt;
-- (NSString *)readSourceFromEquationEditorPDF: (NSString *)filePath;
+// - (void)setDocument:(TSDocument *)doc;
+- (void)registerForCommandCompletion:(id)sender;
+- (NSString *)getDragnDropMacroString:(NSString *)fileExt;
+- (NSString *)readSourceFromEquationEditorPDF:(NSString *)filePath;
 - (BOOL)acceptsFirstMouse:(NSEvent *)theEvent;
-- (NSString *)resolveAlias: (NSString *)path;
+- (NSString *)resolveAlias:(NSString *)path;
 - (NSMenu *)menuForEvent:(NSEvent *)theEvent;
 - (void)autoComplete:(NSMenuItem *)theMenu; //Added by soheil
 @end

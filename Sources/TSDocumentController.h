@@ -32,7 +32,7 @@
 	BOOL				doList;
 }
 - (IBAction)openDocument:(id)sender;
-- (IBAction)newDocumentFromStationery: (id)sender;
+- (IBAction)newDocumentFromStationery:(id)sender;
 - (void)initializeEncoding;
 - (NSInteger)runModalOpenPanel:(NSOpenPanel *)openPanel forTypes:(NSArray *)extensions;
 - (NSStringEncoding)encoding;

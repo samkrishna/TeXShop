@@ -54,19 +54,19 @@
 
 + (TSMacroOutlineController *)sharedInstance;
 
-// - (void)setRootOfTree: (TSMacroTreeNode *)newRootOfTree;
+// - (void)setRootOfTree:(TSMacroTreeNode *)newRootOfTree;
 // - (TSMacroTreeNode *)rootOfTree;
 // - (NSArray*)draggedNodes;
 - (NSArray *)selectedNodes;
 
-- (void)deleteSelection: (id)sender;
-- (void)addNewItem: (id)sender;
-- (void)addSubmenu: (id)sender;
-- (void)addSeparator: (id)sender;
+- (void)deleteSelection:(id)sender;
+- (void)addNewItem:(id)sender;
+- (void)addSubmenu:(id)sender;
+- (void)addSeparator:(id)sender;
 - (void)addNewDataToSelection:(TSMacroTreeNode *)newChild;
 - (void)addNewDataArrayToSelection:(NSArray *)newChildren;
-- (void)duplicateSelection: (id)sender;
-- (void)sortData: (id)sender;
+- (void)duplicateSelection:(id)sender;
+- (void)sortData:(id)sender;
 
 @end
 

@@ -67,7 +67,7 @@ static TSFilterMode savedFilter = kNoFilterMode;
 }
 
 
-- (IBAction)openMacroEditor: (id)sender
+- (IBAction)openMacroEditor:(id)sender
 {
 	if (!outlineView) {
 		// load TSMacroEditor window
@@ -280,24 +280,24 @@ static TSFilterMode savedFilter = kNoFilterMode;
 }
 
 // a method called on "Selection changed" notification
-- (void)outlineViewSelectionChanged: (NSNotification *)note
+- (void)outlineViewSelectionChanged:(NSNotification *)note
 {
 	[self reflectChangesInEditor: NO];
 }
 
 // a method called on "Items changed" (added/removed) notification
-- (void)outlineViewItemsChanged: (NSNotification *)note
+- (void)outlineViewItemsChanged:(NSNotification *)note
 {
 	dataTouched = YES;	// user may have changed the order or dropped an item
 }
 
 // interation bewteen outline data and nameField/contentTextView/etc
-- (void)reflectChangesInEditor: (BOOL)forceUpdate
+- (void)reflectChangesInEditor:(BOOL)forceUpdate
 {
 	NSString *contentString;
 	NSArray *selectedNodes = [outlineController selectedNodes];
-	[deleteButton setEnabled: ([selectedNodes count] > 0)];
-	[duplicateButton setEnabled: ([selectedNodes count] > 0)];
+	[deleteButton setEnabled:([selectedNodes count] > 0)];
+	[duplicateButton setEnabled:([selectedNodes count] > 0)];
 	
 	TSMacroTreeNode *newItem = ([selectedNodes count] == 1)?[selectedNodes objectAtIndex: 0]:nil;
 	if (newItem == self.previousItem && !forceUpdate)
@@ -331,8 +331,8 @@ static TSFilterMode savedFilter = kNoFilterMode;
 		self.previousItem = nil;
 	}
 	
-	[nameField setStringValue: (newItem)?[newItem name]:@""];
-	[nameField setEditable: (newItem && ![newItem isSeparator])?YES:NO];
+	[nameField setStringValue:(newItem)?[newItem name]:@""];
+	[nameField setEditable:(newItem && ![newItem isSeparator])?YES:NO];
 	if (newItem && [newItem isStandardItem]) {
 		contentString = [newItem content]?[newItem content]:@"";
  		if (g_shouldFilter == kMacJapaneseFilterMode)
@@ -342,14 +342,14 @@ static TSFilterMode savedFilter = kNoFilterMode;
 		[contentTextView setEditable: YES];
 		NSString *KeyEquiv = getKeyEquivalentFromString([newItem key]);
 		BOOL hasKeyEquiv = ([KeyEquiv length] > 0);
-		[keyField setStringValue: (hasKeyEquiv)?(KeyEquiv):@""];
+		[keyField setStringValue:(hasKeyEquiv)?(KeyEquiv):@""];
 		[keyField setEditable: YES];
 		NSUInteger modifier = getKeyModifierMaskFromString([newItem key]);
-		[shiftCheckBox setState: (hasKeyEquiv && (modifier & NSShiftKeyMask))?NSOnState:NSOffState];
+		[shiftCheckBox setState:(hasKeyEquiv && (modifier & NSShiftKeyMask))?NSOnState:NSOffState];
 		[shiftCheckBox setEnabled: YES];
-		[optionCheckBox setState: (hasKeyEquiv && (modifier & NSAlternateKeyMask))?NSOnState:NSOffState];
+		[optionCheckBox setState:(hasKeyEquiv && (modifier & NSAlternateKeyMask))?NSOnState:NSOffState];
 		[optionCheckBox setEnabled: YES];
-		[controlCheckBox setState: (hasKeyEquiv && (modifier & NSControlKeyMask))?NSOnState:NSOffState];
+		[controlCheckBox setState:(hasKeyEquiv && (modifier & NSControlKeyMask))?NSOnState:NSOffState];
 		[controlCheckBox setEnabled: YES];
 		[testButton setEnabled: YES];
 	} else {
@@ -377,7 +377,7 @@ static TSFilterMode savedFilter = kNoFilterMode;
 }
 
 // delegate method for window
-- (BOOL)windowShouldClose: (id)sender
+- (BOOL)windowShouldClose:(id)sender
 {
 	if (sender == self)		// called via saveButtonPressed or cancelButtonPressed
 		return YES;
@@ -417,7 +417,7 @@ static TSFilterMode savedFilter = kNoFilterMode;
 }
 
 // delegate method for window
-- (void)windowWillClose: (NSNotification *)aNotification
+- (void)windowWillClose:(NSNotification *)aNotification
 {
 	// clean up
 	if (self.previousItem)
@@ -486,7 +486,7 @@ static TSFilterMode savedFilter = kNoFilterMode;
 }
 
 // delegate method for window
-- (void)windowDidBecomeKey: (NSNotification *)aNotification
+- (void)windowDidBecomeKey:(NSNotification *)aNotification
 {
 	NSString *string;
 	// FIXME/TODO: Instead of using savedFilter, register for notification
@@ -519,7 +519,7 @@ static TSFilterMode savedFilter = kNoFilterMode;
 }
 
 // save given nodes of the tree to a file
-- (void)saveNodes: (id)nodes toFile: (NSString *)filePath
+- (void)saveNodes:(id)nodes toFile:(NSString *)filePath
 {
 	id 	propertyList;
 	NSString *pathStr, *error;
@@ -559,7 +559,7 @@ static TSFilterMode savedFilter = kNoFilterMode;
 }
 
 // action for "save selection to file" menu item
-- (void)saveSelection: (id)sender
+- (void)saveSelection:(id)sender
 {
 	NSSavePanel *aPanel = [NSSavePanel savePanel];
     NSArray *types = [NSArray arrayWithObject:@"plist"];
@@ -610,7 +610,7 @@ static TSFilterMode savedFilter = kNoFilterMode;
 */
 
 // action for "Add macros from file"
-- (void)readDictionaryToMacroEditor: (id)sender
+- (void)readDictionaryToMacroEditor:(id)sender
 {
 	NSOpenPanel *aPanel = [NSOpenPanel openPanel];
 	[aPanel setCanChooseFiles: YES];

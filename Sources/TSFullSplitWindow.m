@@ -32,37 +32,37 @@
 
 @implementation TSFullSplitWindow : NSWindow
 
-- (void)displayConsole: (id)sender
+- (void)displayConsole:(id)sender
 {
     [self.myDocument displayConsole: sender];
 }
 
-- (void)displayLog: (id)sender
+- (void)displayLog:(id)sender
 {
     [self.myDocument displayLog:sender];
 }
 
-- (void)doMove: (id)sender
+- (void)doMove:(id)sender
 {
     [self.myDocument doMove: sender];
 }
 
-- (void)doSeparateWindows: (id)sender
+- (void)doSeparateWindows:(id)sender
 {
     [self.myDocument doSeparateWindows: sender];
 }
 
-- (void)doTemplate: (id)sender
+- (void)doTemplate:(id)sender
 {
     [self.myDocument doTemplate: sender];
 }
 
-- (void)doTag: (id)sender;
+- (void)doTag:(id)sender;
 {
     [self.myDocument doTag: sender];
 }
 
-- (void)newTag: (id)sender
+- (void)newTag:(id)sender
 {
     [self.myDocument newTag: sender];
 }
@@ -148,100 +148,100 @@
 	[self.myDocument savePortableSourcePosition];
 }
 
-- (void)doCommentOrIndent: (id)sender
+- (void)doCommentOrIndent:(id)sender
 {
     [self.myDocument doCommentOrIndent: sender];
 }
 
-- (void)setLineBreakMode: (id)sender
+- (void)setLineBreakMode:(id)sender
 {
     [self.myDocument setLineBreakMode: sender];
 }
 
-- (void)hardWrapSelection: (id)sender
+- (void)hardWrapSelection:(id)sender
 {
     [self.myDocument hardWrapSelection: sender];
 }
 
-- (void)removeNewLinesFromSelection: (id)sender
+- (void)removeNewLinesFromSelection:(id)sender
 {
     [self.myDocument removeNewLinesFromSelection: sender];
 }
 
-- (void)doNextBullet: (id)sender
+- (void)doNextBullet:(id)sender
 {
     [self.myDocument doNextBullet: sender];
 }
 
-- (void)doNextBulletAndDelete: (id)sender
+- (void)doNextBulletAndDelete:(id)sender
 {
     [self.myDocument doNextBulletAndDelete: sender];
 }
 
-- (void)doPreviousBullet: (id)sender
+- (void)doPreviousBullet:(id)sender
 {
     [self.myDocument doPreviousBullet: sender];
 }
 
-- (void)doPreviousBulletAndDelete: (id)sender
+- (void)doPreviousBulletAndDelete:(id)sender
 {
     [self.myDocument doPreviousBulletAndDelete: sender];
 }
 
-- (void)placeBullet: (id)sender
+- (void)placeBullet:(id)sender
 {
     [self.myDocument placeBullet: sender];
 }
 
-- (void)placeComment: (id)sender
+- (void)placeComment:(id)sender
 {
     [self.myDocument placeComment: sender];
 }
 
-- (void)registerForCommandCompletion: (id)sender
+- (void)registerForCommandCompletion:(id)sender
 {
      [[self.myDocument textView] registerForCommandCompletion: sender];
 }
 
 
-- (void)tryScrap: (id)sender
+- (void)tryScrap:(id)sender
 {
     [self.myDocument tryScrap: sender];
 }
 
-- (void)doLine: (id)sender
+- (void)doLine:(id)sender
 {
     [self.myDocument doLine: sender];
 }
 
-- (void)doError: (id)sender
+- (void)doError:(id)sender
 {
     [self.myDocument doError: sender];
 }
 
-- (void)showStatistics: (id)sender
+- (void)showStatistics:(id)sender
 {
     [self.myDocument showStatistics: sender];
 }
 
 /*
-- (void)runPageLayout: (id)sender
+- (void)runPageLayout:(id)sender
 {
     [self.myDocument runPageLayout: sender];
 }
 */
 
-- (void)printSource: (id)sender
+- (void)printSource:(id)sender
 {
     [self.myDocument printSource: sender];
 }
 
-- (void)convertTiff: (id)sender
+- (void)convertTiff:(id)sender
 {
     [self.myDocument convertTiff: sender];
 }
 
-- (void)splitWindow: (id)sender
+- (void)splitWindow:(id)sender
  {
      [self.myDocument splitWindow: sender];
  }

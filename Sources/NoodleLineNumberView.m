@@ -50,7 +50,7 @@
 
 @implementation NoodleLineNumberView
 
-- (id)initWithScrollView: (NSScrollView *)aScrollView
+- (id)initWithScrollView:(NSScrollView *)aScrollView
 {
     if ((self = [super initWithScrollView:aScrollView orientation:NSVerticalRuler]) != nil)
     {

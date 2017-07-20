@@ -129,8 +129,8 @@
 - (id)init;
 - (void)setup;
 - (void)initializeDisplay;
-- (void)showWithPath: (NSString *)imagePath;
-- (void)reShowWithPath: (NSString *)imagePath;
+- (void)showWithPath:(NSString *)imagePath;
+- (void)reShowWithPath:(NSString *)imagePath;
 - (void)showForSecond;
 - (void)prepareSecond;
 - (void)reShowForSecond;
@@ -141,9 +141,9 @@
 - (NSInteger)pageStyle;
 - (NSInteger)firstPageStyle;
 - (NSInteger)resizeOption;
-- (void)setPageStyle: (NSInteger)thePageStyle;
-- (void)setFirstPageStyle: (NSInteger)theFirstPageStyle;
-- (void)setResizeOption: (NSInteger)theResizeOption;
+- (void)setPageStyle:(NSInteger)thePageStyle;
+- (void)setFirstPageStyle:(NSInteger)theFirstPageStyle;
+- (void)setResizeOption:(NSInteger)theResizeOption;
 
 - (void)rotateClockwise:(id)sender;
 - (void)rotateCounterclockwise:(id)sender;
@@ -153,7 +153,7 @@
 - (void)goBack:(id)sender;
 - (void)goForward:(id)sender;
 
-- (void)goToKitPageNumber: (NSInteger)thePage;
+- (void)goToKitPageNumber:(NSInteger)thePage;
 - (void)goToKitPage:(id)sender;
 - (void)previousPage:(id)sender;
 - (void)nextPage:(id)sender;
@@ -165,7 +165,7 @@
 - (IBAction)doFindOne:(id)sender;
 - (void)doFindAgain;
 - (double)magnification;
-- (void)setMagnification: (double)magnification;
+- (void)setMagnification:(double)magnification;
 - (void)changePageStyle:(id)sender;
 - (void)changePDFViewSize:(id)sender;
 - (void)copy:(id)sender;
@@ -173,11 +173,11 @@
 - (IBAction)toggleDrawer:(id)sender;
 - (void)takeDestinationFromOutline:(id)sender;
 - (void)changeMouseMode:(id)sender;
-- (void)mouseDown: (NSEvent *)theEvent;
-- (void)mouseUp: (NSEvent *)theEvent;
-- (void)mouseDragged: (NSEvent *)theEvent;
-- (void)mouseMoved: (NSEvent *)theEvent;
-- (void)scrollByDragging: (NSEvent *)theEvent;
+- (void)mouseDown:(NSEvent *)theEvent;
+- (void)mouseUp:(NSEvent *)theEvent;
+- (void)mouseDragged:(NSEvent *)theEvent;
+- (void)mouseMoved:(NSEvent *)theEvent;
+- (void)scrollByDragging:(NSEvent *)theEvent;
 - (void)zoomIn:(id)sender;
 - (void)zoomOut:(id)sender;
 
@@ -186,44 +186,44 @@
 // printing
 - (void)printDocument:(id)sender;
 
-- (void)selectARect: (NSEvent *)theEvent;
+- (void)selectARect:(NSEvent *)theEvent;
 - (void)selectAll:(id)sender;
-- (void)updateMarquee: (NSTimer *)timer;
-- (void)cleanupMarquee: (BOOL)terminate;
+- (void)updateMarquee:(NSTimer *)timer;
+- (void)cleanupMarquee:(BOOL)terminate;
 - (void)recacheMarquee;
 - (BOOL)hasSelection;
-- (NSData *)imageDataFromSelectionType: (NSInteger)type;
+- (NSData *)imageDataFromSelectionType:(NSInteger)type;
 - (NSData *)PDFImageDataFromSelection;
 // - (void)saveSelectionToFile:(id)sender;
 - (void)chooseExportImageType:(id)sender;
 // drag & drop
-- (void)startDragging: (NSEvent *)theEvent; // mitsu 1.29 drag & drop
+- (void)startDragging:(NSEvent *)theEvent; // mitsu 1.29 drag & drop
 - (void)flagsChanged:(NSEvent *)theEvent;
-- (void)doSync: (NSPoint)thePoint;
-- (BOOL)doNewSync: (NSPoint)thePoint;
-- (BOOL)doSyncTeX: (NSPoint)thePoint;
-- (void)drawDotsForPage:(NSInteger)page atPoint: (NSPoint)p;
+- (void)doSync:(NSPoint)thePoint;
+- (BOOL)doNewSync:(NSPoint)thePoint;
+- (BOOL)doSyncTeX:(NSPoint)thePoint;
+- (void)drawDotsForPage:(NSInteger)page atPoint:(NSPoint)p;
 - (void)drawPage:(PDFPage *)page;
 - (void)resetCursorRects;
-- (void)setIndexForMark: (NSInteger)idx;
-- (void)setBoundsForMark: (NSRect)bounds;
-- (void)setDrawMark: (BOOL)value;
+- (void)setIndexForMark:(NSInteger)idx;
+- (void)setBoundsForMark:(NSRect)bounds;
+- (void)setDrawMark:(BOOL)value;
 - (void)setupSourceFiles;
 - (void)keyDown:(NSEvent *)theEvent;
-- (void)updateBackground: (NSRect)aRect;
-// - (void)goToKitPageNumber: (NSInteger)thePage;
+- (void)updateBackground:(NSRect)aRect;
+// - (void)goToKitPageNumber:(NSInteger)thePage;
 - (NSMenu *)menuForEvent:(NSEvent *)theEvent;
 - (void)fixMagnificationControls;
 - (NSMutableArray *)getSearchResults;
 - (void)resetSearchDelegate;
 - (void)cancelSearch;
-- (void)setProtectFind: (BOOL)value;
-- (void)setShowSync: (BOOL)value;
-- (void)setNumberSyncRect: (int)value;
-- (void)setSyncRect: (int)which originX: (float)x originY: (float)y width: (float)width height: (float)height;
-- (void)setOldSync: (BOOL)value;
+- (void)setProtectFind:(BOOL)value;
+- (void)setShowSync:(BOOL)value;
+- (void)setNumberSyncRect:(int)value;
+- (void)setSyncRect:(int)which originX:(float)x originY:(float)y width:(float)width height:(float)height;
+- (void)setOldSync:(BOOL)value;
 - (void)changePageStyleTo:(NSInteger)newStyle;
-- (void)changePDFViewSizeTo: (NSInteger)newResizeOption;
+- (void)changePDFViewSizeTo:(NSInteger)newResizeOption;
 - (void)moveSplitToCorrectSpot:(NSInteger)index;
 - (NSInteger)index;
 - (NSImage *)imageFromSelection;
@@ -236,17 +236,17 @@
 @end
 
 @interface MyPDFKitView (PDFDocumentDelegate)
-- (void)documentDidBeginDocumentFind: (NSNotification *)notification;
-- (void)documentDidEndDocumentFind: (NSNotification *)notification;
-- (void)documentDidEndPageFind: (NSNotification *)notification;
-- (void)documentDidFindMatch: (NSNotification *)notification;
+- (void)documentDidBeginDocumentFind:(NSNotification *)notification;
+- (void)documentDidEndDocumentFind:(NSNotification *)notification;
+- (void)documentDidEndPageFind:(NSNotification *)notification;
+- (void)documentDidFindMatch:(NSNotification *)notification;
 
 @end
 
 @interface MyPDFKitView (Magnification)
-- (void)doMagnifyingGlass:(NSEvent *)theEvent level: (NSInteger)level;
-- (void)doMagnifyingGlassMavericks:(NSEvent *)theEvent level: (NSInteger)level;
-- (void)doMagnifyingGlassML:(NSEvent *)theEvent level: (NSInteger)level;
+- (void)doMagnifyingGlass:(NSEvent *)theEvent level:(NSInteger)level;
+- (void)doMagnifyingGlassMavericks:(NSEvent *)theEvent level:(NSInteger)level;
+- (void)doMagnifyingGlassML:(NSEvent *)theEvent level:(NSInteger)level;
 @end
 
 

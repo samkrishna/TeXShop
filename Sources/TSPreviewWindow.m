@@ -141,7 +141,7 @@ extern NSPanel *pageNumberWindow;
 			contextInfo: nil];
 }
 
-- (void)magnificationDidEnd:(NSWindow *)sheet returnCode: (NSInteger)returnCode contextInfo: (void *)contextInfo
+- (void)magnificationDidEnd:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo
 {
 	// [sheet close];
 	[sheet orderOut: self];
@@ -160,7 +160,7 @@ extern NSPanel *pageNumberWindow;
 			contextInfo: nil];
 }
 
-- (void)pagenumberDidEnd:(NSWindow *)sheet returnCode: (NSInteger)returnCode contextInfo: (void *)contextInfo
+- (void)pagenumberDidEnd:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo
 {
 	// [sheet close];
 	[sheet orderOut: self];
@@ -357,7 +357,7 @@ extern NSPanel *pageNumberWindow;
 	}
 }
 
-- (void)doMove: (id)sender
+- (void)doMove:(id)sender
 {
     [self.myDocument doMove:sender];
 }
@@ -599,7 +599,7 @@ extern NSPanel *pageNumberWindow;
 
 
 // mitsu 1.29 (O)
-- (void)changePageStyle: (id)sender
+- (void)changePageStyle:(id)sender
 {
 	if ([self.myDocument fromKit])
 		[[self.myDocument pdfKitView] changePageStyle: sender];
@@ -607,27 +607,27 @@ extern NSPanel *pageNumberWindow;
 		[[self.myDocument pdfView] changePageStyle: sender];
 }
 
-- (void)changePDFViewSize: (id)sender
+- (void)changePDFViewSize:(id)sender
 {	if ([self.myDocument fromKit])
 		[[self.myDocument pdfKitView] changePDFViewSize: sender];
 	else
 		[[self.myDocument pdfView] changePDFViewSize: sender];
 }
 
-- (void)zoomIn: (id)sender
+- (void)zoomIn:(id)sender
 {
 	if ([self.myDocument fromKit])
 		[[self.myDocument pdfKitView] zoomIn: sender];
 }
 
-- (void)zoomOut: (id)sender
+- (void)zoomOut:(id)sender
 {
 	
 	if ([self.myDocument fromKit])
 		[[self.myDocument pdfKitView] zoomOut: sender];
 }
 
-- (void)fullscreen: (id)sender
+- (void)fullscreen:(id)sender
 {
 	if ([self.myDocument fromKit])
 		[self.myDocument fullscreen: sender];
@@ -644,7 +644,7 @@ extern NSPanel *pageNumberWindow;
 }
 
 
-- (void)copy: (id)sender
+- (void)copy:(id)sender
 {
 	if ([self.myDocument fromKit])
 		[[self.myDocument pdfKitView] copy: sender];
@@ -652,7 +652,7 @@ extern NSPanel *pageNumberWindow;
 		[[self.myDocument pdfView] copy: sender];
 }
 
--(void)saveSelectionToFile: (id)sender
+-(void)saveSelectionToFile:(id)sender
 {	if ([self.myDocument fromKit])
 		[[self.myDocument pdfKitView] saveSelectionToFile: sender];
 	else
@@ -670,7 +670,7 @@ extern NSPanel *pageNumberWindow;
 
 #endif
 
-- (void)splitPdfKitWindow: (id)sender
+- (void)splitPdfKitWindow:(id)sender
 {
 	NSSize		newSize;
 	NSRect		theFrame;
@@ -728,12 +728,12 @@ extern NSPanel *pageNumberWindow;
 }
 
 // Procedure called by menu item which splits both source and preview windows
-- (void)splitWindow: (id)sender
+- (void)splitWindow:(id)sender
 {
 	[self splitPdfKitWindow: sender];
 }
 
-- (void)fixAfterRotation: (BOOL)clockwise
+- (void)fixAfterRotation:(BOOL)clockwise
 {
 	if (clockwise)
 		[(MyPDFKitView *)self.myPDFKitView rotateClockwisePrimary];
@@ -791,7 +791,7 @@ extern NSPanel *pageNumberWindow;
 }
 */
 
-- (IBAction)takeDestinationFromOutline: (id)sender
+- (IBAction)takeDestinationFromOutline:(id)sender
 {
 	[(MyPDFKitView *)self.activeView takeDestinationFromOutline: sender];
 }

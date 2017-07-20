@@ -36,23 +36,23 @@
 + (id)sharedInstance;
 
 - (void)setupForEncoding;
-- (void)encodingChanged: (NSNotification *)note;
+- (void)encodingChanged:(NSNotification *)note;
 - (IBAction)toggleTeXCharConversion:(id)sender;
 
 // New encoding API: Uses NSStringEncoding for the menu tags
 - (NSStringEncoding)defaultEncoding;
-- (NSStringEncoding)stringEncodingForKey: (NSString *)key;
-- (NSString *)keyForStringEncoding: (NSStringEncoding)encoding;
-- (NSString *)localizedNameForKey: (NSString *)key;
-- (NSString *)localizedNameForStringEncoding: (NSStringEncoding)encoding;
+- (NSStringEncoding)stringEncodingForKey:(NSString *)key;
+- (NSString *)keyForStringEncoding:(NSStringEncoding)encoding;
+- (NSString *)localizedNameForKey:(NSString *)key;
+- (NSString *)localizedNameForStringEncoding:(NSStringEncoding)encoding;
 
 // Add a (localized) list of available encodings to the given menu. The tag of each menu item
 // will equal the corresponding NSStringEncoding.
 - (void)addEncodingsToMenu:(NSMenu *)menu withTarget:(id)aTarget action:(SEL)anAction;
 
 
-- (BOOL)ptexUtfOutputCheck: (NSString *)dataString withEncoding: (NSStringEncoding)enc;
-- (NSData *)ptexUtfOutput: (NSTextView *)dataView withEncoding: (NSStringEncoding)enc;
+- (BOOL)ptexUtfOutputCheck:(NSString *)dataString withEncoding:(NSStringEncoding)enc;
+- (NSData *)ptexUtfOutput:(NSTextView *)dataView withEncoding:(NSStringEncoding)enc;
 @end
 
 NSMutableString *filterBackslashToYen(NSString *aString);

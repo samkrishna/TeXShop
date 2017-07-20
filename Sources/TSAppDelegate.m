@@ -559,7 +559,7 @@
 
 /*
 
-- (void)setForPreview: (BOOL)value
+- (void)setForPreview:(BOOL)value
 {
 	self.forPreview = value;
 }
@@ -625,7 +625,7 @@
 		if (value == 0)
 			theMenu = [[mainMenu itemWithTitle: key] submenu];
 		else
-			theMenu = [[mainMenu itemAtIndex: (value - 1)] submenu];
+			theMenu = [[mainMenu itemAtIndex:(value - 1)] submenu];
 		menuDictionary = [shortcutsDictionary objectForKey: key];
 		
 		if (theMenu && menuDictionary) {
@@ -635,7 +635,7 @@
 				if (value == 0)
 					theMenuItem = [theMenu itemWithTitle: key1];
 				else
-					theMenuItem = [theMenu itemAtIndex: (value - 1)];
+					theMenuItem = [theMenu itemAtIndex:(value - 1)];
 				object = [menuDictionary objectForKey: key1];
 				
 				if (([object isKindOfClass: [NSDictionary class]]) && ([theMenuItem hasSubmenu])) {
@@ -646,7 +646,7 @@
 						if (value == 0)
 							theMenuItem = [subMenu itemWithTitle: key2];
 						else
-							theMenuItem = [subMenu itemAtIndex: (value - 1)];
+							theMenuItem = [subMenu itemAtIndex:(value - 1)];
 						object = [object objectForKey: key2];
 						if ([object isKindOfClass: [NSArray class]]) {
 							theChar = [object objectAtIndex: 0];
@@ -976,7 +976,7 @@
 
 
 // mitsu 1.29 (P)
-- (void)openCommandCompletionList: (id)sender
+- (void)openCommandCompletionList:(id)sender
 {
       
 	 [[NSDocumentController sharedDocumentController] openDocumentWithContentsOfURL:
@@ -992,7 +992,7 @@
 
 #ifdef MITSU_PDF
 // mitsu 1.29 (O)
-- (void)changeImageCopyType: (id)sender
+- (void)changeImageCopyType:(id)sender
 {
 	id  item;
 

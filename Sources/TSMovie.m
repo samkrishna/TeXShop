@@ -13,7 +13,7 @@
 
 @implementation TSMovie 
 
-- (void)getFile: (NSString *)title
+- (void)getFile:(NSString *)title
 {
     NSString *fullURLString = @"http://pages.uoregon.edu/koch/texshop/";
     NSString *destination = @"~/Library/TeXShop/Movies/TeXShop/";

@@ -31,6 +31,6 @@
 
 @property (retain)  NSImageRep      *imageRep;
 
-- (TSPrintView *)initWithImageRep: (NSImageRep *)aRep;
+- (TSPrintView *)initWithImageRep:(NSImageRep *)aRep;
 - (BOOL)knowsPageRange:(NSRangePointer)range;
 @end

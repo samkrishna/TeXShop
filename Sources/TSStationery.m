@@ -34,7 +34,7 @@
 }
 */
 
-- (IBAction)newFromStationery: (id)sender
+- (IBAction)newFromStationery:(id)sender
 {
 	NSString			*title, *title1, *path, *comment;
 	BOOL				isDirectory;

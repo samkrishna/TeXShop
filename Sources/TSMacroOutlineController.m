@@ -108,7 +108,7 @@ static TSMacroOutlineController *_sharedOutlineViewController = nil;
 //  Managing the tree root
 // ================================================================
 
-- (void)setRootOfTree: (TSMacroTreeNode *)newRootOfTree
+- (void)setRootOfTree:(TSMacroTreeNode *)newRootOfTree
 {
 	self.specialRootOfTree = newRootOfTree;
 //    [newRootOfTree retain];
@@ -139,17 +139,17 @@ static TSMacroOutlineController *_sharedOutlineViewController = nil;
 	return [outlineView allSelectedItems];
 }
 
-- (void)addNewItem: (id)sender
+- (void)addNewItem:(id)sender
 {
 	[self addNewDataToSelection: [TSMacroTreeNode nodeWithName: NEW_ITEM_NAME content: nil key: nil]];
 }
 
-- (void)addSubmenu: (id)sender
+- (void)addSubmenu:(id)sender
 {
 	[self addNewDataToSelection: [TSMacroTreeNode submenuNodeWithName: NEW_SUBMENU_NAME]];
 }
 
-- (void)addSeparator: (id)sender
+- (void)addSeparator:(id)sender
 {
 	[self addNewDataToSelection: [TSMacroTreeNode separatorNode]];
 }
@@ -216,7 +216,7 @@ static TSMacroOutlineController *_sharedOutlineViewController = nil;
 #endif
 }
 
-- (void)deleteSelection: (id)sender
+- (void)deleteSelection:(id)sender
 {
 	NSArray *selection = [self selectedNodes];
 	if ([selection count] == 0)
@@ -234,7 +234,7 @@ static TSMacroOutlineController *_sharedOutlineViewController = nil;
 #endif
 }
 
-- (void)duplicateSelection: (id)sender
+- (void)duplicateSelection:(id)sender
 {
 	NSArray *selection = [self selectedNodes];
 	if ([selection count] == 0)
@@ -242,12 +242,12 @@ static TSMacroOutlineController *_sharedOutlineViewController = nil;
 	[self addNewDataArrayToSelection: [TSMacroTreeNode duplicateNodeArray: selection]];
 }
 
-- (void)selectAll: (id)sender
+- (void)selectAll:(id)sender
 {
 	[outlineView selectAll: sender];
 }
 
-- (void)sortData: (id)sender
+- (void)sortData:(id)sender
 {
 	NSArray *itemsToSelect = [self selectedNodes];
 	[self.rootOfTree recursiveSortChildren];
@@ -322,12 +322,12 @@ static TSMacroOutlineController *_sharedOutlineViewController = nil;
 	return [(TSMacroTreeNode*)item isExpandable];
 }
 
-- (BOOL)outlineView:(NSOutlineView *)olv shouldEditTableColumn: (NSTableColumn *)tableColumn item: (id)item
+- (BOOL)outlineView:(NSOutlineView *)olv shouldEditTableColumn:(NSTableColumn *)tableColumn item:(id)item
 {
 	return [(TSMacroTreeNode*)item isEditable];
 }
 
-- (void)outlineView: (NSOutlineView *)olv willDisplayCell: (NSCell *)cell forTableColumn: (NSTableColumn *)tableColumn item: (id)item
+- (void)outlineView:(NSOutlineView *)olv willDisplayCell:(NSCell *)cell forTableColumn:(NSTableColumn *)tableColumn item:(id)item
 {
     // return;
     
@@ -535,7 +535,7 @@ static TSMacroOutlineController *_sharedOutlineViewController = nil;
 	}
 }
 
-- (void)delete: (id)sender
+- (void)delete:(id)sender
 {
 	[(TSMacroOutlineController *)[self delegate] deleteSelection: sender];
 }

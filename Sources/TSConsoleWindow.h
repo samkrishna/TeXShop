@@ -40,7 +40,7 @@
 - (void)doTypeset:(id)sender;
 - (void)displayLog:(id)sender;
 - (void)displayConsole:(id)sender;
-- (void)associatedWindow: (id)sender;;
+- (void)associatedWindow:(id)sender;;
 - (void)abort:(id)sender;
 - (void)trashAUXFiles:(id)sender;
 - (IBAction)convertTiff:(id)sender;;

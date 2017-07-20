@@ -68,7 +68,7 @@
 
 
 
-- (IBAction)newDocumentFromStationery: (id)sender
+- (IBAction)newDocumentFromStationery:(id)sender
 {
 	
 }
@@ -147,7 +147,7 @@
     id obj;
     i = 1;
     while (i < [myDocuments count]) {
-        obj = [myDocuments objectAtIndex: (i - 1)];
+        obj = [myDocuments objectAtIndex:(i - 1)];
         i++;
         if ([(TSDocument *)obj skipTextWindow])
             [(TSDocument *)obj close];

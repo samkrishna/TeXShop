@@ -16,7 +16,7 @@
 @property (retain) 	NSMutableArray *autocompletionKeys;
 @property (retain)  NSMutableArray *autocompletionValues;
 
-- (IBAction)openAutoCompletionListEditor: (id)sender;
+- (IBAction)openAutoCompletionListEditor:(id)sender;
 - (IBAction)savePressed:(id)sender;
 - (IBAction)cancelPressed:(id)sender;
 - (IBAction)removePressed:(id)sender;

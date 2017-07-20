@@ -317,7 +317,7 @@ static TSEncoding _availableTexworksEncodings[] = {
 }
 
 // called when the encoding is changed in Preferences dialog
-- (void)encodingChanged: (NSNotification *)note
+- (void)encodingChanged:(NSNotification *)note
 {
 	[self setupForEncoding];
 
@@ -360,7 +360,7 @@ static TSEncoding _availableTexworksEncodings[] = {
 }
 
 
-- (NSStringEncoding)stringEncodingForKey: (NSString *)key
+- (NSStringEncoding)stringEncodingForKey:(NSString *)key
 {
 
 	NSInteger i;
@@ -395,7 +395,7 @@ static TSEncoding _availableTexworksEncodings[] = {
 	// return _availableEncodings[0].nsEnc;
 }
 
-- (NSString *)keyForStringEncoding: (NSStringEncoding)encoding
+- (NSString *)keyForStringEncoding:(NSStringEncoding)encoding
 {
 	NSInteger i;
 	for (i = 0; i < ARRAYSIZE(_availableEncodings); ++i) {
@@ -410,12 +410,12 @@ static TSEncoding _availableTexworksEncodings[] = {
 	// return self.availableEncodingsNames[0];
 }
 
-- (NSString *)localizedNameForKey: (NSString *)key
+- (NSString *)localizedNameForKey:(NSString *)key
 {
 	return NSLocalizedStringFromTable(key, @"Encodings", @"Fetch localized encoding name");
 }
 
-- (NSString *)localizedNameForStringEncoding: (NSStringEncoding)encoding
+- (NSString *)localizedNameForStringEncoding:(NSStringEncoding)encoding
 {
 	return [self localizedNameForKey: [self keyForStringEncoding:encoding]];
 }
@@ -442,7 +442,7 @@ static TSEncoding _availableTexworksEncodings[] = {
 #pragma mark Support for utf.sty
 
 // zenitani and itoh, 1.35 (C) -- support for utf.sty
-- (BOOL)ptexUtfOutputCheck: (NSString *)dataString withEncoding: (NSStringEncoding)enc
+- (BOOL)ptexUtfOutputCheck:(NSString *)dataString withEncoding:(NSStringEncoding)enc
 {
 	NSString *currentEncoding;
 	currentEncoding = [self keyForStringEncoding:enc];
@@ -455,7 +455,7 @@ static TSEncoding _availableTexworksEncodings[] = {
 	}
 }
 
-- (NSData *)ptexUtfOutput: (NSTextView *)dataView withEncoding: (NSStringEncoding)enc
+- (NSData *)ptexUtfOutput:(NSTextView *)dataView withEncoding:(NSStringEncoding)enc
 {
 	NSString *dataString;
 	

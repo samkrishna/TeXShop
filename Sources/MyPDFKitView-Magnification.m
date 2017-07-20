@@ -13,7 +13,7 @@
 @implementation MyPDFKitView (Magnification)
 
 
-- (void)doMagnifyingGlass:(NSEvent *)theEvent level: (NSInteger)level
+- (void)doMagnifyingGlass:(NSEvent *)theEvent level:(NSInteger)level
 {
     
     // Use new Magnifying Glass Routine on Lion, Mountain Lion, and Mavericks. It works in all these places
@@ -39,7 +39,7 @@
 // Routine for Mavericks
 // -------------------------------------------------------------------------
 
-- (void)doMagnifyingGlassMavericks:(NSEvent *)theEvent level: (NSInteger)level
+- (void)doMagnifyingGlassMavericks:(NSEvent *)theEvent level:(NSInteger)level
 {
     NSPoint mouseLocWindow, mouseLocView, mouseLocDocumentView;
     NSRect magRectWindow, tempRect;
@@ -144,7 +144,7 @@
 
 
 // Routine for El Capitan
-- (void)doMagnifyingGlassElCapitanNew:(NSEvent *)theEvent level: (NSInteger)level
+- (void)doMagnifyingGlassElCapitanNew:(NSEvent *)theEvent level:(NSInteger)level
 {
     NSLog(@"El Capitan New");
     
@@ -281,7 +281,7 @@
 // Routine for Mountain Lion and lower; now obsolete and never called
 // -------------------------------------------------------------------------
 
-- (void)doMagnifyingGlassML:(NSEvent *)theEvent level: (NSInteger)level
+- (void)doMagnifyingGlassML:(NSEvent *)theEvent level:(NSInteger)level
 {
     NSPoint mouseLocWindow, mouseLocView, mouseLocDocumentView;
     NSRect oldBounds, newBounds, magRectWindow, magRectView;

@@ -46,14 +46,14 @@
 - (IBAction)previousTeXWindow:(id)sender; // added by Taylor
 // - (BOOL)forPreview;
 - (void)finishCommandCompletionConfigure; // mitsu 1.29 (P)
-- (void)openCommandCompletionList: (id)sender; // mitsu 1.29 (P)
+- (void)openCommandCompletionList:(id)sender; // mitsu 1.29 (P)
 #ifdef MITSU_PDF
-- (void)changeImageCopyType: (id)sender; // mitsu 1.29 (O)
+- (void)changeImageCopyType:(id)sender; // mitsu 1.29 (O)
 #endif
 - (void)finishAutoCompletionConfigure;
 - (void)finishMenuKeyEquivalentsConfigure;
 - (void)configureExternalEditor;
-// - (void)setForPreview: (BOOL)value;
+// - (void)setForPreview:(BOOL)value;
 - (BOOL)applicationShouldOpenUntitledFile:(NSApplication *)sender;
 - (void)ogreKitWillHackFindMenu:(OgreTextFinder*)textFinder;
 - (IBAction)checkForUpdate:(id)sender; // Update checker

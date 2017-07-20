@@ -66,7 +66,7 @@
 	[self.myDocument displayConsole: sender];
 }
 
-- (void)associatedWindow: (id)sender
+- (void)associatedWindow:(id)sender
 {
     TSDocument *myDocument = (TSDocument*)self.myDocument;
     [myDocument doError: sender];

@@ -59,7 +59,7 @@
 
 + (id)sharedInstance;
 
-- (IBAction)openMacroEditor: (id)sender;
+- (IBAction)openMacroEditor:(id)sender;
 - (void)loadUI;
 
 - (IBAction)savePressed:(id)sender;
@@ -72,16 +72,16 @@
 - (IBAction)modifiersAction:(id)sender;
 - (IBAction)outlineAction:(id)sender;
 
-- (void)outlineViewSelectionChanged: (NSNotification *)note;
-- (void)outlineViewItemsChanged: (NSNotification *)note;
-- (void)reflectChangesInEditor: (BOOL)forceUpdate;
+- (void)outlineViewSelectionChanged:(NSNotification *)note;
+- (void)outlineViewItemsChanged:(NSNotification *)note;
+- (void)reflectChangesInEditor:(BOOL)forceUpdate;
 
 - (void)saveMacrosSheetDidEnd:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo;
 
-- (void)saveNodes: (id)nodes toFile: (NSString *)filePath;
-- (void)saveSelection: (id)sender;
+- (void)saveNodes:(id)nodes toFile:(NSString *)filePath;
+- (void)saveSelection:(id)sender;
 - (void)savePanelDidEnd:(NSSavePanel *)sheet returnCode:(NSInteger)returnCode contextInfo:(void  *)contextInfo;
-- (void)readDictionaryToMacroEditor: (id)sender;
+- (void)readDictionaryToMacroEditor:(id)sender;
 - (void)openPanelDidEnd:(NSOpenPanel *)sheet returnCode:(NSInteger)returnCode contextInfo:(void  *)contextInfo;
 
 @end

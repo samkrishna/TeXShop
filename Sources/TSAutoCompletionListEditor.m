@@ -8,7 +8,7 @@
 #define AutoCompletionRowsType @"TSAutoCompletionRowsType"
 
 @implementation TSAutoCompletionListEditor
-- (IBAction)openAutoCompletionListEditor: (id)sender
+- (IBAction)openAutoCompletionListEditor:(id)sender
 {
 	if(!window){
 		if (![NSBundle loadNibNamed:@"AutoCompletionListEditor" owner:self]) {

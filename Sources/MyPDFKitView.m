@@ -133,17 +133,17 @@
     return resizeOption;
 }
 
-- (void)setPageStyle: (NSInteger)thePageStyle
+- (void)setPageStyle:(NSInteger)thePageStyle
 {
     pageStyle = thePageStyle;
 }
 
-- (void)setFirstPageStyle: (NSInteger)theFirstPageStyle;
+- (void)setFirstPageStyle:(NSInteger)theFirstPageStyle;
 {
     firstPageStyle = theFirstPageStyle;
 }
 
-- (void)setResizeOption: (NSInteger)theResizeOption
+- (void)setResizeOption:(NSInteger)theResizeOption
 {
     resizeOption = theResizeOption;
 }
@@ -417,7 +417,7 @@
 }
 
 
-- (void)showWithPath: (NSString *)imagePath
+- (void)showWithPath:(NSString *)imagePath
 {
 
     
@@ -505,7 +505,7 @@
 }
 
 
-- (void)reShowWithPath: (NSString *)imagePath
+- (void)reShowWithPath:(NSString *)imagePath
 {
 	
 	PDFDocument	*pdfDoc, *oldDoc;
@@ -903,7 +903,7 @@
 	[super goForward:sender];
 }
 
-- (void)scaleChanged: (NSNotification *)notification
+- (void)scaleChanged:(NSNotification *)notification
 {
 	CGFloat	theScale;
 	NSInteger		magsize;
@@ -922,7 +922,7 @@
 		}
 }
 
-- (void)pageChanged: (NSNotification *)notification
+- (void)pageChanged:(NSNotification *)notification
 {
 	PDFPage			*aPage;
 	NSInteger				pageNumber;
@@ -1124,14 +1124,14 @@
 */
 
 
-- (void)previousPage: (id)sender
+- (void)previousPage:(id)sender
 {
 	if  ((pageStyle == PDF_SINGLE_PAGE_STYLE) || (pageStyle == PDF_TWO_PAGE_STYLE))
 		[self cleanupMarquee: YES];
 	[self goToPreviousPage:self];
 }
 
-- (void)nextPage: (id)sender
+- (void)nextPage:(id)sender
 {
 	
 	if  ((pageStyle == PDF_SINGLE_PAGE_STYLE) || (pageStyle == PDF_TWO_PAGE_STYLE))
@@ -1139,21 +1139,21 @@
 	[self goToNextPage:sender];
 }
 
-- (void)firstPage: (id)sender
+- (void)firstPage:(id)sender
 {
 	if  ((pageStyle == PDF_SINGLE_PAGE_STYLE) || (pageStyle == PDF_TWO_PAGE_STYLE))
 		[self cleanupMarquee: YES];
 	[self goToFirstPage:self];
 }
 
-- (void)lastPage: (id)sender
+- (void)lastPage:(id)sender
 {
 	if  ((pageStyle == PDF_SINGLE_PAGE_STYLE) || (pageStyle == PDF_TWO_PAGE_STYLE))
 		[self cleanupMarquee: YES];
 	[self goToLastPage:sender];
 }
 
-- (void)goToKitPageNumber: (NSInteger)thePage
+- (void)goToKitPageNumber:(NSInteger)thePage
 {
 	NSInteger			myPage;
 	PDFPage		*aPage;
@@ -1185,7 +1185,7 @@
 }
 
 
-- (void)goToKitPage: (id)sender
+- (void)goToKitPage:(id)sender
 {
 	NSInteger		thePage;
 
@@ -1245,7 +1245,7 @@
 
 // action for menu items "Single Page/Two Page/Multi-Page/Double Multi-Page"
 // -- tags should be correctly set
-- (void)changePageStyle: (id)sender
+- (void)changePageStyle:(id)sender
 {
     NSInteger newStyle;
     newStyle = [sender tag];
@@ -1285,7 +1285,7 @@
     */
 }
 
-- (void)changePDFViewSizeTo: (NSInteger)newResizeOption
+- (void)changePDFViewSizeTo:(NSInteger)newResizeOption
 {
         NSInteger number, i;
         id item;
@@ -1324,7 +1324,7 @@
          }
          else // possibley called by a menu in toolbar
          {
-         [self setMagnification: ((double)resizeOption)/100];
+         [self setMagnification:((double)resizeOption)/100];
          resizeOption = PDF_FIT_TO_NONE;
          }
          */
@@ -1339,7 +1339,7 @@
 }
 
 // action for menu items "Actual Size/Fixed Magnification/Fit To ..."
-- (void)changePDFViewSize: (id)sender
+- (void)changePDFViewSize:(id)sender
 {
     if (![sender tag]) return;
     
@@ -1375,7 +1375,7 @@
 	}
 	else // possibley called by a menu in toolbar
 	{
-		[self setMagnification: ((double)resizeOption)/100];
+		[self setMagnification:((double)resizeOption)/100];
 		resizeOption = PDF_FIT_TO_NONE;
 	}
 */
@@ -1387,7 +1387,7 @@
 }
 
 
-- (void)copy: (id)sender
+- (void)copy:(id)sender
 {
 	
 	if (mouseMode != NEW_MOUSE_MODE_SELECT_PDF)
@@ -1420,14 +1420,14 @@
 
 // --------------------------------------------------------------------------------------------------------- toggleDrawer
 
-- (IBAction)toggleDrawer: (id)sender
+- (IBAction)toggleDrawer:(id)sender
 {
 	[_drawer toggle: self];
 }
 
 // ------------------------------------------------------------------------------------------- takeDestinationFromOutline
 
-- (IBAction)takeDestinationFromOutline: (id)sender
+- (IBAction)takeDestinationFromOutline:(id)sender
 {
 	// Get the destination associated with the search result list.  Tell the PDFView to go there.
 	[self goToDestination: [[sender itemAtRow: [sender selectedRow]] destination]];
@@ -1439,7 +1439,7 @@
 
 // The outline view is for the PDF outline.  Not all PDF's have an outline.
 
-- (NSInteger)outlineView: (NSOutlineView *)outlineView numberOfChildrenOfItem: (id)item
+- (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item
 {
 	if (item == NULL)
 	{
@@ -1454,7 +1454,7 @@
 
 // --------------------------------------------------------------------------------------------- outlineView:child:ofItem
 
-- (id)outlineView: (NSOutlineView *)outlineView child: (NSInteger)idx ofItem: (id)item
+- (id)outlineView:(NSOutlineView *)outlineView child:(NSInteger)idx ofItem:(id)item
 {
 	if (item == NULL)
 	{
@@ -1469,7 +1469,7 @@
 
 // ----------------------------------------------------------------------------------------- outlineView:isItemExpandable
 
-- (BOOL)outlineView: (NSOutlineView *)outlineView isItemExpandable: (id)item
+- (BOOL)outlineView:(NSOutlineView *)outlineView isItemExpandable:(id)item
 {
 	if (item == NULL)
 	{
@@ -1484,13 +1484,12 @@
 
 // ------------------------------------------------------------------------- outlineView:objectValueForTableColumn:byItem
 
-- (id)outlineView: (NSOutlineView *)outlineView objectValueForTableColumn: (NSTableColumn *)tableColumn
-		byItem: (id) item
+- (id)outlineView:(NSOutlineView *)outlineView objectValueForTableColumn:(NSTableColumn *)tableColumn byItem:(id) item
 {
 	return [(PDFOutline *)item label];
 }
 
-- (void)doFindOne: (id)sender
+- (void)doFindOne:(id)sender
 {
    
     PDFSelection                    *searchSelection;
@@ -1572,7 +1571,7 @@
 }
 
 
-- (void)doFind: (id)sender
+- (void)doFind:(id)sender
 {
     
     self.toolbarFind = NO;
@@ -1596,7 +1595,7 @@
 
 // ------------------------------------------------------------------------------------------------------------ startFind
 
-- (void)documentDidBeginDocumentFind: (NSNotification *)notification
+- (void)documentDidBeginDocumentFind:(NSNotification *)notification
 {
     
     if (self.toolbarFind)
@@ -1622,7 +1621,7 @@
 
 // --------------------------------------------------------------------------------------------------------- findProgress
 
-- (void)documentDidEndPageFind: (NSNotification *)notification
+- (void)documentDidEndPageFind:(NSNotification *)notification
 {
 	double		pageIndex;
 	
@@ -1650,7 +1649,7 @@
 // Called when an instance was located. Delegates can instantiate.
 
 
-- (void)documentDidFindMatch: (NSNotification *)notification
+- (void)documentDidFindMatch:(NSNotification *)notification
 {
     if (self.toolbarFind)
         return;
@@ -1682,7 +1681,7 @@
 
 
 /*
-- (void)didMatchString: (PDFSelection *)instance
+- (void)didMatchString:(PDFSelection *)instance
 {
  
     if (self.toolbarFind)
@@ -1709,7 +1708,7 @@
 
 // -------------------------------------------------------------------------------------------------------------- endFind
 
-- (void)documentDidEndDocumentFind: (NSNotification *)notification
+- (void)documentDidEndDocumentFind:(NSNotification *)notification
 {
     
     if (self.toolbarFind)
@@ -1738,7 +1737,7 @@
 // The table view is used to hold search results.  Column 1 lists the page number for the search result,
 // column two the section in the PDF (x-ref with the PDF outline) where the result appears.
 
-- (NSInteger)numberOfRowsInTableView: (NSTableView *)aTableView
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
 {
 	if (self != [self.myDocument topView])
 		return ([[self.myDocument topView] numberOfRowsInTableView: aTableView]);
@@ -1748,8 +1747,7 @@
 
 // ------------------------------------------------------------------------------ tableView:objectValueForTableColumn:row
 
-- (id)tableView: (NSTableView *)aTableView objectValueForTableColumn: (NSTableColumn *)theColumn
-		row: (NSInteger) rowIndex
+- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)theColumn row:(NSInteger) rowIndex
 {
 	if (self != [self.myDocument topView])
 		return ([[self.myDocument topView] tableView: aTableView objectValueForTableColumn: theColumn row: rowIndex]);
@@ -1766,7 +1764,7 @@
 
 // ------------------------------------------------------------------------------------------ tableViewSelectionDidChange
 
-- (void)tableViewSelectionDidChange: (NSNotification *)notification
+- (void)tableViewSelectionDidChange:(NSNotification *)notification
 {
 	NSInteger				rowIndex;
 	NSMutableArray	*_firstSearchResults;
@@ -1802,7 +1800,7 @@
 	}
 }
 
-- (void)changeMouseMode: (id)sender
+- (void)changeMouseMode:(id)sender
 {
 	NSInteger	oldMouseMode;
 
@@ -1838,7 +1836,7 @@
 
 // mitsu 1.29 (S2)
 // derived from Apple's Sample code PDFView/DraggableScrollView.m
-- (void)scrollByDragging: (NSEvent *)theEvent
+- (void)scrollByDragging:(NSEvent *)theEvent
 {
 	NSPoint 		initialLocation;
 	NSRect			visibleRect;
@@ -1928,17 +1926,17 @@
 
 #pragma mark =====drawPage=====
 
-- (void)setIndexForMark: (NSInteger)idx
+- (void)setIndexForMark:(NSInteger)idx
 {
 	pageIndexForMark = idx;
 }
 
-- (void)setBoundsForMark: (NSRect)bounds
+- (void)setBoundsForMark:(NSRect)bounds
 {
 	pageBoundsForMark = bounds;
 }
 
-- (void)setDrawMark: (BOOL)value
+- (void)setDrawMark:(BOOL)value
 {
 	drawMark = value;
 }
@@ -1950,7 +1948,7 @@
 }
 */
 
-- (void)setOldSync: (BOOL)value
+- (void)setOldSync:(BOOL)value
 {
 	oldSync = value;
 }
@@ -2321,7 +2319,7 @@
 
 #pragma mark =====mouse routines=====
 
-- (void)mouseDown: (NSEvent *)theEvent
+- (void)mouseDown:(NSEvent *)theEvent
 {
     
     if (drawMark) {
@@ -2495,7 +2493,7 @@ The system then remembers the new number and sends is to the Timer which will di
 }
 
 
-- (void)mouseMoved: (NSEvent *)theEvent
+- (void)mouseMoved:(NSEvent *)theEvent
 {
     
     
@@ -2560,7 +2558,7 @@ The system then remembers the new number and sends is to the Timer which will di
 	}
 }
 
-- (void)handleLink: (NSTimer *)theTimer
+- (void)handleLink:(NSTimer *)theTimer
 {
     
     NSPoint         mouseDownLoc, mouseLocDocumentView;
@@ -2682,7 +2680,7 @@ The system then remembers the new number and sends is to the Timer which will di
     self.handlingLink = 0;
 }
 
-- (void)killPopup: (NSTimer *)theTimer
+- (void)killPopup:(NSTimer *)theTimer
 {
     
  //   return; // activate this to leave "link destination" until cursor moves
@@ -2704,7 +2702,7 @@ The system then remembers the new number and sends is to the Timer which will di
 
 // --------------------------------------------------------------------------------------------------------- mouseDragged
 
-- (void)mouseDragged: (NSEvent *)theEvent
+- (void)mouseDragged:(NSEvent *)theEvent
 {
 
 	if (downOverLink) {
@@ -2795,7 +2793,7 @@ The system then remembers the new number and sends is to the Timer which will di
 
 // -------------------------------------------------------------------------------------------------------------- mouseUp
 
-- (void)mouseUp: (NSEvent *)theEvent
+- (void)mouseUp:(NSEvent *)theEvent
 {
 
 	if (downOverLink) {
@@ -2955,7 +2953,7 @@ The system then remembers the new number and sends is to the Timer which will di
 
 // Obsolete Version
 /*
- - (void)selectARectForMavericks: (NSEvent *)theEvent
+ - (void)selectARectForMavericks:(NSEvent *)theEvent
  {
  NSPoint mouseLocWindow, startPoint, currentPoint;
  BOOL startFromCenter = NO;
@@ -3034,7 +3032,7 @@ The system then remembers the new number and sends is to the Timer which will di
 
  */
  
-- (void)selectARectForMavericks: (NSEvent *)theEvent
+- (void)selectARectForMavericks:(NSEvent *)theEvent
 {
   
 //    if ((floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_7) &&
@@ -3124,7 +3122,7 @@ The system then remembers the new number and sends is to the Timer which will di
 // ------------------------------------------------------------------------------
 
 // earses the frame of selected rectangle and cleans up the cached image
-- (void)cleanupMarquee: (BOOL)terminate
+- (void)cleanupMarquee:(BOOL)terminate
 {
     // for Mavericks
    //  if (atLeastMavericks) {
@@ -3174,7 +3172,7 @@ The system then remembers the new number and sends is to the Timer which will di
 // -------------------------------------------------------------------------
 
 // updates the frame of selected rectangle
-- (void)updateMarquee: (NSTimer *)timer
+- (void)updateMarquee:(NSTimer *)timer
 {
 	static NSInteger phase = 0;
 	CGFloat pattern[2] = {3,3};
@@ -3249,7 +3247,7 @@ The system then remembers the new number and sends is to the Timer which will di
 
 
 
-- (void)selectARect: (NSEvent *)theEvent
+- (void)selectARect:(NSEvent *)theEvent
 {
 	NSPoint mouseLocWindow, startPoint, currentPoint;
 	NSRect myBounds, selRectWindow, selRectSuper;
@@ -3436,7 +3434,7 @@ The system then remembers the new number and sends is to the Timer which will di
 }
 
 
-- (void)selectAll: (id)sender
+- (void)selectAll:(id)sender
 {
 /*
 	if ((mouseMode == NEW_MOUSE_MODE_SELECT_PDF) &&
@@ -3597,7 +3595,7 @@ else
 
 
 // get image data from the selected rectangle with specified type
-- (NSData *)imageDataFromSelectionType: (NSInteger)type
+- (NSData *)imageDataFromSelectionType:(NSInteger)type
 {
 	NSRect visRect, newRect, newRectRevised, pageRect, pageDataRect, selRectWindow, frameRect;
 	NSRect mySelectedRect;
@@ -3909,7 +3907,7 @@ else
 
 
 // start save-dialog as a sheet
--(void)saveSelectionToFile: (id)sender
+-(void)saveSelectionToFile:(id)sender
 {
 	NSSavePanel *savePanel = [NSSavePanel savePanel];
 	[savePanel  setAccessoryView: self.imageTypeView];
@@ -3996,7 +3994,7 @@ else
 // mitsu 1.29 drag & drop
 #pragma mark =====drag & drop=====
 
-- (void)startDragging: (NSEvent *)theEvent
+- (void)startDragging:(NSEvent *)theEvent
 {
 	NSPasteboard *pboard;
 	NSInteger imageCopyType;
@@ -4308,7 +4306,7 @@ else
 
 }
 
-- (BOOL)doSyncTeX: (NSPoint)thePoint
+- (BOOL)doSyncTeX:(NSPoint)thePoint
 {
     
 /* // this section moved to TSDocument-SyncTeX
@@ -4350,7 +4348,7 @@ else
 
 /*
 
-- (BOOL)doNewSync: (NSPoint)thePoint
+- (BOOL)doNewSync:(NSPoint)thePoint
 {
     return NO;
 }
@@ -4360,7 +4358,7 @@ else
 //  This is the "old version" with variables upgraded to 64 bits;
 //    should be the GOOD version.
 
- - (BOOL)doNewSync: (NSPoint)thePoint
+ - (BOOL)doNewSync:(NSPoint)thePoint
 {
     NSInteger						theIndex;
     NSInteger						testIndex;
@@ -4641,7 +4639,7 @@ else
 //-----------------------------------------------------
 
 /*
-- (BOOL)doNewSync: (NSPoint)thePoint
+- (BOOL)doNewSync:(NSPoint)thePoint
 {
 	NSInteger				theIndex;
 	NSInteger				testIndex;
@@ -5030,7 +5028,7 @@ else
 
 
 // TODO: This method is way too big and should be split up / simplified
-- (void)doSync: (NSPoint)thePoint
+- (void)doSync:(NSPoint)thePoint
 {
 	NSFileManager	*fileManager;
 	NSNumber        *thePageNumber;
@@ -5474,7 +5472,7 @@ else
 //		you may combine shift key to shrink
 
 
-- (void)drawDotsForPage:(NSInteger)page atPoint: (NSPoint)p
+- (void)drawDotsForPage:(NSInteger)page atPoint:(NSPoint)p
 {
 		NSFileManager	*fileManager;
 		NSInteger             pageNumber;
@@ -5680,7 +5678,7 @@ else
 
 // WARNING: Modified Version
 
-- (void)updateBackground: (NSRect)aRect
+- (void)updateBackground:(NSRect)aRect
 {
 	NSRect theRect = NSIntersectionRect(aRect, [self visibleRect]);
 	[self displayRect: theRect];
@@ -5707,7 +5705,7 @@ else
 	[[self window] invalidateCursorRectsForView: self]; // this updates the cursor rects
 }
 
-- (void)setMagnification: (double)magnification
+- (void)setMagnification:(double)magnification
 {
 	NSInteger		scale;
 
@@ -5977,7 +5975,7 @@ else
     return theMenu;
 }
 
-- (void)doMenuSync: (id)theItem
+- (void)doMenuSync:(id)theItem
 {
 	[[self window] invalidateCursorRectsForView: self];
  	[self doSync: menuSyncPoint];
@@ -6056,22 +6054,22 @@ else
 	return _searchResults;
 }
 
-- (void)setProtectFind: (BOOL)value
+- (void)setProtectFind:(BOOL)value
 {
 	protectFind = value;
 }
 
-- (void)setShowSync: (BOOL)value
+- (void)setShowSync:(BOOL)value
 {	
 	showSync = value;
 }
 
-- (void)setNumberSyncRect: (int)value
+- (void)setNumberSyncRect:(int)value
 {
 	numberSyncRect = value;
 }
 
-- (void)setSyncRect: (int)which originX: (float)x originY: (float)y width: (float)width height: (float)height
+- (void)setSyncRect:(int)which originX:(float)x originY:(float)y width:(float)width height:(float)height
 {
 	syncRect[which].origin.x = x;
 	syncRect[which].origin.y = y;

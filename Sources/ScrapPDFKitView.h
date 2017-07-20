@@ -38,7 +38,7 @@
 @property           NSRect      scrapVisibleRect;
 @property           NSRect      scrapFullRect;
 
-- (void)reShowWithPath: (NSString *)imagePath;
+- (void)reShowWithPath:(NSString *)imagePath;
 
 @end
 

@@ -266,7 +266,7 @@
 //------------------------------------------------------------------------------
 // API used by other TeXShop classes
 //------------------------------------------------------------------------------
-- (NSString *)relativePath: (NSString *)path fromFile: (NSString *)file; // added by zenitani, Feb 13, 2003
+- (NSString *)relativePath:(NSString *)path fromFile:(NSString *)file; // added by zenitani, Feb 13, 2003
 
 - (void)registerFactoryDefaults;
 
